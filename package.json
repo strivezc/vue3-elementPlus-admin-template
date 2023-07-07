@@ -1,0 +1,43 @@
+{
+  "name": "zzc",
+  "version": "3.8.6",
+  "description": "管理系统",
+  "author": "zzc",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build:prod": "vite build",
+    "build:test": "vite build --mode staging",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "2.1.0",
+    "@vueup/vue-quill": "1.2.0",
+    "@vueuse/core": "10.2.1",
+    "axios": "1.4.0",
+    "echarts": "5.4.2",
+    "element-plus": "2.2.27",
+    "file-saver": "2.0.5",
+    "fuse.js": "6.6.2",
+    "js-cookie": "3.0.5",
+    "jsencrypt": "3.3.2",
+    "nprogress": "0.2.0",
+    "path-browserify": "^1.0.1",
+    "pinia": "2.1.4",
+    "vue": "3.3.4",
+    "vue-cropper": "1.0.3",
+    "vue-router": "4.2.4"
+  },
+  "devDependencies": {
+    "@iconify-json/ep": "^1.1.11",
+    "@vitejs/plugin-vue": "4.2.3",
+    "@vue/compiler-sfc": "3.3.4",
+    "sass": "1.56.1",
+    "unplugin-auto-import": "^0.7.0",
+    "unplugin-icons": "^0.14.1",
+    "unplugin-vue-components": "^0.25.1",
+    "vite": "4.4.0",
+    "vite-plugin-svg-icons": "2.0.1",
+    "vite-plugin-vue-setup-extend": "0.4.0"
+  }
+}
