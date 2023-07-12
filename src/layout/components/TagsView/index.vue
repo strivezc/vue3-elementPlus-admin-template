@@ -8,7 +8,6 @@
         :class="isActive(tag) ? 'active' : ''"
         :to="{ path: tag.path, query: tag.query, fullPath: tag.fullPath }"
         class="tags-view-item"
-        :style="activeStyle(tag)"
         @click.middle="!isAffix(tag) ? closeSelectedTag(tag) : ''"
         @contextmenu.prevent="openMenu(tag, $event)"
       >
@@ -81,13 +80,6 @@ onMounted(() => {
 
 function isActive(r) {
   return r.path === route.path
-}
-function activeStyle(tag) {
-  if (!isActive(tag)) return {};
-  return {
-    "background-color": theme.value,
-    "border-color": theme.value
-  };
 }
 function isAffix(tag) {
   return tag.meta && tag.meta.affix

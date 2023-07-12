@@ -40,7 +40,11 @@ export default defineConfig(({mode, command}) => {
       Components({
         resolvers: [
           // 自动导入 Element Plus 组件
-          ElementPlusResolver(),
+          ElementPlusResolver(
+            {
+              importStyle: 'sass',
+            }
+          ),
           // 自动注册图标组件
           // 使用方法：原有代码前面需要加前缀,大驼峰IEp,或者中划线i-ep-,
           // <el-icon><IEpHomeFilled /></el-icon>  <el-icon><i-ep-circle-check-filled /></el-icon>
@@ -98,7 +102,13 @@ export default defineConfig(({mode, command}) => {
             }
           }
         ]
-      }
+      },
+      preprocessorOptions: {
+        scss: {
+          //自定义的element主题文件
+          additionalData: `@use "@/assets/styles/element-theme.scss" as *;`,
+        },
+      },
     },
     build: {
       minify: 'esbuild',
