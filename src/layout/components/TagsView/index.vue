@@ -13,7 +13,7 @@
       >
         {{ tag.title }}
         <span v-if="!isAffix(tag)" @click.prevent.stop="closeSelectedTag(tag)">
-          <i-ep-close
+          <close
             class="el-icon-close"
             style="width: 1em; height: 1em; vertical-align: middle"
           />
@@ -22,22 +22,22 @@
     </scroll-pane>
     <ul v-show="visible" :style="{ left: left + 'px', top: top + 'px' }" class="contextmenu">
       <li @click="refreshSelectedTag(selectedTag)">
-        <i-ep-refresh-right style="width: 1em; height: 1em" /> 刷新页面
+        <refresh-right style="width: 1em; height: 1em" /> 刷新页面
       </li>
       <li v-if="!isAffix(selectedTag)" @click="closeSelectedTag(selectedTag)">
-        <i-ep-close style="width: 1em; height: 1em" /> 关闭当前
+        <close style="width: 1em; height: 1em" /> 关闭当前
       </li>
       <li @click="closeOthersTags">
-        <i-ep-circle-close style="width: 1em; height: 1em" /> 关闭其他
+        <circle-close style="width: 1em; height: 1em" /> 关闭其他
       </li>
       <li v-if="!isFirstView()" @click="closeLeftTags">
-        <i-ep-back style="width: 1em; height: 1em" /> 关闭左侧
+        <back style="width: 1em; height: 1em" /> 关闭左侧
       </li>
       <li v-if="!isLastView()" @click="closeRightTags">
-        <i-ep-right style="width: 1em; height: 1em" /> 关闭右侧
+        <right style="width: 1em; height: 1em" /> 关闭右侧
       </li>
       <li @click="closeAllTags(selectedTag)">
-        <i-ep-circle-close style="width: 1em; height: 1em" /> 全部关闭
+        <circle-close style="width: 1em; height: 1em" /> 全部关闭
       </li>
     </ul>
   </div>

@@ -11,7 +11,7 @@ const account = {
   alwaysShow: true,
   meta: {
     title: '账户管理',
-    icon: 'password',
+    icon: 'lock',
   },
   children: [
     {

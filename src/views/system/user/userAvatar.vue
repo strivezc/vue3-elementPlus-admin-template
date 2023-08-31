@@ -41,28 +41,28 @@
           >
             <el-button>
               选择
-              <el-icon class="el-icon--right"><i-ep-upload /></el-icon>
+              <el-icon class="el-icon--right"><upload /></el-icon>
             </el-button>
           </el-upload>
         </el-col>
         <el-col :lg="{ span: 1, offset: 2 }" :md="2">
           <el-button @click="changeScale(1)">
-            <el-icon><i-ep-plus /></el-icon>
+            <el-icon><plus /></el-icon>
           </el-button>
         </el-col>
         <el-col :lg="{ span: 1, offset: 1 }" :md="2">
           <el-button @click="changeScale(-1)">
-            <el-icon><i-ep-minus /></el-icon>
+            <el-icon><minus /></el-icon>
           </el-button>
         </el-col>
         <el-col :lg="{ span: 1, offset: 1 }" :md="2">
           <el-button @click="rotateLeft()">
-            <el-icon><i-ep-refresh-left /></el-icon>
+            <el-icon><refresh-left /></el-icon>
           </el-button>
         </el-col>
         <el-col :lg="{ span: 1, offset: 1 }" :md="2">
           <el-button @click="rotateRight()">
-            <el-icon><i-ep-refresh-right /></el-icon>
+            <el-icon><refresh-right /></el-icon>
           </el-button>
         </el-col>
         <el-col :lg="{ span: 2, offset: 6 }" :md="2">

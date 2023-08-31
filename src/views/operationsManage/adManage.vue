@@ -9,8 +9,15 @@
     >
       <el-row>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
-          <el-form-item label="词本名">
-            <el-input v-model="formData.accountName" placeholder="词本名" class="input"/>
+          <el-form-item label="位置">
+            <el-select class="select" v-model="formData.type" placeholder="请选择">
+              <el-option label="全部" value="" />
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :sm="24" :md="12" :lg="8" :xl="8">
+          <el-form-item label="广告标题">
+            <el-input v-model="formData.accountName" placeholder="广告标题" class="input" />
           </el-form-item>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
@@ -18,23 +25,25 @@
             <el-radio-group v-model="formData.status">
               <el-radio label="">全部</el-radio>
               <el-radio :label="0">正常</el-radio>
-              <el-radio :label="1">删除</el-radio>
+              <el-radio :label="1">下架</el-radio>
             </el-radio-group>
-          </el-form-item>
-        </el-col>
-        <el-col :sm="24" :md="12" :lg="8" :xl="8">
-          <el-form-item label="分类">
-            <el-select class="select" v-model="formData.accountStatus" placeholder="请选择">
-              <el-option label="全部" value=""/>
-            </el-select>
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
+          <el-form-item label="是否过期" prop="status">
+            <el-radio-group v-model="formData.status">
+              <el-radio label="">不限</el-radio>
+              <el-radio :label="0">未过期</el-radio>
+              <el-radio :label="1">已过期</el-radio>
+            </el-radio-group>
+          </el-form-item>
+        </el-col>
+        <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
             <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-            <el-button type="warning" @click="add">单词本导入</el-button>
+            <el-button type="success" @click="add">新增</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -42,13 +51,14 @@
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
-        <el-table-column align="center" label="词本" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="所属分类" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="简介" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="封面图" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="单词数" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="ID" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="位置" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="标题" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="目标链接" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="广告图" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="失效时间" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="点击量" prop="createTime"></el-table-column>
         <el-table-column align="center" label="状态" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="推荐" prop="createTime"></el-table-column>
         <el-table-column align="center" label="操作" prop="createTime"></el-table-column>
       </el-table>
       <pagination
@@ -60,34 +70,35 @@
       />
     </div>
 
-    <el-dialog title="编辑" draggable v-model="showDialog" :before-close="close" width="550px">
+    <el-dialog title="新增" draggable v-model="showDialog" :before-close="close" width="550px">
       <el-form
           :model="form"
           :rules="formRules"
           ref="ruleFormRef"
           label-position="right"
-          label-width="80px"
+          label-width="100px"
       >
-        <el-form-item label="词本名:" prop="accountName">
-          <el-input v-model="form.accountName" placeholder="词本名" class="input form-input"/>
-        </el-form-item>
-        <el-form-item label="分类:">
+        <el-form-item label="广告位置:">
           <el-select class="form-select" v-model="form.topic" placeholder="请选择">
             <el-option label="全部" value=""/>
           </el-select>
         </el-form-item>
-        <el-form-item label="简介:" prop="reply">
-          <el-input
-              class="form-textarea"
-              v-model="form.reply"
-              placeholder="最多输入500个字符"
-              type="textarea"
-              maxlength="500"
-              :autosize="{ minRows: 4, maxRows: 6 }"
-              show-word-limit
+        <el-form-item label="广告标题:" prop="accountName">
+          <el-input v-model="form.accountName" placeholder="广告标题" class="input form-input"/>
+        </el-form-item>
+        <el-form-item label="目标链接:" prop="accountName">
+          <el-input v-model="form.accountName" placeholder="目标链接" class="input form-input"/>
+        </el-form-item>
+        <el-form-item label="过期时间:" prop="accountName">
+          <el-date-picker
+              v-model="form.overTime"
+              value-format="yyyy-MM-dd HH:mm:ss"
+              type="datetime"
+              class="form-date"
+              placeholder="选择日期"
           />
         </el-form-item>
-        <el-form-item prop="barrierImg" label="封面图">
+        <el-form-item prop="barrierImg" label="广告图片">
           <div class="flex-column">
             <el-upload
                 ref="barrierImg"
@@ -113,7 +124,8 @@
   </div>
 </template>
 
-<script setup name="Vocabulary">
+<script setup name="AdManage">
+import { list } from '@/api'
 import { uploadFile } from '@/api/common'
 
 const { proxy } = getCurrentInstance()
@@ -127,6 +139,7 @@ const data = reactive({
     currPage: 1,
     pageSize: 10
   },
+
   loading: false,
   showDialog: false,
   form: {
@@ -136,20 +149,17 @@ const data = reactive({
     accountName: [{ required: true, message: '请输入', trigger: 'blur' }]
   }
 })
-const ruleFormRef = ref()
 
-const {
-  formData,
-  tableDataLoading,
-  tableData,
-  total,
-  listQuery,
-  form,
-  formRules,
-  showDialog,
-  loading
-} = toRefs(data)
+const ruleFormRef=ref()
+const { formData, tableDataLoading, tableData, total, listQuery, form, formRules, showDialog, loading } = toRefs(data)
 
+function add() {
+  showDialog.value=true
+}
+function close() {
+  showDialog.value = false
+  ruleFormRef.value.resetFields()
+}
 const submit = async () => {
   await ruleFormRef.value.validate((valid, fields) => {
     if (valid) {
@@ -158,15 +168,6 @@ const submit = async () => {
       console.log('error submit!', fields)
     }
   })
-}
-
-function close() {
-  showDialog.value = false
-  ruleFormRef.value.resetFields()
-}
-
-function add() {
-  showDialog.value = true
 }
 
 function search() {
@@ -190,6 +191,7 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+
 const uploadImg = async (file) => {
   if (file.file.size / 1024 / 1024 > 10) {
     proxy.$modal.msgError('文件大小不能超过10MB')

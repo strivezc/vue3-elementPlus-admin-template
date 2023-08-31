@@ -25,5 +25,10 @@
   ),
   $table: (
     'border-color': #dfe6ec,
-  )
+  ),
+  $common-component-size: (
+    'large': 40px,
+    'default': 36px,
+    'small': 28px,
+  ),
 );

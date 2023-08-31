@@ -1,7 +1,7 @@
 <template>
   <div class="errPage-container">
     <el-button class="pan-back-btn" @click="back">
-      <el-icon><i-ep-arrow-left /></el-icon>返回
+      <el-icon><arrow-left /></el-icon>返回
     </el-button>
     <el-row>
       <el-col :span="12">

@@ -22,7 +22,7 @@ const content = {
   alwaysShow: true,
   meta: {
     title: '内容管理',
-    icon: 'tool',
+    icon: 'folder',
   },
   children: [
     {

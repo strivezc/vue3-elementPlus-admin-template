@@ -2,6 +2,13 @@ export const components = {
   OperationsManage: () => import('@/layout'),
   Agreement: () => import('@/views/operationsManage/agreement'),
   EditCompliance: () => import('@/views/operationsManage/components/editCompliance'),
+  Feedback: () => import('@/views/operationsManage/feedback'),
+  AdManage: () => import('@/views/operationsManage/adManage'),
+  VersionControl: () => import('@/views/operationsManage/versionControl'),
+  SMSManage: () => import('@/components/ParentView'),
+  SMSChannel: () => import('@/views/operationsManage/SMSManage/SMSChannel'),
+  SMSTemplate: () => import('@/views/operationsManage/SMSManage/SMSTemplate'),
+  SMSBlacklist: () => import('@/views/operationsManage/SMSManage/SMSBlacklist'),
 }
 
 const operations = {
@@ -28,28 +35,52 @@ const operations = {
       hidden:true,
       meta: { title: '编辑协议', activeMenu: '/operationsManage/agreement' },
     },
-    // {
-    //   path: 'AIManage',
-    //   component: components.AIManage,
-    //   name: 'AIManage',
-    //   meta: { title: 'AI管理' },
-    //   redirect: 'noRedirect',
-    //   alwaysShow: true,
-    //   children: [
-    //     {
-    //       path: 'classify',
-    //       component: components.Classify,
-    //       name: 'Classify',
-    //       meta: { title: 'AI分类管理' },
-    //     },
-    //     {
-    //       path: 'robot',
-    //       component: components.Robot,
-    //       name: 'Robot',
-    //       meta: { title: 'AI机器人管理' },
-    //     },
-    //   ],
-    // },
+    {
+      path: 'feedback',
+      name: 'Feedback',
+      component: components.Feedback,
+      meta: { title: '建议与反馈' },
+    },
+    {
+      path: 'adManage',
+      name: 'AdManage',
+      component: components.AdManage,
+      meta: { title: '广告管理' },
+    },
+    {
+      path: 'versionControl',
+      name: 'VersionControl',
+      component: components.VersionControl,
+      meta: { title: '版本管理' },
+    },
+    {
+      path: 'SMSManage',
+      component: components.SMSManage,
+      name: 'SMSManage',
+      meta: { title: '短信管理' },
+      redirect: 'noRedirect',
+      alwaysShow: true,
+      children: [
+        {
+          path: 'SMSChannel',
+          component: components.SMSChannel,
+          name: 'SMSChannel',
+          meta: { title: '短信通道' },
+        },
+        {
+          path: 'SMSTemplate',
+          component: components.SMSTemplate,
+          name: 'SMSTemplate',
+          meta: { title: '短信模板' },
+        },
+        {
+          path: 'SMSBlacklist',
+          component: components.SMSBlacklist,
+          name: 'SMSBlacklist',
+          meta: { title: '短信黑名单' },
+        },
+      ],
+    },
   ],
 }
 

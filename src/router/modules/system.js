@@ -11,7 +11,7 @@ const system = {
   alwaysShow: true,
   meta: {
     title: '权限管理',
-    icon: 'tree-table',
+    icon: 'menu',
   },
   children: [
     {

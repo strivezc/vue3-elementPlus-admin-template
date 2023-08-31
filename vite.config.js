@@ -3,8 +3,8 @@ import {defineConfig, loadEnv} from 'vite'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
+// import Icons from 'unplugin-icons/vite'
+// import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import setupExtend from 'vite-plugin-vue-setup-extend'
 import {createSvgIconsPlugin} from 'vite-plugin-svg-icons'
@@ -32,10 +32,6 @@ export default defineConfig(({mode, command}) => {
           ElementPlusResolver(
             {  importStyle: 'sass'}
           ),
-          // 自动导入图标组件
-          IconsResolver({
-            prefix: 'Icon',
-          }),
         ],
         dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
       }),
@@ -47,17 +43,8 @@ export default defineConfig(({mode, command}) => {
               importStyle: 'sass',
             }
           ),
-          // 自动注册图标组件
-          // 使用方法：原有代码前面需要加前缀,大驼峰IEp,或者中划线i-ep-,
-          // <el-icon><IEpHomeFilled /></el-icon>  <el-icon><i-ep-circle-check-filled /></el-icon>
-          IconsResolver({
-            enabledCollections: ['ep'],
-          }),
         ],
         dts: path.resolve(pathSrc, 'components.d.ts'),
-      }),
-      Icons({
-        autoInstall: true,
       }),
       setupExtend(),
       createSvgIconsPlugin({

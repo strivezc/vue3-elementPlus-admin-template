@@ -14,7 +14,7 @@ const operationLog = {
   alwaysShow: true,
   meta: {
     title: '操作记录',
-    icon: 'log',
+    icon: 'edit',
   },
   children: [
     {

@@ -102,24 +102,24 @@
 
 .input .el-input__wrapper {
   width: 185px;
-  height: 36px;
 }
 .select .el-input__wrapper {
   width: 185px;
-  height: 36px;
 }
 .date {
   width: 160px !important;
-  height: 36px !important;
   .el-input__wrapper {
-    height: 36px;
   }
 }
 .date-picker {
   width: 160px !important;
-  height: 36px !important;
   .el-input__wrapper {
-    height: 36px;
+  }
+}
+.form-date{
+  width: 220px !important;
+  .el-input__wrapper {
+    width: 220px !important;
   }
 }
 .el-button {
@@ -136,15 +136,10 @@
 }
 .form-select .el-input__wrapper {
   width: 220px;
-  height: 36px;
 }
 .form-date {
   width: 220px !important;
   height: 36px !important;
   .el-input__wrapper {
-    height: 36px;
   }
-}
-.el-button--small{
-  height: 28px!important;
 }

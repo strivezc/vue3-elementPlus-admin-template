@@ -64,6 +64,13 @@
           </el-form-item>
         </el-col>
       </el-row>
+      <el-row>
+        <el-col :sm="24" :md="12" :lg="7" :xl="7">
+          <el-form-item>
+            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+          </el-form-item>
+        </el-col>
+      </el-row>
     </el-form>
     <div class="pt20">
       <total-count :total="total"></total-count>
