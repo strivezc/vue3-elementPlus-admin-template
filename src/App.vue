@@ -1,14 +1,14 @@
 <template>
-  <el-config-provider :locale="locale">
+  <el-config-provider :locale="locale" :size="size">
     <router-view />
   </el-config-provider>
 </template>
 
 <script setup>
-import { ElConfigProvider } from 'element-plus'
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 
-const { locale } = reactive({
+const { locale, size } = reactive({
   locale: zhCn,
-});
+  size: 'default',
+})
 </script>

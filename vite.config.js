@@ -29,9 +29,9 @@ export default defineConfig(({mode, command}) => {
           'pinia'
         ],
         resolvers: [
-          ElementPlusResolver( {
-              importStyle: 'sass',
-            }),
+          ElementPlusResolver(
+            {  importStyle: 'sass'}
+          ),
           // 自动导入图标组件
           IconsResolver({
             prefix: 'Icon',

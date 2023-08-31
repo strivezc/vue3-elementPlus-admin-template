@@ -10,30 +10,30 @@ import path from 'path-browserify'
  */
 // 二级以上的菜单降级成二级菜单
 function formatRouter(routes, basePath = '/', list = [], parent) {
-  routes.map(item => {
-    item.path = path.resolve(basePath, item.path);
-    const meta = item.meta || {};
+  routes.map((item) => {
+    item.path = path.resolve(basePath, item.path)
+    const meta = item.meta || {}
     if (!meta.parent && parent) {
-      meta.parent = parent.path;
-      item.meta = meta;
+      meta.parent = parent.path
+      item.meta = meta
     }
-    if (item.redirect) item.redirect = path.resolve(basePath, item.redirect);
+    if (item.redirect) item.redirect = path.resolve(basePath, item.redirect)
     if (item.children && item.children.length > 0) {
-      const arr = formatRouter(item.children, item.path, list, item);
-      delete item.children;
-      list.concat(arr);
+      const arr = formatRouter(item.children, item.path, list, item)
+      delete item.children
+      list.concat(arr)
     }
-    list.push(item);
-  });
-  return list;
+    list.push(item)
+  })
+  return list
 }
 
 // 菜单降级
 export function getFlatRoutes(routes) {
-  return routes.map(child => {
+  return routes.map((child) => {
     if (child.children && child.children.length > 0) {
-      child.children = formatRouter(child.children, child.path, [], child);
+      child.children = formatRouter(child.children, child.path, [], child)
     }
-    return child;
-  });
+    return child
+  })
 }

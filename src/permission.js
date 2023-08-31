@@ -1,5 +1,5 @@
 import router from './router'
-import { ElMessage } from 'element-plus'
+// import { ElMessage } from 'element-plus'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { getToken } from '@/utils/auth'
@@ -8,9 +8,9 @@ import useUserStore from '@/store/modules/user'
 import useSettingsStore from '@/store/modules/settings'
 import usePermissionStore from '@/store/modules/permission'
 
-NProgress.configure({ showSpinner: false });
+NProgress.configure({ showSpinner: false })
 
-const whiteList = ['/login'];
+const whiteList = ['/login']
 
 router.beforeEach((to, from, next) => {
   NProgress.start()
@@ -21,25 +21,31 @@ router.beforeEach((to, from, next) => {
       next({ path: '/' })
       NProgress.done()
     } else {
-      const hasRoles = (usePermissionStore().menuList && usePermissionStore().menuList.length > 0) || usePermissionStore().permissionFlag;
+      const hasRoles =
+        (usePermissionStore().menuList && usePermissionStore().menuList.length > 0) ||
+        usePermissionStore().permissionFlag
       if (hasRoles) {
-        next();
+        next()
       } else {
         try {
-          usePermissionStore().generateRoutes().then(accessRoutes => {
-            // 根据roles权限生成可访问的路由表
-            accessRoutes.forEach(route => {
-              if (!isHttp(route.path)) {
-              router.addRoute(route) // 动态添加可访问路由表
-              }
+          usePermissionStore()
+            .generateRoutes()
+            .then((accessRoutes) => {
+              // 根据roles权限生成可访问的路由表
+              accessRoutes.forEach((route) => {
+                if (!isHttp(route.path)) {
+                  router.addRoute(route) // 动态添加可访问路由表
+                }
+              })
+              next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
             })
-            next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
-          })
         } catch (e) {
-          useUserStore().resetToken().then(() => {
-            ElMessage.error(error || 'Has Error');
-            next({ path: '/' });
-          })
+          useUserStore()
+            .resetToken()
+            .then(() => {
+              ElMessage.error(error || 'Has Error')
+              next({ path: '/' })
+            })
         }
       }
     }

@@ -1,7 +1,12 @@
 import { createWebHistory, createRouter } from 'vue-router'
 /* Layout */
 import Layout from '@/layout'
-import system from './modules/system';
+import system from './modules/system'
+import user from './modules/user'
+import content from './modules/content'
+import account from './modules/account'
+import operations from './modules/operations'
+import operationLog from './modules/operationLog'
 
 /**
  * Note: 路由配置项
@@ -34,24 +39,24 @@ export const constantRoutes = [
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect/index.vue')
-      }
-    ]
+        component: () => import('@/views/redirect/index.vue'),
+      },
+    ],
   },
   {
     path: '/login',
     component: () => import('@/views/login'),
-    hidden: true
+    hidden: true,
   },
   {
-    path: "/:pathMatch(.*)*",
+    path: '/:pathMatch(.*)*',
     component: () => import('@/views/error/404'),
-    hidden: true
+    hidden: true,
   },
   {
     path: '/401',
     component: () => import('@/views/error/401'),
-    hidden: true
+    hidden: true,
   },
   {
     path: '',
@@ -62,16 +67,14 @@ export const constantRoutes = [
         path: '/index',
         component: () => import('@/views/index'),
         name: 'Index',
-        meta: { title: '首页', icon: 'dashboard', affix: true }
-      }
-    ]
-  }
+        meta: { title: '首页', icon: 'dashboard', affix: true },
+      },
+    ],
+  },
 ]
 
 // 动态路由，基于用户权限动态去加载
-export const asyncRoutes = [
-  system,
-]
+export const asyncRoutes = [user, content, operations,operationLog,system,account]
 
 const router = createRouter({
   history: createWebHistory(),
@@ -83,6 +86,6 @@ const router = createRouter({
       return { top: 0 }
     }
   },
-});
+})
 
-export default router;
+export default router
