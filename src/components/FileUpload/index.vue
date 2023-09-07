@@ -58,27 +58,27 @@ const props = defineProps({
   // 数量限制
   limit: {
     type: Number,
-    default: 5,
+    default: 5
   },
   // 大小限制(MB)
   fileSize: {
     type: Number,
-    default: 5,
+    default: 5
   },
   // 文件类型, 例如['png', 'jpg', 'jpeg']
   fileType: {
     type: Array,
-    default: () => ['doc', 'xls', 'ppt', 'txt', 'pdf'],
+    default: () => ['doc', 'xls', 'ppt', 'txt', 'pdf']
   },
   // 是否显示提示
   isShowTip: {
     type: Boolean,
-    default: true,
-  },
+    default: true
+  }
 })
 
 const { proxy } = getCurrentInstance()
-const emit = defineEmits()
+const emit = defineEmits(['update:modelValue'])
 const number = ref(0)
 const uploadList = ref([])
 const baseUrl = import.meta.env.VITE_APP_BASE_API
@@ -89,13 +89,13 @@ const showTip = computed(() => props.isShowTip && (props.fileType || props.fileS
 
 watch(
   () => props.modelValue,
-  (val) => {
+  val => {
     if (val) {
       let temp = 1
       // 首先将值转为数组
       const list = Array.isArray(val) ? val : props.modelValue.split(',')
       // 然后将数组转为对象数组
-      fileList.value = list.map((item) => {
+      fileList.value = list.map(item => {
         if (typeof item === 'string') {
           item = { name: item, url: item }
         }
@@ -107,7 +107,7 @@ watch(
       return []
     }
   },
-  { deep: true, immediate: true },
+  { deep: true, immediate: true }
 )
 
 // 上传前校检格式和大小
@@ -168,7 +168,7 @@ function handleDelete(index) {
 // 上传结束处理
 function uploadedSuccessfully() {
   if (number.value > 0 && uploadList.value.length === number.value) {
-    fileList.value = fileList.value.filter((f) => f.url !== undefined).concat(uploadList.value)
+    fileList.value = fileList.value.filter(f => f.url !== undefined).concat(uploadList.value)
     uploadList.value = []
     number.value = 0
     emit('update:modelValue', listToString(fileList.value))

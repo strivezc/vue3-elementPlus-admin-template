@@ -87,7 +87,9 @@
               accept=".jpg, .jpeg, .png, .gif, .bmp"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
-              <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>
+              <template #tip>
+                <span class="remarks ml15">注：建议尺寸：750*750px</span>
+              </template>
             </el-upload>
             <img :src="form.barrierImg" v-if="form.barrierImg" class="cover" />
           </div>
@@ -125,23 +127,23 @@ import { list } from '@/api'
 
 const { proxy } = getCurrentInstance()
 
-const data = reactive({
+const state = reactive({
   formData: {},
   tableDataLoading: false,
   tableData: [],
   total: 0,
   listQuery: {
     currPage: 1,
-    pageSize: 10,
+    pageSize: 10
   },
   loading: false,
   showDialog: false,
   form: {
-    accountName: '',
+    accountName: ''
   },
   formRules: {
-    accountName: [{ required: true, message: '请输入', trigger: 'blur' }],
-  },
+    accountName: [{ required: true, message: '请输入', trigger: 'blur' }]
+  }
 })
 
 const ruleFormRef = ref()
@@ -155,8 +157,8 @@ const {
   form,
   formRules,
   showDialog,
-  loading,
-} = toRefs(data)
+  loading
+} = toRefs(state)
 
 const submit = async () => {
   await ruleFormRef.value.validate((valid, fields) => {
@@ -176,7 +178,7 @@ function add() {
   showDialog.value = true
 }
 function search() {
-  listQuery.value.currPage = 0
+  listQuery.value.currPage = 1
   getList()
 }
 
@@ -185,10 +187,10 @@ const getList = async () => {
   try {
     const params = {
       ...formData.value,
-      ...listQuery.value,
+      ...listQuery.value
     }
-    const { resultData, totalCount } = await list(params)
-    tableData.value = resultData
+    const { data, totalCount } = await list(params)
+    tableData.value = data
     total.value = totalCount
   } catch (e) {
     console.log(e, 'error')

@@ -7,14 +7,16 @@
         </template>
       </el-table-column>
       <el-table-column align="center" label="内容类型">
-        <template #default="{row}">
+        <template #default="{ row }">
           {{ resourceType[row.resourceType] }}
         </template>
       </el-table-column>
       <el-table-column align="center" label="更新日期" prop="createTime"></el-table-column>
       <el-table-column align="center" label="操作">
-        <template #default="{row}">
-          <el-button type="primary" plain size="small" @click="edit(row.resourceType)">编辑</el-button>
+        <template #default="{ row }">
+          <el-button type="primary" plain size="small" @click="edit(row.resourceType)"
+            >编辑</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -22,34 +24,28 @@
 </template>
 
 <script setup name="Agreement">
-import { list } from '@/api'
-
 const { proxy } = getCurrentInstance()
 
 const resourceType = {
-  34: '用户协议',
-  35: '隐私协议',
-  37: '常见问题',
-};
-const tableData=ref([{
-  resourceType:34
-}])
+  1: '未成年人隐私协议',
+  2: '隐私协议',
+  3: '用户协议',
+  4: '关于我们'
+}
+const tableData = ref([])
 
-const getList=async ()=> {
+const getList = async () => {
   try {
-    const { resultData } = await list();
-    tableData.value = resultData;
+    const { data } = await proxy.$http.operation.queryAgreement()
+    tableData.value = data
   } catch (e) {
-    console.log(e, 'error');
+    console.log(e, 'error')
   }
 }
 function edit(resourceType) {
-  proxy.$router.push('/operationsManage/editCompliance/' + resourceType);
+  proxy.$router.push('/operationsManage/editCompliance/' + resourceType)
 }
+getList()
 </script>
 
-<style scoped lang="scss">
-
-</style>
-
-
+<style scoped lang="scss"></style>

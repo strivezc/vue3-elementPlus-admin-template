@@ -4,13 +4,13 @@ export function handleThemeStyle(theme) {
   for (let i = 1; i <= 9; i++) {
     document.documentElement.style.setProperty(
       `--el-color-primary-light-${i}`,
-      `${getLightColor(theme, i / 10)}`,
+      `${getLightColor(theme, i / 10)}`
     )
   }
   for (let i = 1; i <= 9; i++) {
     document.documentElement.style.setProperty(
       `--el-color-primary-dark-${i}`,
-      `${getDarkColor(theme, i / 10)}`,
+      `${getDarkColor(theme, i / 10)}`
     )
   }
 }

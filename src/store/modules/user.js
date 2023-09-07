@@ -8,7 +8,7 @@ const useUserStore = defineStore('user', {
     name: '',
     avatar: defAva,
     roles: [],
-    permissions: [],
+    permissions: []
   }),
   actions: {
     // 登录
@@ -32,7 +32,7 @@ const useUserStore = defineStore('user', {
     getInfo() {
       return new Promise((resolve, reject) => {
         getInfo()
-          .then((res) => {
+          .then(res => {
             const user = res.user
             const avatar =
               user.avatar == '' || user.avatar == null
@@ -50,7 +50,7 @@ const useUserStore = defineStore('user', {
             this.avatar = avatar
             resolve(res)
           })
-          .catch((error) => {
+          .catch(error => {
             reject(error)
           })
       })
@@ -66,19 +66,19 @@ const useUserStore = defineStore('user', {
             removeToken()
             resolve()
           })
-          .catch((error) => {
+          .catch(error => {
             reject(error)
           })
       })
     },
     resetToken() {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         this.token = ''
         removeToken()
         resolve()
       })
-    },
-  },
+    }
+  }
 })
 
 export default useUserStore

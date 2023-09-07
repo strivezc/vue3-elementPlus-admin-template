@@ -1,19 +1,30 @@
 import axios from 'axios'
 import router from '../router'
 // import { ElNotification, ElMessageBox, ElMessage, ElLoading } from 'element-plus'
-import { getToken } from '@/utils/auth'
+import { getToken, getRequestPath } from '@/utils/auth'
 import cache from '@/plugins/cache'
 import useUserStore from '@/store/modules/user'
 
+function getBaseURL() {
+  let baseURL = ''
+  if (import.meta.env.MODE === 'development') {
+    const devRequestPath = getRequestPath()
+    baseURL = devRequestPath ? devRequestPath : 'http://10.204.42.157:9091'
+  } else {
+    baseURL = import.meta.env.VITE_APP_BASE_API
+  }
+  return baseURL
+}
 // 创建axios实例
 const service = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_API,
-  timeout: 10000,
+  // baseURL: import.meta.env.VITE_APP_BASE_API,
+  timeout: 10000
 })
 
 // request拦截器
 service.interceptors.request.use(
-  (config) => {
+  config => {
+    config.baseURL = getBaseURL()
     if (useUserStore().token) {
       config.headers['token'] = getToken()
     }
@@ -27,7 +38,7 @@ service.interceptors.request.use(
       const requestObj = {
         url: config.url,
         data: typeof config.data === 'object' ? JSON.stringify(config.data) : config.data,
-        time: new Date().getTime(),
+        time: new Date().getTime()
       }
       const sessionObj = cache.session.getJSON('sessionObj')
       if (sessionObj === undefined || sessionObj === null || sessionObj === '') {
@@ -52,38 +63,38 @@ service.interceptors.request.use(
     }
     return config
   },
-  (error) => {
+  error => {
     console.log(error)
     Promise.reject(error)
-  },
+  }
 )
 
 // 响应拦截器
 service.interceptors.response.use(
-  (response) => {
+  response => {
     const res = response.data
     // if the custom code is not 200, it is judged as an error.
-    if (res.resultCode !== 0) {
-      if (res.resultCode === 3 || res.resultCode === -5) {
+    if (res.code !== 0) {
+      if (res.code === 3 || res.code === -5) {
         // hideMessage 是否隐藏错误提示
         if (response.config.hideMessage) {
           return Promise.reject(res || 'Error')
         } else {
           ElMessage.error(res.resultMessage)
         }
-      } else if (res.resultCode === -4) {
+      } else if (res.code === -4) {
         ElMessageBox.confirm(res.resultMessage, '提示', {
           confirmButtonText: '确认',
           showCancelButton: false,
           showClose: false,
           closeOnClickModal: false,
           closeOnPressEscape: false,
-          type: 'warning',
+          type: 'warning'
         }).then(() => {
-          store.dispatch('user/refreshMenu').then(() => {})
+          // store.dispatch('user/refreshMenu').then(() => {})
         })
       } else {
-        if (res.resultCode === -1) {
+        if (res.code === -1) {
           // to re-login
           ElMessageBox.confirm('登录失效，请重新登录！', '提示', {
             confirmButtonText: '确认',
@@ -91,7 +102,7 @@ service.interceptors.response.use(
             showClose: false,
             closeOnClickModal: false,
             closeOnPressEscape: false,
-            type: 'warning',
+            type: 'warning'
           }).then(() => {
             useUserStore()
               .resetToken()
@@ -101,7 +112,7 @@ service.interceptors.response.use(
               })
           })
         } else {
-          ElMessage.error(`操作异常，请联系管理员(${res.resultCode})!`)
+          ElMessage.error(`操作异常，请联系管理员(${res.code})!`)
         }
       }
       return Promise.reject(res || 'Error')
@@ -109,7 +120,7 @@ service.interceptors.response.use(
       return res
     }
   },
-  (err) => {
+  err => {
     let { message } = err
     if (message === 'Network Error') {
       message = '系统接口连接异常'
@@ -125,10 +136,10 @@ service.interceptors.response.use(
     ElMessage({
       message: message,
       type: 'error',
-      duration: 5 * 1000,
+      duration: 5 * 1000
     })
     return Promise.reject(err)
-  },
+  }
 )
 
 export default service

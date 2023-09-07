@@ -74,13 +74,13 @@ function initFuse(list) {
     keys: [
       {
         name: 'title',
-        weight: 0.7,
+        weight: 0.7
       },
       {
         name: 'path',
-        weight: 0.3,
-      },
-    ],
+        weight: 0.3
+      }
+    ]
   })
 }
 // Filter out the routes that can be displayed in the sidebar
@@ -96,7 +96,7 @@ function generateRoutes(routes, basePath = '', prefixTitle = []) {
     const p = r.path.length > 0 && r.path[0] === '/' ? r.path : '/' + r.path
     const data = {
       path: !isHttp(r.path) ? getNormalPath(basePath + p) : r.path,
-      title: [...prefixTitle],
+      title: [...prefixTitle]
     }
 
     if (r.meta && r.meta.title) {
@@ -135,7 +135,7 @@ watchEffect(() => {
   searchPool.value = generateRoutes(routes.value)
 })
 
-watch(show, (value) => {
+watch(show, value => {
   if (value) {
     document.body.addEventListener('click', close)
   } else {
@@ -143,7 +143,7 @@ watch(show, (value) => {
   }
 })
 
-watch(searchPool, (list) => {
+watch(searchPool, list => {
   initFuse(list)
 })
 </script>

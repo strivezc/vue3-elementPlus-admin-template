@@ -1,31 +1,31 @@
 <template>
   <div class="app-container">
     <el-form
-        :inline="true"
-        class="form-border"
-        autocomplete="on"
-        :model="formData"
-        onsubmit="return false"
+      :inline="true"
+      class="form-border"
+      autocomplete="on"
+      :model="formData"
+      onsubmit="return false"
     >
       <el-form-item label="操作日期">
         <el-date-picker
-            v-model="formData.date1"
-            value-format="yyyy-MM-dd"
-            type="date"
-            class="date"
-            placeholder="选择日期"
+          v-model="formData.date1"
+          value-format="yyyy-MM-dd"
+          type="date"
+          class="date"
+          placeholder="选择日期"
         />
         <span class="date-line">-</span>
         <el-date-picker
-            v-model="formData.date2"
-            value-format="yyyy-MM-dd"
-            type="date"
-            class="date"
-            placeholder="选择日期"
+          v-model="formData.date2"
+          value-format="yyyy-MM-dd"
+          type="date"
+          class="date"
+          placeholder="选择日期"
         />
       </el-form-item>
       <el-form-item label="用户编号">
-        <el-input v-model="formData.accountName" placeholder="用户编号" class="input"/>
+        <el-input v-model="formData.accountName" placeholder="用户编号" class="input" />
       </el-form-item>
       <el-form-item label="类型">
         <el-radio-group v-model="formData.status">
@@ -49,11 +49,11 @@
         <el-table-column align="center" label="地点" prop="createTime"></el-table-column>
       </el-table>
       <pagination
-          v-show="total > 0"
-          :total="total"
-          v-model:page="listQuery.currPage"
-          v-model:limit="listQuery.pageSize"
-          @pagination="getList"
+        v-show="total > 0"
+        :total="total"
+        v-model:page="listQuery.currPage"
+        v-model:limit="listQuery.pageSize"
+        @pagination="getList"
       />
     </div>
   </div>
@@ -64,7 +64,7 @@ import { list } from '@/api'
 
 const { proxy } = getCurrentInstance()
 
-const data = reactive({
+const state = reactive({
   formData: {},
   tableDataLoading: false,
   tableData: [],
@@ -74,10 +74,10 @@ const data = reactive({
     pageSize: 10
   }
 })
-const { formData, tableDataLoading, tableData, total, listQuery } = toRefs(data)
+const { formData, tableDataLoading, tableData, total, listQuery } = toRefs(state)
 
 function search() {
-  listQuery.value.currPage = 0
+  listQuery.value.currPage = 1
   getList()
 }
 
@@ -88,8 +88,8 @@ const getList = async () => {
       ...formData.value,
       ...listQuery.value
     }
-    const { resultData, totalCount } = await list(params)
-    tableData.value = resultData
+    const { data, totalCount } = await list(params)
+    tableData.value = data
     total.value = totalCount
   } catch (e) {
     console.log(e, 'error')
@@ -99,6 +99,4 @@ const getList = async () => {
 }
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

@@ -2,7 +2,7 @@
   <div
     :style="{
       backgroundColor:
-        sideTheme === 'theme-dark' ? variables.menuBackground : variables.menuLightBackground,
+        sideTheme === 'theme-dark' ? variables.menuBackground : variables.menuLightBackground
     }"
   >
     <el-scrollbar :class="sideTheme" wrap-class="scrollbar-wrapper">

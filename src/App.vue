@@ -9,6 +9,6 @@ import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 
 const { locale, size } = reactive({
   locale: zhCn,
-  size: 'default',
+  size: 'default'
 })
 </script>

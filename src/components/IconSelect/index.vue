@@ -33,8 +33,8 @@ import icons from './requireIcons'
 
 const props = defineProps({
   activeIcon: {
-    type: String,
-  },
+    type: String
+  }
 })
 
 const iconName = ref('')
@@ -44,7 +44,7 @@ const emit = defineEmits(['selected'])
 function filterIcons() {
   iconList.value = icons
   if (iconName.value) {
-    iconList.value = icons.filter((item) => item.indexOf(iconName.value) !== -1)
+    iconList.value = icons.filter(item => item.indexOf(iconName.value) !== -1)
   }
 }
 
@@ -59,7 +59,7 @@ function reset() {
 }
 
 defineExpose({
-  reset,
+  reset
 })
 </script>
 

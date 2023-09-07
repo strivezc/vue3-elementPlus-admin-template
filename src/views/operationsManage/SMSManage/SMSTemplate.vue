@@ -1,18 +1,24 @@
 <template>
   <div class="app-container">
     <el-form
-        :inline="true"
-        class="form-border"
-        autocomplete="on"
-        :model="formData"
-        onsubmit="return false"
+      :inline="true"
+      class="form-border"
+      autocomplete="on"
+      :model="formData"
+      onsubmit="return false"
     >
       <el-form-item label="类型名称">
-        <el-input v-model="formData.accountName" placeholder="类型名称" class="input"/>
+        <el-input v-model="formData.typeName" placeholder="类型名称" class="input" />
       </el-form-item>
       <el-form-item label="通道">
-        <el-select class="select" v-model="formData.type" placeholder="请选择">
-          <el-option label="全部" value=""/>
+        <el-select class="select" clearable v-model="formData.channelId" placeholder="请选择">
+          <el-option label="全部" value="" />
+          <el-option
+            v-for="item in channelList"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id"
+          />
         </el-select>
       </el-form-item>
       <el-form-item label="状态" prop="status">
@@ -29,62 +35,103 @@
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
-        <el-table-column align="center" label="ID" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="短信类型" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="模板内容" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="通道" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="状态" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="操作" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="ID" prop="id"></el-table-column>
+        <el-table-column align="center" label="短信类型" prop="typeName"></el-table-column>
+        <el-table-column align="center" label="模板内容" prop="content"></el-table-column>
+        <el-table-column align="center" label="通道" prop="channelName"></el-table-column>
+        <el-table-column align="center" label="状态">
+          <template #default="{ row }">
+            {{ row.status === 0 ? '正常' : '删除' }}
+          </template>
+        </el-table-column>
+        <el-table-column align="center" label="操作">
+          <template #default="{ row }">
+            <div class="button-box-row">
+              <el-button type="primary" plain size="small" @click="openDialog(row, 1)"
+                >切换通道</el-button
+              >
+              <el-button type="primary" plain size="small" @click="openDialog(row, 2)"
+                >编辑内容</el-button
+              >
+              <el-button type="primary" plain size="small" @click="openDialog(row, 4)"
+                >限制次数</el-button
+              >
+              <el-button type="primary" plain size="small" @click="openDialog(row, 3)"
+                >发送短信</el-button
+              >
+            </div>
+          </template>
+        </el-table-column>
       </el-table>
       <pagination
-          v-show="total > 0"
-          :total="total"
-          v-model:page="listQuery.currPage"
-          v-model:limit="listQuery.pageSize"
-          @pagination="getList"
+        v-show="total > 0"
+        :total="total"
+        v-model:page="listQuery.currPage"
+        v-model:limit="listQuery.pageSize"
+        @pagination="getList"
       />
     </div>
 
-    <el-dialog :title="title" draggable v-model="showDialog" :before-close="close"
-               :width="(type===2||type===3)?'520px':'400px'">
+    <el-dialog
+      :title="title"
+      draggable
+      v-model="showDialog"
+      :before-close="close"
+      :width="type === 2 || type === 3 ? '520px' : '400px'"
+    >
       <el-form :model="form" :rules="formRules" ref="ruleFormRef">
-        <el-form-item label="通道:" v-if="type===1">
-          <el-select class="form-select" v-model="form.topic" placeholder="请选择">
-            <el-option label="全部" value=""/>
+        <el-form-item label="通道:" v-if="type === 1" prop="channelId">
+          <el-select class="form-select" clearable v-model="form.channelId" placeholder="请选择">
+            <el-option
+              v-for="item in channelList"
+              :key="item.id"
+              :label="item.name"
+              :value="item.id"
+            />
           </el-select>
         </el-form-item>
-        <el-form-item label="内容:" prop="reply" v-else-if="type===2">
+        <el-form-item label="内容:" prop="content" v-else-if="type === 2">
           <el-input
+            class="form-textarea"
+            v-model="form.content"
+            placeholder="更新内容"
+            type="textarea"
+            :autosize="{ minRows: 4, maxRows: 6 }"
+            show-word-limit
+          />
+        </el-form-item>
+        <template v-else-if="type === 3">
+          <el-form-item label="手机:" prop="phone">
+            <el-input v-model="form.phone" placeholder="手机号" class="form-input" />
+          </el-form-item>
+          <el-form-item label="内容:" prop="content">
+            <el-input
               class="form-textarea"
-              v-model="form.reply"
+              v-model="form.content"
               placeholder="更新内容"
               type="textarea"
               :autosize="{ minRows: 4, maxRows: 6 }"
               show-word-limit
-          />
-        </el-form-item>
-        <template v-else-if="type===3">
-          <el-form-item label="手机:">
-            <el-input v-model="form.accountName" placeholder="手机号" class="form-input"/>
-          </el-form-item>
-          <el-form-item label="内容:" prop="reply">
-            <el-input
-                class="form-textarea"
-                v-model="form.reply"
-                placeholder="更新内容"
-                type="textarea"
-                :autosize="{ minRows: 4, maxRows: 6 }"
-                show-word-limit
             />
           </el-form-item>
-          <el-form-item label="通道:">
-            <el-select class="form-select" v-model="form.topic" placeholder="请选择">
-              <el-option label="全部" value=""/>
+          <el-form-item label="通道:" prop="channelId">
+            <el-select class="form-select" clearable v-model="form.channelId" placeholder="请选择">
+              <el-option
+                v-for="item in channelList"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id"
+              />
             </el-select>
           </el-form-item>
         </template>
-        <el-form-item label="限制次数:" v-else-if="type===4">
-          <el-input v-model="form.accountName" placeholder="限制次数" class="form-input"/>
+        <el-form-item label="限制次数:" v-else-if="type === 4" prop="num">
+          <el-input
+            v-model="form.num"
+            oninput="value=value.replace(/^(0+)|[^\d]+/g,'')"
+            placeholder="限制次数"
+            class="form-input"
+          />
         </el-form-item>
       </el-form>
       <template #footer>
@@ -98,12 +145,25 @@
 </template>
 
 <script setup name="SMSTemplate">
-import { list } from '@/api'
+import { validPhone } from '@/utils/validate'
 
 const { proxy } = getCurrentInstance()
 
-const data = reactive({
-  formData: {},
+const validatePhone = (rule, value, callback) => {
+  if (!value) {
+    callback(new Error('请输入手机号!'))
+  } else if (!validPhone(value)) {
+    callback(new Error('手机号码格式不正确!'))
+  } else {
+    callback()
+  }
+}
+const state = reactive({
+  formData: {
+    channelId: '',
+    status: '',
+    typeName: ''
+  },
   tableDataLoading: false,
   tableData: [],
   total: 0,
@@ -111,17 +171,36 @@ const data = reactive({
     currPage: 1,
     pageSize: 10
   },
-  showDialog: true,
+  showDialog: false,
   form: {
-    accountName: ''
+    id: '',
+    channelId: '',
+    content: '',
+    num: '',
+    phone: ''
   },
   formRules: {
-    accountName: [{ required: true, message: '请输入', trigger: 'blur' }]
+    channelId: [{ required: true, message: '请选择通道！', trigger: 'change' }],
+    content: [{ required: true, message: '请输入内容！', trigger: 'blur' }],
+    num: [{ required: true, message: '请输入限制次数！', trigger: 'blur' }],
+    phone: [{ required: true, validator: validatePhone, trigger: 'blur' }]
   },
-  type: 3
+  type: 1,
+  channelList: []
 })
 const ruleFormRef = ref()
-const { formData, tableDataLoading, tableData, total, listQuery, form, formRules, showDialog, type } = toRefs(data)
+const {
+  formData,
+  tableDataLoading,
+  tableData,
+  total,
+  listQuery,
+  form,
+  formRules,
+  showDialog,
+  type,
+  channelList
+} = toRefs(state)
 const title = computed(() => {
   const titleObj = {
     1: '切换通道',
@@ -132,23 +211,13 @@ const title = computed(() => {
   return titleObj[type.value]
 })
 
-const submit = async () => {
-  await ruleFormRef.value.validate((valid, fields) => {
-    if (valid) {
-      console.log('submit!')
-    } else {
-      console.log('error submit!', fields)
-    }
-  })
-}
-
 function close() {
   showDialog.value = false
   ruleFormRef.value.resetFields()
 }
 
 function search() {
-  listQuery.value.currPage = 0
+  listQuery.value.currPage = 1
   getList()
 }
 
@@ -159,8 +228,8 @@ const getList = async () => {
       ...formData.value,
       ...listQuery.value
     }
-    const { resultData, totalCount } = await list(params)
-    tableData.value = resultData
+    const { data, totalCount } = await proxy.$http.operation.contentList(params)
+    tableData.value = data
     total.value = totalCount
   } catch (e) {
     console.log(e, 'error')
@@ -168,8 +237,61 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+const getChannelList = async () => {
+  try {
+    const { data } = await proxy.$http.operation.queryChannel()
+    channelList.value = data
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+
+function openDialog(row, dialogType) {
+  type.value = dialogType
+  form.value.id = row.id
+  form.content = row.content
+  showDialog.value = true
+}
+
+const submit = async () => {
+  await ruleFormRef.value.validate(async (valid, fields) => {
+    if (valid) {
+      switch (type.value) {
+        case 1:
+          await proxy.$http.operation.updateContentChannel({
+            id: form.value.id,
+            channelId: form.value.channelId
+          })
+          break
+        case 2:
+          await proxy.$http.operation.updateContent({
+            id: form.value.id,
+            content: form.value.content
+          })
+          break
+        case 3:
+          await proxy.$http.operation.sendMsg({
+            id: form.value.id,
+            content: form.value.content,
+            channelId: form.value.channelId,
+            phone: form.value.phone
+          })
+          break
+        case 4:
+          await proxy.$http.operation.updateLimitNum(form.value.id, form.value.num)
+          break
+        default:
+      }
+      proxy.$modal.msgSuccess('操作成功!')
+      close()
+      getList()
+    } else {
+      console.log('error submit!', fields)
+    }
+  })
+}
+
+getChannelList()
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

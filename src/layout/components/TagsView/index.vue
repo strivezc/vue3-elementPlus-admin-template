@@ -13,10 +13,7 @@
       >
         {{ tag.title }}
         <span v-if="!isAffix(tag)" @click.prevent.stop="closeSelectedTag(tag)">
-          <close
-            class="el-icon-close"
-            style="width: 1em; height: 1em; vertical-align: middle"
-          />
+          <close class="el-icon-close" style="width: 1em; height: 1em; vertical-align: middle" />
         </span>
       </router-link>
     </scroll-pane>
@@ -27,9 +24,7 @@
       <li v-if="!isAffix(selectedTag)" @click="closeSelectedTag(selectedTag)">
         <close style="width: 1em; height: 1em" /> 关闭当前
       </li>
-      <li @click="closeOthersTags">
-        <circle-close style="width: 1em; height: 1em" /> 关闭其他
-      </li>
+      <li @click="closeOthersTags"><circle-close style="width: 1em; height: 1em" /> 关闭其他</li>
       <li v-if="!isFirstView()" @click="closeLeftTags">
         <back style="width: 1em; height: 1em" /> 关闭左侧
       </li>
@@ -69,7 +64,7 @@ watch(route, () => {
   addTags()
   moveToCurrentTag()
 })
-watch(visible, (value) => {
+watch(visible, value => {
   if (value) {
     document.body.addEventListener('click', closeMenu)
   } else {
@@ -106,14 +101,14 @@ function isLastView() {
 }
 function filterAffixTags(routes, basePath = '') {
   let tags = []
-  routes.forEach((route) => {
+  routes.forEach(route => {
     if (route.meta && route.meta.affix) {
       const tagPath = getNormalPath(basePath + '/' + route.path)
       tags.push({
         fullPath: tagPath,
         path: tagPath,
         name: route.name,
-        meta: { ...route.meta },
+        meta: { ...route.meta }
       })
     }
     if (route.children) {
@@ -172,15 +167,15 @@ function closeSelectedTag(view) {
   })
 }
 function closeRightTags() {
-  proxy.$tab.closeRightPage(selectedTag.value).then((visitedViews) => {
-    if (!visitedViews.find((i) => i.fullPath === route.fullPath)) {
+  proxy.$tab.closeRightPage(selectedTag.value).then(visitedViews => {
+    if (!visitedViews.find(i => i.fullPath === route.fullPath)) {
       toLastView(visitedViews)
     }
   })
 }
 function closeLeftTags() {
-  proxy.$tab.closeLeftPage(selectedTag.value).then((visitedViews) => {
-    if (!visitedViews.find((i) => i.fullPath === route.fullPath)) {
+  proxy.$tab.closeLeftPage(selectedTag.value).then(visitedViews => {
+    if (!visitedViews.find(i => i.fullPath === route.fullPath)) {
       toLastView(visitedViews)
     }
   })
@@ -193,7 +188,7 @@ function closeOthersTags() {
 }
 function closeAllTags(view) {
   proxy.$tab.closeAllPage().then(({ visitedViews }) => {
-    if (affixTags.value.some((tag) => tag.path === route.path)) {
+    if (affixTags.value.some(tag => tag.path === route.path)) {
       return
     }
     toLastView(visitedViews, view)

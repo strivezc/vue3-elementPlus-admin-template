@@ -4,45 +4,61 @@
       <h3 class="title">后台管理系统</h3>
       <el-form-item prop="username">
         <el-input
-            v-model="loginForm.username"
-            type="text"
-            size="large"
-            auto-complete="off"
-            placeholder="账号"
+          v-model="loginForm.username"
+          type="text"
+          size="large"
+          auto-complete="off"
+          placeholder="账号"
         >
           <template #prefix>
-            <svg-icon icon-class="user" class="el-input__icon input-icon"/>
+            <svg-icon icon-class="user" class="el-input__icon input-icon" />
           </template>
         </el-input>
       </el-form-item>
       <el-form-item prop="password">
         <el-input
-            v-model="loginForm.password"
-            type="password"
-            size="large"
-            auto-complete="off"
-            placeholder="密码"
-            @keyup.enter="handleLogin"
+          v-model="loginForm.password"
+          type="password"
+          size="large"
+          auto-complete="off"
+          placeholder="密码"
+          @keyup.enter="handleLogin"
         >
           <template #prefix>
-            <svg-icon icon-class="password" class="el-input__icon input-icon"/>
+            <svg-icon icon-class="password" class="el-input__icon input-icon" />
           </template>
         </el-input>
       </el-form-item>
       <el-checkbox v-model="loginForm.rememberMe" style="margin: 0px 0px 25px 0px"
-      >记住密码
+        >记住密码
       </el-checkbox>
       <el-form-item style="width: 100%">
         <el-button
-            :loading="loading"
-            size="large"
-            type="primary"
-            style="width: 100%"
-            @click.prevent="handleLogin"
+          :loading="loading"
+          size="large"
+          type="primary"
+          style="width: 100%"
+          @click.prevent="handleLogin"
         >
           <span v-show="!loading">登 录</span>
           <span v-show="loading">登 录 中...</span>
         </el-button>
+      </el-form-item>
+      <el-form-item label="dev请求路径" v-if="MODE === 'development'">
+        <el-select
+          class="select"
+          style="width: 210px"
+          v-model="requestPath"
+          placeholder="请选择"
+          @change="changeRequestPath"
+        >
+          <el-option
+            label="http://10.204.42.157:9000"
+            value="http://10.204.42.157:9000"
+          ></el-option>
+          <el-option label="http://10.204.42.89:9000" value="http://10.204.42.89:9000"></el-option>
+          <el-option label="https://test.talk915.com" value="https://test.talk915.com"></el-option>
+        </el-select>
       </el-form-item>
     </el-form>
     <div class="el-login-footer">
@@ -52,6 +68,7 @@
 </template>
 
 <script setup>
+import { getRequestPath, setRequestPath } from '@/utils/auth'
 import Cookies from 'js-cookie'
 import { encrypt, decrypt } from '@/utils/jsencrypt'
 import useUserStore from '@/store/modules/user'
@@ -60,13 +77,12 @@ const userStore = useUserStore()
 const router = useRouter()
 const { proxy } = getCurrentInstance()
 
+const MODE = import.meta.env.MODE
+const requestPath = ref('')
 const loginForm = ref({
   username: 'admin',
-  s: 'sd',
-  password: 'admin123',
-  rememberMe: false,
-  code: '',
-  uuid: ''
+  password: '123456',
+  rememberMe: false
 })
 
 const loginRules = {
@@ -77,8 +93,11 @@ const loginRules = {
 const loading = ref(false)
 const redirect = ref(undefined)
 
+function changeRequestPath(path) {
+  setRequestPath(path)
+}
 function handleLogin() {
-  proxy.$refs.loginRef.validate((valid) => {
+  proxy.$refs.loginRef.validate(valid => {
     if (valid) {
       loading.value = true
       // 勾选了需要记住密码设置在 cookie 中设置记住用户名和密码
@@ -114,48 +133,52 @@ function getCookie() {
     password: password === undefined ? loginForm.value.password : decrypt(password),
     rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
   }
-  console.log(loginForm.value,'loginForm.value')
+  console.log(loginForm.value, 'loginForm.value')
 }
 
+if (MODE === 'development') {
+  requestPath.value = getRequestPath() ? getRequestPath() : 'http://10.204.42.157:9091'
+  setRequestPath(requestPath.value)
+}
 getCookie()
 </script>
 
 <style lang="scss" scoped>
-  .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    /*background-image: url('../assets/images/login-background.jpg');*/
-    /*background-size: cover;*/
-    background: #2d3a4b;
-  }
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /*background-image: url('../assets/images/login-background.jpg');*/
+  /*background-size: cover;*/
+  background: #2d3a4b;
+}
 
-  .title {
-    margin: 0px auto 30px auto;
-    text-align: center;
-    color: #2c3e50;
-    font-weight: bold;
-  }
+.title {
+  margin: 0px auto 30px auto;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: bold;
+}
 
-  .login-form {
-    border-radius: 10px;
-    background: #ffffff;
-    width: 420px;
-    padding: 25px 25px 5px 25px;
-    margin-top: -150px;
-    .el-input {
+.login-form {
+  border-radius: 10px;
+  background: #ffffff;
+  width: 420px;
+  padding: 25px 25px 5px 25px;
+  margin-top: -150px;
+  .el-input {
+    height: 50px;
+
+    input {
       height: 50px;
-
-      input {
-        height: 50px;
-      }
     }
+  }
 
-    .input-icon {
-      height: 39px;
-      width: 14px;
-      margin-left: 0px;
+  .input-icon {
+    height: 39px;
+    width: 14px;
+    margin-left: 0px;
   }
 }
 .login-tip {

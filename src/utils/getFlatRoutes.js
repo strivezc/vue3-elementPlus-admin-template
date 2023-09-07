@@ -10,7 +10,7 @@ import path from 'path-browserify'
  */
 // 二级以上的菜单降级成二级菜单
 function formatRouter(routes, basePath = '/', list = [], parent) {
-  routes.map((item) => {
+  routes.map(item => {
     item.path = path.resolve(basePath, item.path)
     const meta = item.meta || {}
     if (!meta.parent && parent) {
@@ -30,7 +30,7 @@ function formatRouter(routes, basePath = '/', list = [], parent) {
 
 // 菜单降级
 export function getFlatRoutes(routes) {
-  return routes.map((child) => {
+  return routes.map(child => {
     if (child.children && child.children.length > 0) {
       child.children = formatRouter(child.children, child.path, [], child)
     }

@@ -5,7 +5,7 @@ import App from './App'
 import store from './store'
 import router from './router'
 import directive from './directive' // directive
-import http from './utils/http'; // 模块化引入api
+import http from './utils/http' // 模块化引入api
 // 注册指令
 import plugins from './plugins' // plugins
 

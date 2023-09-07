@@ -2,10 +2,12 @@ import JSEncrypt from 'jsencrypt/bin/jsencrypt.min'
 
 // 密钥对生成 http://web.chacuo.net/netrsakeypair
 
-const publicKey ='MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMrqbG5VgT2c8OOwsejmf4nGhjMpLKdX\n' +
+const publicKey =
+  'MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMrqbG5VgT2c8OOwsejmf4nGhjMpLKdX\n' +
   'QUwbOaHr7yzC/FkP9Ej4Rn5R6SKz9NQoUd4oCRmgdKSOjI+UI0IfP9MCAwEAAQ=='
 
-const privateKey ='MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAyupsblWBPZzw47Cx\n' +
+const privateKey =
+  'MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAyupsblWBPZzw47Cx\n' +
   '6OZ/icaGMyksp1dBTBs5oevvLML8WQ/0SPhGflHpIrP01ChR3igJGaB0pI6Mj5Qj\n' +
   'Qh8/0wIDAQABAkB/fgT82fpnFOmBle5icBioHzUIhhFJXxhm0iBG7W+MRiRQ6mJ4\n' +
   'f5Qm1oLv7RAldd1X3u1hRKvjUXwCTSHbR4vBAiEA5MFc+lCTwX5PvSAcYNpqLLdm\n' +

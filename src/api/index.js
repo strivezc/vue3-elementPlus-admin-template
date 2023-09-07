@@ -5,6 +5,6 @@ export function list(data) {
     url: '/list',
     method: 'post',
     data: data,
-    isRepeatSubmit: true,
+    isRepeatSubmit: true
   })
 }

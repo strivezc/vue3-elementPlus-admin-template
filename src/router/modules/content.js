@@ -6,12 +6,13 @@ export const components = {
   TopicManage: () => import('@/views/contentManage/infoManage/topicManage'),
   ArticleManage: () => import('@/views/contentManage/infoManage/articleManage'),
   AddArticle: () => import('@/views/contentManage/infoManage/components/addArticle'),
+  EditArticle: () => import('@/views/contentManage/infoManage/components/editArticle'),
   WordManage: () => import('@/components/ParentView'),
   Vocabulary: () => import('@/views/contentManage/wordManage/vocabulary'),
   WordBank: () => import('@/views/contentManage/wordManage/wordBank'),
   AIManage: () => import('@/components/ParentView'),
   Classify: () => import('@/views/contentManage/AIManage/classify'),
-  Robot: () => import('@/views/contentManage/AIManage/robot'),
+  Robot: () => import('@/views/contentManage/AIManage/robot')
 }
 
 const content = {
@@ -22,7 +23,7 @@ const content = {
   alwaysShow: true,
   meta: {
     title: '内容管理',
-    icon: 'folder',
+    icon: 'folder'
   },
   children: [
     {
@@ -37,9 +38,9 @@ const content = {
           path: 'dailySentence',
           component: components.DailySentence,
           name: 'DailySentence',
-          meta: { title: '每日一句' },
-        },
-      ],
+          meta: { title: '每日一句' }
+        }
+      ]
     },
     {
       path: 'infoManage',
@@ -53,22 +54,29 @@ const content = {
           path: 'topicManage',
           component: components.TopicManage,
           name: 'TopicManage',
-          meta: { title: '专题管理' },
+          meta: { title: '专题管理' }
         },
         {
           path: 'articleManage',
           component: components.ArticleManage,
           name: 'ArticleManage',
-          meta: { title: '文章管理' },
+          meta: { title: '文章管理' }
         },
         {
           path: 'addArticle',
           component: components.AddArticle,
           name: 'AddArticle',
           hidden: true,
-          meta: { title: '新增文章', activeMenu: '/contentManage/infoManage/articleManage' },
+          meta: { title: '新增文章', activeMenu: '/contentManage/infoManage/articleManage' }
         },
-      ],
+        {
+          path: 'editArticle/:id?',
+          component: components.EditArticle,
+          name: 'EditArticle',
+          hidden: true,
+          meta: { title: '编辑文章', activeMenu: '/contentManage/infoManage/articleManage' }
+        }
+      ]
     },
     {
       path: 'wordManage',
@@ -82,15 +90,15 @@ const content = {
           path: 'vocabulary',
           component: components.Vocabulary,
           name: 'Vocabulary',
-          meta: { title: '单词本管理' },
+          meta: { title: '单词本管理' }
         },
         {
           path: 'wordBank',
           component: components.WordBank,
           name: 'WordBank',
-          meta: { title: '单词库' },
-        },
-      ],
+          meta: { title: '单词库' }
+        }
+      ]
     },
     {
       path: 'AIManage',
@@ -104,17 +112,17 @@ const content = {
           path: 'classify',
           component: components.Classify,
           name: 'Classify',
-          meta: { title: 'AI分类管理' },
+          meta: { title: 'AI分类管理' }
         },
         {
           path: 'robot',
           component: components.Robot,
           name: 'Robot',
-          meta: { title: 'AI机器人管理' },
-        },
-      ],
-    },
-  ],
+          meta: { title: 'AI机器人管理' }
+        }
+      ]
+    }
+  ]
 }
 
 export default content

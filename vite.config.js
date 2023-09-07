@@ -1,4 +1,5 @@
 import vue from '@vitejs/plugin-vue'
+import eslintPlugin from 'vite-plugin-eslint'
 import {defineConfig, loadEnv} from 'vite'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -20,6 +21,9 @@ export default defineConfig(({mode, command}) => {
     base: VITE_APP_ENV === 'production' ? '/' : '/',
     plugins: [
       vue(),
+      eslintPlugin({
+        include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
+      }),
       AutoImport({
         imports: [
           'vue',
@@ -32,6 +36,9 @@ export default defineConfig(({mode, command}) => {
           ),
         ],
         dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
+        eslintrc: {
+          enabled: false,
+        },
       }),
       Components({
         resolvers: [

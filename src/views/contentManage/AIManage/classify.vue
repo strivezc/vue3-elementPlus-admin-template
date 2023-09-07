@@ -78,28 +78,28 @@ import { list } from '@/api'
 
 const { proxy } = getCurrentInstance()
 
-const data = reactive({
+const state = reactive({
   formData: {},
   tableDataLoading: false,
   tableData: [],
   total: 0,
   listQuery: {
     currPage: 1,
-    pageSize: 10,
+    pageSize: 10
   },
   showDialog: false,
   form: {
-    accountName: '',
+    accountName: ''
   },
   formRules: {
-    accountName: [{ required: true, message: '请输入', trigger: 'blur' }],
-  },
+    accountName: [{ required: true, message: '请输入', trigger: 'blur' }]
+  }
 })
 
 const ruleFormRef = ref()
 
 const { formData, tableDataLoading, tableData, total, listQuery, form, formRules, showDialog } =
-  toRefs(data)
+  toRefs(state)
 
 const submit = async () => {
   await ruleFormRef.value.validate((valid, fields) => {
@@ -116,7 +116,7 @@ function close() {
   ruleFormRef.value.resetFields()
 }
 function search() {
-  listQuery.value.currPage = 0
+  listQuery.value.currPage = 1
   getList()
 }
 
@@ -125,10 +125,10 @@ const getList = async () => {
   try {
     const params = {
       ...formData.value,
-      ...listQuery.value,
+      ...listQuery.value
     }
-    const { resultData, totalCount } = await list(params)
-    tableData.value = resultData
+    const { data, totalCount } = await list(params)
+    tableData.value = data
     total.value = totalCount
   } catch (e) {
     console.log(e, 'error')

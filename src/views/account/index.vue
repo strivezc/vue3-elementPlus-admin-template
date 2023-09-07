@@ -49,7 +49,6 @@
 
 <script setup name="EditPassword">
 import useUserStore from '@/store/modules/user'
-import { password } from '@/api/user'
 
 const router = useRouter()
 const { proxy } = getCurrentInstance()
@@ -58,7 +57,7 @@ const userStore = useUserStore()
 const form = ref({
   oldPassword: '',
   newPassword: '',
-  confirmPassword: '',
+  confirmPassword: ''
 })
 const reg = /(((?=.*\d)(?=.*\D)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z]))(?!^.*[\u4E00-\u9FA5].*$)^\S{8,20}$)/
 const validateNewPwd = (rule, value, callback) => {
@@ -88,7 +87,7 @@ const validateConfirmPwd = (rule, value, callback) => {
 const formRules = ref({
   oldPassword: [{ required: true, trigger: 'blur', message: '请输入当前密码!' }],
   newPassword: [{ required: true, trigger: 'blur', validator: validateNewPwd }],
-  confirmPassword: [{ required: true, trigger: 'blur', validator: validateConfirmPwd }],
+  confirmPassword: [{ required: true, trigger: 'blur', validator: validateConfirmPwd }]
 })
 const ruleFormRef = ref()
 
@@ -96,7 +95,7 @@ const submit = async () => {
   await ruleFormRef.value.validate(async (valid, fields) => {
     if (valid) {
       try {
-        await password(form.value)
+        await proxy.$http.user.updatePassword(form.value)
         ruleFormRef.value.resetFields()
         ElMessageBox.confirm('修改密码成功，请重新登录！', '提示', {
           confirmButtonText: '确定',
@@ -105,7 +104,7 @@ const submit = async () => {
           showClose: false,
           closeOnClickModal: false,
           closeOnPressEscape: false,
-          type: 'success',
+          type: 'success'
         }).then(() => {
           userStore.resetToken().then(() => {
             router.push('/login')

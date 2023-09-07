@@ -9,7 +9,8 @@
     "build:prod": "vite build",
     "build:test": "vite build --mode staging",
     "preview": "vite preview",
-    "lint:fotmat": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}\""
+    "lint:fotmat": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
+    "lint": "eslint --ext .js,.vue src --fix"
   },
   "dependencies": {
     "@element-plus/icons-vue": "2.1.0",
@@ -32,14 +33,21 @@
     "vue-router": "4.2.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.15",
+    "@babel/eslint-parser": "^7.22.15",
     "@iconify-json/ep": "^1.1.11",
     "@vitejs/plugin-vue": "4.2.3",
     "@vue/compiler-sfc": "3.3.4",
-    "prettier": "^3.0.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "prettier": "^3.0.3",
     "sass": "1.56.1",
     "unplugin-auto-import": "^0.7.0",
     "unplugin-vue-components": "^0.25.1",
     "vite": "4.4.0",
+    "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svg-icons": "2.0.1",
     "vite-plugin-vue-setup-extend": "0.4.0"
   }

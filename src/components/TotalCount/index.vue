@@ -7,8 +7,8 @@
 <script setup name="TotalCount">
 const props = defineProps({
   total: {
-    type: [Number, String],
-  },
+    type: [Number, String]
+  }
 })
 </script>
 

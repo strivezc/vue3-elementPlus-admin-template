@@ -3,7 +3,7 @@
     <quill-editor
       v-model:content="content"
       contentType="html"
-      @textChange="(e) => $emit('update:modelValue', content)"
+      @textChange="e => $emit('update:modelValue', content)"
       :options="options"
       :style="styles"
     />
@@ -32,23 +32,23 @@ Quill.register(fontSize, true)
 const props = defineProps({
   /* 编辑器的内容 */
   modelValue: {
-    type: String,
+    type: String
   },
   /* 高度 */
   height: {
     type: Number,
-    default: 400,
+    default: 400
   },
   /* 最小高度 */
   minHeight: {
     type: Number,
-    default: 400,
+    default: 400
   },
   /* 只读 */
   readOnly: {
     type: Boolean,
-    default: false,
-  },
+    default: false
+  }
 })
 
 const options = ref({
@@ -68,12 +68,12 @@ const options = ref({
       [{ list: 'ordered' }, { list: 'bullet' }], // 有序、无序列表
       [{ indent: '-1' }, { indent: '+1' }], // 缩进
       [{ align: [] }], // 对齐方式
-      ['link', 'image', 'video','formula'], // 链接、图片、视频、数学公式
-      ['clean'], // 清除文本格式
+      ['link', 'image', 'video', 'formula'], // 链接、图片、视频、数学公式
+      ['clean'] // 清除文本格式
     ],
     ImageUploader: {
       upload(file) {
-        return new Promise(async (resolve, reject) => {
+        return new Promise((resolve, reject) => {
           if (file.size / 1024 / 1024 > 10) {
             ElMessage.error('文件大小不能超过10MB')
             reject()
@@ -82,20 +82,21 @@ const options = ref({
           let formData = new FormData()
           formData.append('file', file)
           try {
-            const { resultData } = await uploadFile(formData)
-            resolve(resultData.fileUrl)
+            uploadFile(formData).then(({ resultData }) => {
+              resolve(resultData.fileUrl)
+            })
           } catch (e) {
             reject('Upload failed')
             console.log(e, 'ImageUploader')
           }
         })
-      },
+      }
     },
     // 图片缩放
-    blotFormatter: {},
+    blotFormatter: {}
   },
   placeholder: '请输入内容',
-  readOnly: props.readOnly,
+  readOnly: props.readOnly
 })
 
 const styles = computed(() => {
@@ -112,12 +113,12 @@ const styles = computed(() => {
 const content = ref('')
 watch(
   () => props.modelValue,
-  (v) => {
+  v => {
     if (v !== content.value) {
       content.value = v === undefined ? '<p></p>' : v
     }
   },
-  { immediate: true },
+  { immediate: true }
 )
 </script>
 

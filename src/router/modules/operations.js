@@ -9,6 +9,9 @@ export const components = {
   SMSChannel: () => import('@/views/operationsManage/SMSManage/SMSChannel'),
   SMSTemplate: () => import('@/views/operationsManage/SMSManage/SMSTemplate'),
   SMSBlacklist: () => import('@/views/operationsManage/SMSManage/SMSBlacklist'),
+  Dict: () => import('@/views/operationsManage/dict'),
+  DictData: () => import('@/views/operationsManage/components/dictData'),
+  Whitelist: () => import('@/views/operationsManage/whitelist')
 }
 
 const operations = {
@@ -19,39 +22,39 @@ const operations = {
   alwaysShow: true,
   meta: {
     title: '运营管理',
-    icon: 'monitor',
+    icon: 'monitor'
   },
   children: [
     {
       path: 'agreement',
       name: 'Agreement',
       component: components.Agreement,
-      meta: { title: '协议管理' },
+      meta: { title: '协议管理' }
     },
     {
       path: 'editCompliance/:id?',
       name: 'EditCompliance',
       component: components.EditCompliance,
-      hidden:true,
-      meta: { title: '编辑协议', activeMenu: '/operationsManage/agreement' },
+      hidden: true,
+      meta: { title: '编辑协议', activeMenu: '/operationsManage/agreement' }
     },
     {
       path: 'feedback',
       name: 'Feedback',
       component: components.Feedback,
-      meta: { title: '建议与反馈' },
+      meta: { title: '建议与反馈' }
     },
     {
       path: 'adManage',
       name: 'AdManage',
       component: components.AdManage,
-      meta: { title: '广告管理' },
+      meta: { title: '广告管理' }
     },
     {
       path: 'versionControl',
       name: 'VersionControl',
       component: components.VersionControl,
-      meta: { title: '版本管理' },
+      meta: { title: '版本管理' }
     },
     {
       path: 'SMSManage',
@@ -65,23 +68,42 @@ const operations = {
           path: 'SMSChannel',
           component: components.SMSChannel,
           name: 'SMSChannel',
-          meta: { title: '短信通道' },
+          meta: { title: '短信通道' }
         },
         {
           path: 'SMSTemplate',
           component: components.SMSTemplate,
           name: 'SMSTemplate',
-          meta: { title: '短信模板' },
+          meta: { title: '短信模板' }
         },
         {
           path: 'SMSBlacklist',
           component: components.SMSBlacklist,
           name: 'SMSBlacklist',
-          meta: { title: '短信黑名单' },
-        },
-      ],
+          meta: { title: '短信黑名单' }
+        }
+      ]
     },
-  ],
+    {
+      path: 'dict',
+      name: 'Dict',
+      component: components.Dict,
+      meta: { title: '数据字典' }
+    },
+    {
+      path: 'dictData/:id?',
+      name: 'DictData',
+      component: components.DictData,
+      hidden: true,
+      meta: { title: '字典详情', activeMenu: '/operationsManage/dict' }
+    },
+    {
+      path: 'whitelist',
+      name: 'Whitelist',
+      component: components.Whitelist,
+      meta: { title: '功能白名单' }
+    }
+  ]
 }
 
 export default operations

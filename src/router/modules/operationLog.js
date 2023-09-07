@@ -3,7 +3,7 @@ export const components = {
   Log: () => import('@/components/ParentView'),
   AccessLog: () => import('@/views/operationLog/log/accessLog'),
   LoginLog: () => import('@/views/operationLog/log/loginLog'),
-  SMSRecord: () => import('@/views/operationLog/log/SMSRecord'),
+  SMSRecord: () => import('@/views/operationLog/log/SMSRecord')
 }
 
 const operationLog = {
@@ -14,7 +14,7 @@ const operationLog = {
   alwaysShow: true,
   meta: {
     title: '操作记录',
-    icon: 'edit',
+    icon: 'edit'
   },
   children: [
     {
@@ -29,23 +29,23 @@ const operationLog = {
           path: 'accessLog',
           component: components.AccessLog,
           name: 'AccessLog',
-          meta: { title: '访问日志' },
+          meta: { title: '访问日志' }
         },
         {
           path: 'loginLog',
           component: components.LoginLog,
           name: 'LoginLog',
-          meta: { title: '登录日志' },
+          meta: { title: '登录日志' }
         },
         {
           path: 'SMSRecord',
           component: components.SMSRecord,
           name: 'SMSRecord',
-          meta: { title: '短信记录' },
-        },
-      ],
-    },
-  ],
+          meta: { title: '短信记录' }
+        }
+      ]
+    }
+  ]
 }
 
 export default operationLog

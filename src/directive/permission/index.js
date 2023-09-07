@@ -1,7 +1,7 @@
 import usePermissionStore from '@/store/modules/permission'
 
 export default {
-  mounted(el, binding, vnode) {
+  mounted(el, binding) {
     let { value } = binding
     value = value && value.toString()
     const menuList = usePermissionStore().menuList
@@ -13,5 +13,5 @@ export default {
     } else {
       throw new Error('need permission! Like v-permission="1000"')
     }
-  },
+  }
 }

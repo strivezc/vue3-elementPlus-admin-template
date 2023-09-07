@@ -14,13 +14,13 @@ const useSettingsStore = defineStore('settings', {
     fixedHeader:
       storageSetting.fixedHeader === undefined ? fixedHeader : storageSetting.fixedHeader,
     dynamicTitle:
-      storageSetting.dynamicTitle === undefined ? dynamicTitle : storageSetting.dynamicTitle,
+      storageSetting.dynamicTitle === undefined ? dynamicTitle : storageSetting.dynamicTitle
   }),
   actions: {
     // 修改布局设置
     changeSetting(data) {
       const { key, value } = data
-      if (this.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(this, key)) {
         this[key] = value
       }
     },
@@ -28,8 +28,8 @@ const useSettingsStore = defineStore('settings', {
     setTitle(title) {
       this.title = title
       useDynamicTitle()
-    },
-  },
+    }
+  }
 })
 
 export default useSettingsStore

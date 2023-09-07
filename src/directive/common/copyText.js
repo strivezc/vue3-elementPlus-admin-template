@@ -18,7 +18,7 @@ export default {
       el.addEventListener('click', handler)
       el.$destroyCopy = () => el.removeEventListener('click', handler)
     }
-  },
+  }
 }
 
 function copyTextToClipboard(input, { target = document.body } = {}) {

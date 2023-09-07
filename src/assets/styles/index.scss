@@ -203,3 +203,19 @@ aside {
   display: flex;
   flex-direction: column;
 }
+.button-box-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: -5px;
+  .el-button {
+    margin-bottom: 5px;
+    min-width: 50px;
+  }
+}
+.remarks {
+  color: #ff574e;
+  font-size: 14px;
+}

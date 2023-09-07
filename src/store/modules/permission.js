@@ -7,14 +7,14 @@ const usePermissionStore = defineStore('permission', {
   state: () => ({
     routes: [],
     menuList: [],
-    permissionFlag: false,
+    permissionFlag: false
   }),
   actions: {
     setRoutes(routes) {
       this.routes = constantRoutes.concat(routes)
     },
     generateRoutes(roles) {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         // 向后端请求路由数据
         // getRouters().then(res => {
         this.menuList = [
@@ -30,7 +30,7 @@ const usePermissionStore = defineStore('permission', {
           '1000',
           '2',
           '20',
-          '200',
+          '200'
         ]
         let accessedRoutes = filterAsyncRoutes(asyncRoutes, this.menuList)
         this.setRoutes(accessedRoutes)
@@ -38,10 +38,10 @@ const usePermissionStore = defineStore('permission', {
         // 降级后的路由
         const flatRoutes = getFlatRoutes(deepClone(accessedRoutes, ['component']))
         // 指向对应的路由component
-        flatRoutes.forEach((item) => {
+        flatRoutes.forEach(item => {
           item.component = mergeComponents[item.name]
           if (item.children && item.children.length > 0) {
-            item.children.forEach((child) => {
+            item.children.forEach(child => {
               child.component = mergeComponents[child.name]
             })
           }
@@ -62,8 +62,8 @@ const usePermissionStore = defineStore('permission', {
         // resolve(rewriteRoutes)
         // })
       })
-    },
-  },
+    }
+  }
 })
 
 function hasPermission(menuList, route) {
@@ -81,7 +81,7 @@ function hasPermission(menuList, route) {
  */
 function filterAsyncRoutes(routes, menuList) {
   const res = []
-  routes.forEach((route) => {
+  routes.forEach(route => {
     const tmp = { ...route }
     if (hasPermission(menuList, tmp)) {
       if (tmp.children) {

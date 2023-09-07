@@ -5,7 +5,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 19,
-    pid: '0',
+    pid: '0'
   },
   {
     name: 'crm消息列表',
@@ -13,7 +13,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 20,
-    pid: '0',
+    pid: '0'
   },
   {
     name: '新注册用户',
@@ -21,7 +21,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 21,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '注册后3天未体验',
@@ -29,7 +29,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 24,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '预约首节课',
@@ -37,7 +37,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 27,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '首节课即将开始',
@@ -45,7 +45,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 30,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '首节课结束',
@@ -53,7 +53,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 33,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '首节课结束3天未购买',
@@ -61,7 +61,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 36,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '首次完成3节课',
@@ -69,7 +69,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 39,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '第二节课后连续15天未上课',
@@ -77,7 +77,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 42,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '下单未完成支付',
@@ -85,7 +85,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 45,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '支付成功',
@@ -93,7 +93,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 48,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '机构用户提交课表',
@@ -101,7 +101,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 51,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '机构课表首节课即将开始',
@@ -109,7 +109,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 54,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '机构课表结束',
@@ -117,7 +117,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 57,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '短信通道失败',
@@ -125,7 +125,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 60,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '课表没有老师',
@@ -133,7 +133,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 63,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '条档案被主管备注',
@@ -141,7 +141,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 66,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '连续2次缺勤',
@@ -149,7 +149,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 681,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '4小时内未跟进用户',
@@ -157,7 +157,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 712,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '24小时内未跟进用户',
@@ -165,7 +165,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 715,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '套餐包1个月后过期',
@@ -173,7 +173,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 784,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '月卡连续2次扣点',
@@ -181,7 +181,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 875,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '补偿课时审核驳回提醒',
@@ -189,7 +189,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 873,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '补偿课时审核',
@@ -197,7 +197,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 871,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '周卡扣5课时',
@@ -205,7 +205,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 906,
-    pid: '00',
+    pid: '00'
   },
   {
     name: '查询',
@@ -213,7 +213,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 22,
-    pid: '000',
+    pid: '000'
   },
   {
     name: '导出记录',
@@ -221,7 +221,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 23,
-    pid: '000',
+    pid: '000'
   },
   {
     name: '查询',
@@ -229,7 +229,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 25,
-    pid: '001',
+    pid: '001'
   },
   {
     name: '导出记录',
@@ -237,7 +237,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 26,
-    pid: '001',
+    pid: '001'
   },
   {
     name: '查询',
@@ -245,7 +245,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 28,
-    pid: '002',
+    pid: '002'
   },
   {
     name: '导出记录',
@@ -253,7 +253,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 29,
-    pid: '002',
+    pid: '002'
   },
   {
     name: '查询',
@@ -261,7 +261,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 31,
-    pid: '003',
+    pid: '003'
   },
   {
     name: '导出记录',
@@ -269,7 +269,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 32,
-    pid: '003',
+    pid: '003'
   },
   {
     name: '查询',
@@ -277,7 +277,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 34,
-    pid: '004',
+    pid: '004'
   },
   {
     name: '导出记录',
@@ -285,7 +285,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 35,
-    pid: '004',
+    pid: '004'
   },
   {
     name: '查询',
@@ -293,7 +293,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 37,
-    pid: '005',
+    pid: '005'
   },
   {
     name: '导出记录',
@@ -301,7 +301,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 38,
-    pid: '005',
+    pid: '005'
   },
   {
     name: '查询',
@@ -309,7 +309,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 40,
-    pid: '006',
+    pid: '006'
   },
   {
     name: '导出记录',
@@ -317,7 +317,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 41,
-    pid: '006',
+    pid: '006'
   },
   {
     name: '查询',
@@ -325,7 +325,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 43,
-    pid: '007',
+    pid: '007'
   },
   {
     name: '导出记录',
@@ -333,7 +333,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 44,
-    pid: '007',
+    pid: '007'
   },
   {
     name: '查询',
@@ -341,7 +341,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 46,
-    pid: '008',
+    pid: '008'
   },
   {
     name: '导出记录',
@@ -349,7 +349,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 47,
-    pid: '008',
+    pid: '008'
   },
   {
     name: '查询',
@@ -357,7 +357,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 49,
-    pid: '009',
+    pid: '009'
   },
   {
     name: '导出记录',
@@ -365,7 +365,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 50,
-    pid: '009',
+    pid: '009'
   },
   {
     name: '查询',
@@ -373,7 +373,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 52,
-    pid: '00a',
+    pid: '00a'
   },
   {
     name: '导出记录',
@@ -381,7 +381,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 53,
-    pid: '00a',
+    pid: '00a'
   },
   {
     name: '查询',
@@ -389,7 +389,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 55,
-    pid: '00b',
+    pid: '00b'
   },
   {
     name: '导出记录',
@@ -397,7 +397,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 56,
-    pid: '00b',
+    pid: '00b'
   },
   {
     name: '查询',
@@ -405,7 +405,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 58,
-    pid: '00c',
+    pid: '00c'
   },
   {
     name: '导出记录',
@@ -413,7 +413,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 59,
-    pid: '00c',
+    pid: '00c'
   },
   {
     name: '查询',
@@ -421,7 +421,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 61,
-    pid: '00d',
+    pid: '00d'
   },
   {
     name: '导出记录',
@@ -429,7 +429,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 62,
-    pid: '00d',
+    pid: '00d'
   },
   {
     name: '查询',
@@ -437,7 +437,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 64,
-    pid: '00e',
+    pid: '00e'
   },
   {
     name: '导出记录',
@@ -445,7 +445,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 65,
-    pid: '00e',
+    pid: '00e'
   },
   {
     name: '查询',
@@ -453,7 +453,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 67,
-    pid: '00f',
+    pid: '00f'
   },
   {
     name: '导出记录',
@@ -461,7 +461,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 68,
-    pid: '00f',
+    pid: '00f'
   },
   {
     name: '查询',
@@ -469,7 +469,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 682,
-    pid: '00g',
+    pid: '00g'
   },
   {
     name: '导出记录',
@@ -477,7 +477,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 683,
-    pid: '00g',
+    pid: '00g'
   },
   {
     name: '查询',
@@ -485,7 +485,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 713,
-    pid: '00h',
+    pid: '00h'
   },
   {
     name: '导出记录',
@@ -493,7 +493,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 714,
-    pid: '00h',
+    pid: '00h'
   },
   {
     name: '查询',
@@ -501,7 +501,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 716,
-    pid: '00i',
+    pid: '00i'
   },
   {
     name: '导出记录',
@@ -509,7 +509,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 717,
-    pid: '00i',
+    pid: '00i'
   },
   {
     name: '查询',
@@ -517,7 +517,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 785,
-    pid: '00j',
+    pid: '00j'
   },
   {
     name: '导出记录',
@@ -525,7 +525,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 786,
-    pid: '00j',
+    pid: '00j'
   },
   {
     name: '查询',
@@ -533,7 +533,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 876,
-    pid: '00k',
+    pid: '00k'
   },
   {
     name: '导出记录',
@@ -541,7 +541,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 877,
-    pid: '00k',
+    pid: '00k'
   },
   {
     name: '查询',
@@ -549,7 +549,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 874,
-    pid: '00l',
+    pid: '00l'
   },
   {
     name: '查询',
@@ -557,7 +557,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 872,
-    pid: '00m',
+    pid: '00m'
   },
   {
     name: '查询',
@@ -565,7 +565,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 907,
-    pid: '00n',
+    pid: '00n'
   },
   {
     name: '导出',
@@ -573,7 +573,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 908,
-    pid: '00n',
+    pid: '00n'
   },
   {
     name: '用户管理',
@@ -581,7 +581,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 69,
-    pid: '1',
+    pid: '1'
   },
   {
     name: '学生管理',
@@ -589,7 +589,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 70,
-    pid: '1',
+    pid: '1'
   },
   {
     name: '经销商管理',
@@ -597,7 +597,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 87,
-    pid: '1',
+    pid: '1'
   },
   {
     name: '老师管理',
@@ -605,7 +605,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 93,
-    pid: '1',
+    pid: '1'
   },
   {
     name: '阿尔法蛋',
@@ -613,7 +613,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1028,
-    pid: '1',
+    pid: '1'
   },
   {
     name: '学生管理',
@@ -621,7 +621,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 71,
-    pid: '10',
+    pid: '10'
   },
   {
     name: '学生教材',
@@ -629,7 +629,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 79,
-    pid: '10',
+    pid: '10'
   },
   {
     name: '经销商教材',
@@ -637,7 +637,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 83,
-    pid: '10',
+    pid: '10'
   },
   {
     name: '学生老师绑定',
@@ -645,7 +645,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 727,
-    pid: '10',
+    pid: '10'
   },
   {
     name: '学生账号屏蔽记录',
@@ -653,7 +653,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 997,
-    pid: '10',
+    pid: '10'
   },
   {
     name: '学员注销记录',
@@ -661,7 +661,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1064,
-    pid: '10',
+    pid: '10'
   },
   {
     name: '查询',
@@ -669,7 +669,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 72,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '导出记录',
@@ -677,7 +677,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 73,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '最初推荐人',
@@ -685,7 +685,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 74,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '重置密码',
@@ -693,7 +693,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 75,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '备注/修改',
@@ -701,7 +701,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 76,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '修改/填写区域',
@@ -709,7 +709,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 77,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '修改手机号码',
@@ -717,7 +717,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 78,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '启用/停用eClass网页端',
@@ -725,7 +725,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 739,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '知识地图',
@@ -733,7 +733,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 829,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '屏蔽',
@@ -741,7 +741,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 999,
-    pid: '100',
+    pid: '100'
   },
   {
     name: '查询',
@@ -749,7 +749,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 80,
-    pid: '101',
+    pid: '101'
   },
   {
     name: '绑定关系',
@@ -757,7 +757,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 81,
-    pid: '101',
+    pid: '101'
   },
   {
     name: '延期',
@@ -765,7 +765,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 82,
-    pid: '101',
+    pid: '101'
   },
   {
     name: '查询',
@@ -773,7 +773,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 84,
-    pid: '102',
+    pid: '102'
   },
   {
     name: '绑定关系',
@@ -781,7 +781,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 85,
-    pid: '102',
+    pid: '102'
   },
   {
     name: '删除/恢复',
@@ -789,7 +789,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 86,
-    pid: '102',
+    pid: '102'
   },
   {
     name: '查询',
@@ -797,7 +797,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 728,
-    pid: '103',
+    pid: '103'
   },
   {
     name: '延期',
@@ -805,7 +805,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 729,
-    pid: '103',
+    pid: '103'
   },
   {
     name: '查询',
@@ -813,7 +813,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 998,
-    pid: '104',
+    pid: '104'
   },
   {
     name: '查询',
@@ -821,7 +821,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1065,
-    pid: '105',
+    pid: '105'
   },
   {
     name: '经销商管理',
@@ -829,7 +829,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 88,
-    pid: '11',
+    pid: '11'
   },
   {
     name: '经销商白名单',
@@ -837,7 +837,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1003,
-    pid: '11',
+    pid: '11'
   },
   {
     name: '查询',
@@ -845,7 +845,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 89,
-    pid: '110',
+    pid: '110'
   },
   {
     name: '导出记录',
@@ -853,7 +853,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 90,
-    pid: '110',
+    pid: '110'
   },
   {
     name: '重置密码',
@@ -861,7 +861,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 91,
-    pid: '110',
+    pid: '110'
   },
   {
     name: '备注/修改',
@@ -869,7 +869,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 92,
-    pid: '110',
+    pid: '110'
   },
   {
     name: '审核',
@@ -877,7 +877,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 760,
-    pid: '110',
+    pid: '110'
   },
   {
     name: '查看信息',
@@ -885,7 +885,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 761,
-    pid: '110',
+    pid: '110'
   },
   {
     name: '电子账号迁移',
@@ -893,7 +893,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 762,
-    pid: '110',
+    pid: '110'
   },
   {
     name: '查询',
@@ -901,7 +901,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1004,
-    pid: '111',
+    pid: '111'
   },
   {
     name: '新增',
@@ -909,7 +909,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1005,
-    pid: '111',
+    pid: '111'
   },
   {
     name: '导入',
@@ -917,7 +917,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1006,
-    pid: '111',
+    pid: '111'
   },
   {
     name: '调整权重',
@@ -925,7 +925,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1007,
-    pid: '111',
+    pid: '111'
   },
   {
     name: '老师管理',
@@ -933,7 +933,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 94,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师签名管理',
@@ -941,7 +941,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 109,
-    pid: '12',
+    pid: '12'
   },
   {
     name: 'GC非基地工资结算/查询',
@@ -949,7 +949,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 112,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师群管理',
@@ -957,7 +957,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 116,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师代理',
@@ -965,7 +965,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 630,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '请假管理',
@@ -973,7 +973,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 730,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '基地工资结算/工资查询',
@@ -981,7 +981,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 809,
-    pid: '12',
+    pid: '12'
   },
   {
     name: 'ST非基地工资结算/查询',
@@ -989,7 +989,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 827,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '飞博老师工资结算/管理',
@@ -997,7 +997,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 851,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '教师法定假期管理',
@@ -1005,7 +1005,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 855,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师申请管理',
@@ -1013,7 +1013,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 910,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师视频管理',
@@ -1021,7 +1021,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 914,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师培训资料查看记录',
@@ -1029,7 +1029,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1000,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师开课时间查看',
@@ -1037,7 +1037,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1033,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '老师代理1v1工资',
@@ -1045,7 +1045,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1056,
-    pid: '12',
+    pid: '12'
   },
   {
     name: '查询',
@@ -1053,7 +1053,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 95,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '导出记录',
@@ -1061,7 +1061,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 96,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '增加老师',
@@ -1069,7 +1069,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 97,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '编辑',
@@ -1077,7 +1077,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 98,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '屏蔽/显示',
@@ -1085,7 +1085,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 99,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '重置密码',
@@ -1093,7 +1093,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 100,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '首页推荐/撤销',
@@ -1101,7 +1101,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 102,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '二级域名推荐/撤销',
@@ -1109,7 +1109,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 103,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '启用/停止直播间',
@@ -1117,7 +1117,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 104,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '取消/图标推荐',
@@ -1125,7 +1125,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 105,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '激活账户',
@@ -1133,7 +1133,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 106,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '资源服务器',
@@ -1141,7 +1141,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 107,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '添加老师签名',
@@ -1149,7 +1149,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 108,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '查看',
@@ -1157,7 +1157,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 629,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '留任/不留任',
@@ -1165,7 +1165,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 738,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '调级',
@@ -1173,7 +1173,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 802,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '工资调整',
@@ -1181,7 +1181,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 830,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '停止系统开课',
@@ -1189,7 +1189,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 870,
-    pid: '120',
+    pid: '120'
   },
   {
     name: '查询',
@@ -1197,7 +1197,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 110,
-    pid: '121',
+    pid: '121'
   },
   {
     name: '审核',
@@ -1205,7 +1205,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 111,
-    pid: '121',
+    pid: '121'
   },
   {
     name: '查询',
@@ -1213,7 +1213,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 113,
-    pid: '122',
+    pid: '122'
   },
   {
     name: '导入工资',
@@ -1221,7 +1221,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 114,
-    pid: '122',
+    pid: '122'
   },
   {
     name: '导出工时',
@@ -1229,7 +1229,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 115,
-    pid: '122',
+    pid: '122'
   },
   {
     name: '查询',
@@ -1237,7 +1237,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 117,
-    pid: '123',
+    pid: '123'
   },
   {
     name: '设置群主',
@@ -1245,7 +1245,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 118,
-    pid: '123',
+    pid: '123'
   },
   {
     name: '删除',
@@ -1253,7 +1253,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 119,
-    pid: '123',
+    pid: '123'
   },
   {
     name: '成员管理',
@@ -1261,7 +1261,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 120,
-    pid: '123',
+    pid: '123'
   },
   {
     name: '更换',
@@ -1269,7 +1269,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 121,
-    pid: '123',
+    pid: '123'
   },
   {
     name: '查询',
@@ -1277,7 +1277,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 631,
-    pid: '124',
+    pid: '124'
   },
   {
     name: '添加代理',
@@ -1285,7 +1285,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 632,
-    pid: '124',
+    pid: '124'
   },
   {
     name: '屏蔽/恢复',
@@ -1293,7 +1293,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 633,
-    pid: '124',
+    pid: '124'
   },
   {
     name: '开通/关闭巡视',
@@ -1301,7 +1301,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 813,
-    pid: '124',
+    pid: '124'
   },
   {
     name: '查询',
@@ -1309,7 +1309,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 731,
-    pid: '125',
+    pid: '125'
   },
   {
     name: '导出记录',
@@ -1317,7 +1317,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 732,
-    pid: '125',
+    pid: '125'
   },
   {
     name: '请假申请',
@@ -1325,7 +1325,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 733,
-    pid: '125',
+    pid: '125'
   },
   {
     name: '取消',
@@ -1333,7 +1333,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 734,
-    pid: '125',
+    pid: '125'
   },
   {
     name: '编辑',
@@ -1341,7 +1341,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 735,
-    pid: '125',
+    pid: '125'
   },
   {
     name: '提交',
@@ -1349,7 +1349,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 736,
-    pid: '125',
+    pid: '125'
   },
   {
     name: '查询',
@@ -1357,7 +1357,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 810,
-    pid: '126',
+    pid: '126'
   },
   {
     name: '导出工时',
@@ -1365,7 +1365,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 811,
-    pid: '126',
+    pid: '126'
   },
   {
     name: '导入工资',
@@ -1373,7 +1373,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 812,
-    pid: '126',
+    pid: '126'
   },
   {
     name: '查询',
@@ -1381,7 +1381,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 828,
-    pid: '127',
+    pid: '127'
   },
   {
     name: '导入工资',
@@ -1389,7 +1389,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 928,
-    pid: '127',
+    pid: '127'
   },
   {
     name: '导出工时',
@@ -1397,7 +1397,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 927,
-    pid: '127',
+    pid: '127'
   },
   {
     name: '查询',
@@ -1405,7 +1405,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 852,
-    pid: '128',
+    pid: '128'
   },
   {
     name: '导入工资',
@@ -1413,7 +1413,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 853,
-    pid: '128',
+    pid: '128'
   },
   {
     name: '导出工时',
@@ -1421,7 +1421,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 854,
-    pid: '128',
+    pid: '128'
   },
   {
     name: '查询',
@@ -1429,7 +1429,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 856,
-    pid: '129',
+    pid: '129'
   },
   {
     name: '查询',
@@ -1437,7 +1437,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 911,
-    pid: '12a',
+    pid: '12a'
   },
   {
     name: '导出',
@@ -1445,7 +1445,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 912,
-    pid: '12a',
+    pid: '12a'
   },
   {
     name: '查看详情',
@@ -1453,7 +1453,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 913,
-    pid: '12a',
+    pid: '12a'
   },
   {
     name: '查询',
@@ -1461,7 +1461,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 915,
-    pid: '12b',
+    pid: '12b'
   },
   {
     name: '导出',
@@ -1469,7 +1469,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 916,
-    pid: '12b',
+    pid: '12b'
   },
   {
     name: '审核',
@@ -1477,7 +1477,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 917,
-    pid: '12b',
+    pid: '12b'
   },
   {
     name: '下载',
@@ -1485,7 +1485,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 918,
-    pid: '12b',
+    pid: '12b'
   },
   {
     name: '查询',
@@ -1493,7 +1493,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1001,
-    pid: '12c',
+    pid: '12c'
   },
   {
     name: '导出',
@@ -1501,7 +1501,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1002,
-    pid: '12c',
+    pid: '12c'
   },
   {
     name: '查询',
@@ -1509,7 +1509,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1034,
-    pid: '12d',
+    pid: '12d'
   },
   {
     name: '导出',
@@ -1517,7 +1517,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1035,
-    pid: '12d',
+    pid: '12d'
   },
   {
     name: '查询',
@@ -1525,7 +1525,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1057,
-    pid: '12e',
+    pid: '12e'
   },
   {
     name: '添加',
@@ -1533,7 +1533,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1058,
-    pid: '12e',
+    pid: '12e'
   },
   {
     name: '屏蔽/恢复',
@@ -1541,7 +1541,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1059,
-    pid: '12e',
+    pid: '12e'
   },
   {
     name: '删除/批量删除',
@@ -1549,7 +1549,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1060,
-    pid: '12e',
+    pid: '12e'
   },
   {
     name: '学员查询',
@@ -1557,7 +1557,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1029,
-    pid: '13',
+    pid: '13'
   },
   {
     name: '套餐查询',
@@ -1565,7 +1565,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1031,
-    pid: '13',
+    pid: '13'
   },
   {
     name: '查询',
@@ -1573,7 +1573,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1030,
-    pid: '130',
+    pid: '130'
   },
   {
     name: '导出',
@@ -1581,7 +1581,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1053,
-    pid: '130',
+    pid: '130'
   },
   {
     name: '查询',
@@ -1589,7 +1589,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1032,
-    pid: '131',
+    pid: '131'
   },
   {
     name: '导出',
@@ -1597,7 +1597,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1054,
-    pid: '131',
+    pid: '131'
   },
   {
     name: '订单管理',
@@ -1605,7 +1605,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 122,
-    pid: '2',
+    pid: '2'
   },
   {
     name: '订单管理',
@@ -1613,7 +1613,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 123,
-    pid: '2',
+    pid: '2'
   },
   {
     name: '订单管理',
@@ -1621,7 +1621,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 124,
-    pid: '20',
+    pid: '20'
   },
   {
     name: '查询',
@@ -1629,7 +1629,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 125,
-    pid: '200',
+    pid: '200'
   },
   {
     name: '导出记录',
@@ -1637,7 +1637,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 126,
-    pid: '200',
+    pid: '200'
   },
   {
     name: '添加订单',
@@ -1645,7 +1645,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 127,
-    pid: '200',
+    pid: '200'
   },
   {
     name: '支付',
@@ -1653,7 +1653,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 128,
-    pid: '200',
+    pid: '200'
   },
   {
     name: '发货',
@@ -1661,7 +1661,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 129,
-    pid: '200',
+    pid: '200'
   },
   {
     name: '订单改价',
@@ -1669,7 +1669,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 861,
-    pid: '200',
+    pid: '200'
   },
   {
     name: '订单导入',
@@ -1677,7 +1677,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1052,
-    pid: '200',
+    pid: '200'
   },
   {
     name: '套餐管理',
@@ -1685,7 +1685,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 130,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '套餐管理',
@@ -1693,7 +1693,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 131,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '套餐包请假',
@@ -1701,7 +1701,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 140,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '次卡包延期',
@@ -1709,7 +1709,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 818,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '套餐包有效期变更',
@@ -1717,7 +1717,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 821,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '周卡包延期',
@@ -1725,7 +1725,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 994,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '产品管理',
@@ -1733,7 +1733,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1008,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '套餐激活',
@@ -1741,7 +1741,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1049,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '套餐包延期',
@@ -1749,7 +1749,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1080,
-    pid: '3',
+    pid: '3'
   },
   {
     name: '套餐管理',
@@ -1757,7 +1757,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 132,
-    pid: '30',
+    pid: '30'
   },
   {
     name: '查询',
@@ -1765,7 +1765,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 133,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '导出记录',
@@ -1773,7 +1773,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 134,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '延期',
@@ -1781,7 +1781,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 135,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '删除',
@@ -1789,7 +1789,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 136,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '解冻套餐',
@@ -1797,7 +1797,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 137,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '详情',
@@ -1805,7 +1805,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 138,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '开发票',
@@ -1813,7 +1813,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 139,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '套餐(包含超过15天)',
@@ -1821,7 +1821,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1072,
-    pid: '300',
+    pid: '300'
   },
   {
     name: '套餐包请假',
@@ -1829,7 +1829,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 141,
-    pid: '31',
+    pid: '31'
   },
   {
     name: '查询',
@@ -1837,7 +1837,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 142,
-    pid: '310',
+    pid: '310'
   },
   {
     name: '次卡包延期',
@@ -1845,7 +1845,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 819,
-    pid: '32',
+    pid: '32'
   },
   {
     name: '查询',
@@ -1853,7 +1853,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 820,
-    pid: '320',
+    pid: '320'
   },
   {
     name: '套餐包有效期变更',
@@ -1861,7 +1861,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 822,
-    pid: '33',
+    pid: '33'
   },
   {
     name: '查询',
@@ -1869,7 +1869,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 823,
-    pid: '330',
+    pid: '330'
   },
   {
     name: '周卡包延期',
@@ -1877,7 +1877,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 995,
-    pid: '34',
+    pid: '34'
   },
   {
     name: '查询',
@@ -1885,7 +1885,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 996,
-    pid: '340',
+    pid: '340'
   },
   {
     name: '产品管理',
@@ -1893,7 +1893,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1009,
-    pid: '35',
+    pid: '35'
   },
   {
     name: '查询',
@@ -1901,7 +1901,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1010,
-    pid: '350',
+    pid: '350'
   },
   {
     name: '新增',
@@ -1909,7 +1909,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1011,
-    pid: '350',
+    pid: '350'
   },
   {
     name: '上架',
@@ -1917,7 +1917,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1012,
-    pid: '350',
+    pid: '350'
   },
   {
     name: '套餐激活',
@@ -1925,7 +1925,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1050,
-    pid: '36',
+    pid: '36'
   },
   {
     name: '激活套餐',
@@ -1933,7 +1933,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1051,
-    pid: '360',
+    pid: '360'
   },
   {
     name: '套餐包延期',
@@ -1941,7 +1941,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1081,
-    pid: '37',
+    pid: '37'
   },
   {
     name: '查询',
@@ -1949,7 +1949,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1082,
-    pid: '370',
+    pid: '370'
   },
   {
     name: '延期操作',
@@ -1957,7 +1957,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1083,
-    pid: '370',
+    pid: '370'
   },
   {
     name: '课程管理',
@@ -1965,7 +1965,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 143,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '约课管理',
@@ -1973,7 +1973,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 144,
-    pid: '4',
+    pid: '4'
   },
   {
     name: 'vip按周课表',
@@ -1981,7 +1981,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 154,
-    pid: '4',
+    pid: '4'
   },
   {
     name: 'vip自助课表',
@@ -1989,7 +1989,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 165,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '机构课表',
@@ -1997,7 +1997,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 179,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '老师时间管理',
@@ -2005,7 +2005,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 189,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '手工约课',
@@ -2013,7 +2013,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 196,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '机构课上课记录',
@@ -2021,7 +2021,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 213,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '修改教材',
@@ -2029,7 +2029,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 743,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '公开课管理',
@@ -2037,7 +2037,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 763,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '投诉管理',
@@ -2045,7 +2045,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 954,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '春雷教材',
@@ -2053,7 +2053,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 985,
-    pid: '4',
+    pid: '4'
   },
   {
     name: '约课管理',
@@ -2061,7 +2061,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 145,
-    pid: '40',
+    pid: '40'
   },
   {
     name: '查询',
@@ -2069,7 +2069,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 146,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '导出记录',
@@ -2077,7 +2077,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 147,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '课程取消',
@@ -2085,7 +2085,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 148,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '打卡',
@@ -2093,7 +2093,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 150,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '录像',
@@ -2101,7 +2101,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 151,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '补偿课时',
@@ -2109,7 +2109,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 152,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '修改取消原因',
@@ -2117,7 +2117,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 153,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '查询测评报告',
@@ -2125,7 +2125,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 625,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '审核测评报告',
@@ -2133,7 +2133,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 626,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '导测评课',
@@ -2141,7 +2141,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 628,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '巡视员',
@@ -2149,7 +2149,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 737,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '切换工具',
@@ -2157,7 +2157,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 944,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '投诉',
@@ -2165,7 +2165,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 960,
-    pid: '400',
+    pid: '400'
   },
   {
     name: '修改状态',
@@ -2173,7 +2173,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 961,
-    pid: '400',
+    pid: '400'
   },
   {
     name: 'vip按周课表',
@@ -2181,7 +2181,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 155,
-    pid: '41',
+    pid: '41'
   },
   {
     name: '查询',
@@ -2189,7 +2189,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 156,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '查看',
@@ -2197,7 +2197,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 157,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '取消约课',
@@ -2205,7 +2205,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 158,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '变更/确认老师',
@@ -2213,7 +2213,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 159,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '分配老师',
@@ -2221,7 +2221,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 160,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '取消处理',
@@ -2229,7 +2229,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 161,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '更改教材',
@@ -2237,7 +2237,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 162,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '（未分配）取消课表',
@@ -2245,7 +2245,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 163,
-    pid: '410',
+    pid: '410'
   },
   {
     name: '（已安排）取消课表',
@@ -2253,7 +2253,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 164,
-    pid: '410',
+    pid: '410'
   },
   {
     name: 'vip自助课表管理',
@@ -2261,7 +2261,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 166,
-    pid: '42',
+    pid: '42'
   },
   {
     name: 'VIP自助课表明细',
@@ -2269,7 +2269,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 176,
-    pid: '42',
+    pid: '42'
   },
   {
     name: '查询',
@@ -2277,7 +2277,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 167,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '导出记录',
@@ -2285,7 +2285,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 168,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '总览',
@@ -2293,7 +2293,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 169,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '停止续课',
@@ -2301,7 +2301,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 170,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '一键开课',
@@ -2309,7 +2309,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 171,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '详情',
@@ -2317,7 +2317,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 172,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '取消课表',
@@ -2325,7 +2325,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 174,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '延长续课',
@@ -2333,7 +2333,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 175,
-    pid: '420',
+    pid: '420'
   },
   {
     name: '查询',
@@ -2341,7 +2341,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 177,
-    pid: '421',
+    pid: '421'
   },
   {
     name: '导出记录',
@@ -2349,7 +2349,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 178,
-    pid: '421',
+    pid: '421'
   },
   {
     name: '机构课表',
@@ -2357,7 +2357,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 180,
-    pid: '43',
+    pid: '43'
   },
   {
     name: '机构课表明细',
@@ -2365,7 +2365,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 187,
-    pid: '43',
+    pid: '43'
   },
   {
     name: '查询',
@@ -2373,7 +2373,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 181,
-    pid: '430',
+    pid: '430'
   },
   {
     name: '查看',
@@ -2381,7 +2381,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 182,
-    pid: '430',
+    pid: '430'
   },
   {
     name: '编辑',
@@ -2389,7 +2389,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 183,
-    pid: '430',
+    pid: '430'
   },
   {
     name: '取消约课',
@@ -2397,7 +2397,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 184,
-    pid: '430',
+    pid: '430'
   },
   {
     name: '分配/修改老师',
@@ -2405,7 +2405,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 185,
-    pid: '430',
+    pid: '430'
   },
   {
     name: '取消处理',
@@ -2413,7 +2413,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 186,
-    pid: '430',
+    pid: '430'
   },
   {
     name: '查询',
@@ -2421,7 +2421,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 188,
-    pid: '431',
+    pid: '431'
   },
   {
     name: '成人频道老师',
@@ -2429,7 +2429,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 190,
-    pid: '44',
+    pid: '44'
   },
   {
     name: '少儿频道老师',
@@ -2437,7 +2437,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 192,
-    pid: '44',
+    pid: '44'
   },
   {
     name: '查看开课时间',
@@ -2445,7 +2445,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 194,
-    pid: '44',
+    pid: '44'
   },
   {
     name: '自由预约时间查询',
@@ -2453,7 +2453,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 759,
-    pid: '44',
+    pid: '44'
   },
   {
     name: '查询',
@@ -2461,7 +2461,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 191,
-    pid: '440',
+    pid: '440'
   },
   {
     name: '查询',
@@ -2469,7 +2469,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 193,
-    pid: '441',
+    pid: '441'
   },
   {
     name: '查询',
@@ -2477,7 +2477,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 195,
-    pid: '442',
+    pid: '442'
   },
   {
     name: '自由约课',
@@ -2485,7 +2485,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 197,
-    pid: '45',
+    pid: '45'
   },
   {
     name: '机构约课',
@@ -2493,7 +2493,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 199,
-    pid: '45',
+    pid: '45'
   },
   {
     name: 'vip按周预约',
@@ -2501,7 +2501,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 201,
-    pid: '45',
+    pid: '45'
   },
   {
     name: 'vip自助预约',
@@ -2509,7 +2509,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 203,
-    pid: '45',
+    pid: '45'
   },
   {
     name: '测评课预约',
@@ -2517,7 +2517,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 205,
-    pid: '45',
+    pid: '45'
   },
   {
     name: '查询',
@@ -2525,7 +2525,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 198,
-    pid: '450',
+    pid: '450'
   },
   {
     name: '查询',
@@ -2533,7 +2533,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 200,
-    pid: '451',
+    pid: '451'
   },
   {
     name: '查询',
@@ -2541,7 +2541,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 202,
-    pid: '452',
+    pid: '452'
   },
   {
     name: '查询',
@@ -2549,7 +2549,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 204,
-    pid: '453',
+    pid: '453'
   },
   {
     name: '查询',
@@ -2557,7 +2557,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 206,
-    pid: '454',
+    pid: '454'
   },
   {
     name: '机构课上课记录',
@@ -2565,7 +2565,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 214,
-    pid: '47',
+    pid: '47'
   },
   {
     name: '查询',
@@ -2573,7 +2573,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 215,
-    pid: '470',
+    pid: '470'
   },
   {
     name: '导出记录',
@@ -2581,7 +2581,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 216,
-    pid: '470',
+    pid: '470'
   },
   {
     name: '修改教材',
@@ -2589,7 +2589,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 744,
-    pid: '48',
+    pid: '48'
   },
   {
     name: '查询',
@@ -2597,7 +2597,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 745,
-    pid: '480',
+    pid: '480'
   },
   {
     name: '公开课课程管理',
@@ -2605,7 +2605,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 764,
-    pid: '49',
+    pid: '49'
   },
   {
     name: '公开课约课管理',
@@ -2613,7 +2613,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 790,
-    pid: '49',
+    pid: '49'
   },
   {
     name: '公开课评论管理',
@@ -2621,7 +2621,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 824,
-    pid: '49',
+    pid: '49'
   },
   {
     name: '查询',
@@ -2629,7 +2629,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 765,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '导出记录',
@@ -2637,7 +2637,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 766,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '新增公开课',
@@ -2645,7 +2645,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 767,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '编辑',
@@ -2653,7 +2653,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 768,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '下架/恢复',
@@ -2661,7 +2661,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 769,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '新增录像',
@@ -2669,7 +2669,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 778,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '助教',
@@ -2677,7 +2677,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 779,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '新增系列',
@@ -2685,7 +2685,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 807,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '打卡',
@@ -2693,7 +2693,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 808,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '取消',
@@ -2701,7 +2701,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 909,
-    pid: '490',
+    pid: '490'
   },
   {
     name: '查询',
@@ -2709,7 +2709,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 791,
-    pid: '491',
+    pid: '491'
   },
   {
     name: '导出记录',
@@ -2717,7 +2717,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 792,
-    pid: '491',
+    pid: '491'
   },
   {
     name: '取消课程',
@@ -2725,7 +2725,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 793,
-    pid: '491',
+    pid: '491'
   },
   {
     name: '补偿',
@@ -2733,7 +2733,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 831,
-    pid: '491',
+    pid: '491'
   },
   {
     name: '查询',
@@ -2741,7 +2741,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 825,
-    pid: '492',
+    pid: '492'
   },
   {
     name: '导出记录',
@@ -2749,7 +2749,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 826,
-    pid: '492',
+    pid: '492'
   },
   {
     name: '投诉管理',
@@ -2757,7 +2757,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 955,
-    pid: '4a',
+    pid: '4a'
   },
   {
     name: '查询',
@@ -2765,7 +2765,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 956,
-    pid: '4a0',
+    pid: '4a0'
   },
   {
     name: '查看',
@@ -2773,7 +2773,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 957,
-    pid: '4a0',
+    pid: '4a0'
   },
   {
     name: '审核',
@@ -2781,7 +2781,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 958,
-    pid: '4a0',
+    pid: '4a0'
   },
   {
     name: '导出',
@@ -2789,7 +2789,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 959,
-    pid: '4a0',
+    pid: '4a0'
   },
   {
     name: '春雷教材',
@@ -2797,7 +2797,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 986,
-    pid: '4b',
+    pid: '4b'
   },
   {
     name: '春雷约课',
@@ -2805,7 +2805,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1023,
-    pid: '4b',
+    pid: '4b'
   },
   {
     name: '查询',
@@ -2813,7 +2813,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 987,
-    pid: '4b0',
+    pid: '4b0'
   },
   {
     name: '批量绑定',
@@ -2821,7 +2821,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 988,
-    pid: '4b0',
+    pid: '4b0'
   },
   {
     name: '绑定课件',
@@ -2829,7 +2829,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 989,
-    pid: '4b0',
+    pid: '4b0'
   },
   {
     name: '确认约课',
@@ -2837,7 +2837,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1024,
-    pid: '4b1',
+    pid: '4b1'
   },
   {
     name: '内容管理',
@@ -2845,7 +2845,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 217,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '老师资料',
@@ -2853,7 +2853,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 218,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '评价管理',
@@ -2861,7 +2861,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 235,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '资讯管理',
@@ -2869,7 +2869,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 253,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '团购管理',
@@ -2877,7 +2877,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 260,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '分期管理',
@@ -2885,7 +2885,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 276,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '视频管理',
@@ -2893,7 +2893,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 288,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '帖子管理',
@@ -2901,7 +2901,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 295,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '关键词管理',
@@ -2909,7 +2909,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 307,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '教材管理',
@@ -2917,7 +2917,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 322,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '广告管理',
@@ -2925,7 +2925,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 333,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '明星学员',
@@ -2933,7 +2933,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 340,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '分期申请查询',
@@ -2941,7 +2941,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 350,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '口语测评评价模板',
@@ -2949,7 +2949,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 930,
-    pid: '5',
+    pid: '5'
   },
   {
     name: '老师资料',
@@ -2957,7 +2957,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 219,
-    pid: '50',
+    pid: '50'
   },
   {
     name: '查询',
@@ -2965,7 +2965,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 220,
-    pid: '500',
+    pid: '500'
   },
   {
     name: '增加资料',
@@ -2973,7 +2973,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 221,
-    pid: '500',
+    pid: '500'
   },
   {
     name: '预览',
@@ -2981,7 +2981,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 222,
-    pid: '500',
+    pid: '500'
   },
   {
     name: '修改',
@@ -2989,7 +2989,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 223,
-    pid: '500',
+    pid: '500'
   },
   {
     name: '删除/恢复',
@@ -2997,7 +2997,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 224,
-    pid: '500',
+    pid: '500'
   },
   {
     name: '置顶/取消',
@@ -3005,7 +3005,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 225,
-    pid: '500',
+    pid: '500'
   },
   {
     name: '设置/取消引导',
@@ -3013,7 +3013,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 935,
-    pid: '500',
+    pid: '500'
   },
   {
     name: '评价管理',
@@ -3021,7 +3021,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 236,
-    pid: '52',
+    pid: '52'
   },
   {
     name: '评价统计',
@@ -3029,7 +3029,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 242,
-    pid: '52',
+    pid: '52'
   },
   {
     name: '同名排行',
@@ -3037,7 +3037,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 245,
-    pid: '52',
+    pid: '52'
   },
   {
     name: '责任状查询',
@@ -3045,7 +3045,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 249,
-    pid: '52',
+    pid: '52'
   },
   {
     name: '查询',
@@ -3053,7 +3053,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 237,
-    pid: '520',
+    pid: '520'
   },
   {
     name: '导出记录',
@@ -3061,7 +3061,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 238,
-    pid: '520',
+    pid: '520'
   },
   {
     name: '显示/屏蔽',
@@ -3069,7 +3069,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 239,
-    pid: '520',
+    pid: '520'
   },
   {
     name: '编辑回复',
@@ -3077,7 +3077,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 240,
-    pid: '520',
+    pid: '520'
   },
   {
     name: '统计/不统计评价',
@@ -3085,7 +3085,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 241,
-    pid: '520',
+    pid: '520'
   },
   {
     name: '查询',
@@ -3093,7 +3093,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 243,
-    pid: '521',
+    pid: '521'
   },
   {
     name: '导出记录',
@@ -3101,7 +3101,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 244,
-    pid: '521',
+    pid: '521'
   },
   {
     name: '查询',
@@ -3109,7 +3109,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 246,
-    pid: '522',
+    pid: '522'
   },
   {
     name: '导出记录',
@@ -3117,7 +3117,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 247,
-    pid: '522',
+    pid: '522'
   },
   {
     name: '修改',
@@ -3125,7 +3125,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 248,
-    pid: '522',
+    pid: '522'
   },
   {
     name: '查询',
@@ -3133,7 +3133,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 250,
-    pid: '523',
+    pid: '523'
   },
   {
     name: '备注',
@@ -3141,7 +3141,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 251,
-    pid: '523',
+    pid: '523'
   },
   {
     name: '详情',
@@ -3149,7 +3149,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 252,
-    pid: '523',
+    pid: '523'
   },
   {
     name: '资讯管理',
@@ -3157,7 +3157,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 254,
-    pid: '53',
+    pid: '53'
   },
   {
     name: '查询',
@@ -3165,7 +3165,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 255,
-    pid: '530',
+    pid: '530'
   },
   {
     name: '增加',
@@ -3173,7 +3173,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 256,
-    pid: '530',
+    pid: '530'
   },
   {
     name: '编辑',
@@ -3181,7 +3181,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 257,
-    pid: '530',
+    pid: '530'
   },
   {
     name: '删除',
@@ -3189,7 +3189,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 258,
-    pid: '530',
+    pid: '530'
   },
   {
     name: '首页推荐/撤销',
@@ -3197,7 +3197,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 259,
-    pid: '530',
+    pid: '530'
   },
   {
     name: '发布网站公告-APP推送',
@@ -3205,7 +3205,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 866,
-    pid: '530',
+    pid: '530'
   },
   {
     name: '团购查询',
@@ -3213,7 +3213,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 261,
-    pid: '54',
+    pid: '54'
   },
   {
     name: '团购模板',
@@ -3221,7 +3221,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 266,
-    pid: '54',
+    pid: '54'
   },
   {
     name: '添加团购',
@@ -3229,7 +3229,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 270,
-    pid: '54',
+    pid: '54'
   },
   {
     name: '预约管理',
@@ -3237,7 +3237,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 272,
-    pid: '54',
+    pid: '54'
   },
   {
     name: '查询',
@@ -3245,7 +3245,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 262,
-    pid: '540',
+    pid: '540'
   },
   {
     name: '导出记录',
@@ -3253,7 +3253,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 263,
-    pid: '540',
+    pid: '540'
   },
   {
     name: '编辑',
@@ -3261,7 +3261,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 264,
-    pid: '540',
+    pid: '540'
   },
   {
     name: '下架/恢复',
@@ -3269,7 +3269,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 265,
-    pid: '540',
+    pid: '540'
   },
   {
     name: '团购绑定',
@@ -3277,7 +3277,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1022,
-    pid: '540',
+    pid: '540'
   },
   {
     name: '查询',
@@ -3285,7 +3285,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 267,
-    pid: '541',
+    pid: '541'
   },
   {
     name: '编辑',
@@ -3293,7 +3293,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 268,
-    pid: '541',
+    pid: '541'
   },
   {
     name: '详情',
@@ -3301,7 +3301,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 269,
-    pid: '541',
+    pid: '541'
   },
   {
     name: '添加',
@@ -3309,7 +3309,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 271,
-    pid: '542',
+    pid: '542'
   },
   {
     name: '查询',
@@ -3317,7 +3317,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 273,
-    pid: '543',
+    pid: '543'
   },
   {
     name: '导出记录',
@@ -3325,7 +3325,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 274,
-    pid: '543',
+    pid: '543'
   },
   {
     name: '备注/修改',
@@ -3333,7 +3333,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 275,
-    pid: '543',
+    pid: '543'
   },
   {
     name: '分期查询',
@@ -3341,7 +3341,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 277,
-    pid: '55',
+    pid: '55'
   },
   {
     name: '分期模板',
@@ -3349,7 +3349,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 282,
-    pid: '55',
+    pid: '55'
   },
   {
     name: '添加分期',
@@ -3357,7 +3357,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 286,
-    pid: '55',
+    pid: '55'
   },
   {
     name: '查询',
@@ -3365,7 +3365,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 278,
-    pid: '550',
+    pid: '550'
   },
   {
     name: '导出记录',
@@ -3373,7 +3373,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 279,
-    pid: '550',
+    pid: '550'
   },
   {
     name: '编辑',
@@ -3381,7 +3381,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 280,
-    pid: '550',
+    pid: '550'
   },
   {
     name: '下架/恢复',
@@ -3389,7 +3389,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 281,
-    pid: '550',
+    pid: '550'
   },
   {
     name: '查询',
@@ -3397,7 +3397,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 283,
-    pid: '551',
+    pid: '551'
   },
   {
     name: '编辑',
@@ -3405,7 +3405,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 284,
-    pid: '551',
+    pid: '551'
   },
   {
     name: '详情',
@@ -3413,7 +3413,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 285,
-    pid: '551',
+    pid: '551'
   },
   {
     name: '添加',
@@ -3421,7 +3421,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 287,
-    pid: '552',
+    pid: '552'
   },
   {
     name: '视频管理',
@@ -3429,7 +3429,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 289,
-    pid: '56',
+    pid: '56'
   },
   {
     name: '查询',
@@ -3437,7 +3437,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 290,
-    pid: '560',
+    pid: '560'
   },
   {
     name: '编辑',
@@ -3445,7 +3445,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 291,
-    pid: '560',
+    pid: '560'
   },
   {
     name: '审核',
@@ -3453,7 +3453,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 292,
-    pid: '560',
+    pid: '560'
   },
   {
     name: '显示/屏蔽',
@@ -3461,7 +3461,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 293,
-    pid: '560',
+    pid: '560'
   },
   {
     name: '首页推荐/撤销',
@@ -3469,7 +3469,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 294,
-    pid: '560',
+    pid: '560'
   },
   {
     name: '帖子管理',
@@ -3477,7 +3477,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 296,
-    pid: '57',
+    pid: '57'
   },
   {
     name: '版主管理',
@@ -3485,7 +3485,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 301,
-    pid: '57',
+    pid: '57'
   },
   {
     name: '最新动态',
@@ -3493,7 +3493,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 305,
-    pid: '57',
+    pid: '57'
   },
   {
     name: '帖子用户黑名单',
@@ -3501,7 +3501,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 750,
-    pid: '57',
+    pid: '57'
   },
   {
     name: '查询',
@@ -3509,7 +3509,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 297,
-    pid: '570',
+    pid: '570'
   },
   {
     name: '屏蔽/开启',
@@ -3517,7 +3517,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 298,
-    pid: '570',
+    pid: '570'
   },
   {
     name: '管理',
@@ -3525,7 +3525,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 299,
-    pid: '570',
+    pid: '570'
   },
   {
     name: '板块转移',
@@ -3533,7 +3533,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 300,
-    pid: '570',
+    pid: '570'
   },
   {
     name: '查询',
@@ -3541,7 +3541,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 302,
-    pid: '571',
+    pid: '571'
   },
   {
     name: '添加版主',
@@ -3549,7 +3549,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 303,
-    pid: '571',
+    pid: '571'
   },
   {
     name: '取消版主',
@@ -3557,7 +3557,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 304,
-    pid: '571',
+    pid: '571'
   },
   {
     name: '查询',
@@ -3565,7 +3565,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 306,
-    pid: '572',
+    pid: '572'
   },
   {
     name: '搜索',
@@ -3573,7 +3573,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 751,
-    pid: '573',
+    pid: '573'
   },
   {
     name: '添加用户',
@@ -3581,7 +3581,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 752,
-    pid: '573',
+    pid: '573'
   },
   {
     name: '删除',
@@ -3589,7 +3589,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 753,
-    pid: '573',
+    pid: '573'
   },
   {
     name: '恢复',
@@ -3597,7 +3597,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 754,
-    pid: '573',
+    pid: '573'
   },
   {
     name: '敏感词管理',
@@ -3605,7 +3605,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 308,
-    pid: '58',
+    pid: '58'
   },
   {
     name: '标签管理',
@@ -3613,7 +3613,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 314,
-    pid: '58',
+    pid: '58'
   },
   {
     name: '标签统计',
@@ -3621,7 +3621,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 319,
-    pid: '58',
+    pid: '58'
   },
   {
     name: '查询',
@@ -3629,7 +3629,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 309,
-    pid: '580',
+    pid: '580'
   },
   {
     name: '添加敏感词',
@@ -3637,7 +3637,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 310,
-    pid: '580',
+    pid: '580'
   },
   {
     name: '批量导入',
@@ -3645,7 +3645,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 311,
-    pid: '580',
+    pid: '580'
   },
   {
     name: '修改',
@@ -3653,7 +3653,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 312,
-    pid: '580',
+    pid: '580'
   },
   {
     name: '删除',
@@ -3661,7 +3661,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 313,
-    pid: '580',
+    pid: '580'
   },
   {
     name: '查询',
@@ -3669,7 +3669,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 315,
-    pid: '581',
+    pid: '581'
   },
   {
     name: '添加标签',
@@ -3677,7 +3677,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 316,
-    pid: '581',
+    pid: '581'
   },
   {
     name: '修改',
@@ -3685,7 +3685,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 317,
-    pid: '581',
+    pid: '581'
   },
   {
     name: '删除',
@@ -3693,7 +3693,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 318,
-    pid: '581',
+    pid: '581'
   },
   {
     name: '查询',
@@ -3701,7 +3701,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 320,
-    pid: '582',
+    pid: '582'
   },
   {
     name: '导出记录',
@@ -3709,7 +3709,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 321,
-    pid: '582',
+    pid: '582'
   },
   {
     name: '分册管理',
@@ -3717,7 +3717,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 323,
-    pid: '59',
+    pid: '59'
   },
   {
     name: '文件管理',
@@ -3725,7 +3725,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 327,
-    pid: '59',
+    pid: '59'
   },
   {
     name: '电影测评教材',
@@ -3733,7 +3733,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 936,
-    pid: '59',
+    pid: '59'
   },
   {
     name: '查询',
@@ -3741,7 +3741,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 324,
-    pid: '590',
+    pid: '590'
   },
   {
     name: '少儿编辑',
@@ -3749,7 +3749,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 325,
-    pid: '590',
+    pid: '590'
   },
   {
     name: '成人编辑',
@@ -3757,7 +3757,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 326,
-    pid: '590',
+    pid: '590'
   },
   {
     name: '查询',
@@ -3765,7 +3765,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 328,
-    pid: '591',
+    pid: '591'
   },
   {
     name: '上传所有直播间课件',
@@ -3773,7 +3773,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 329,
-    pid: '591',
+    pid: '591'
   },
   {
     name: '删除所有直播间课件',
@@ -3781,7 +3781,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 330,
-    pid: '591',
+    pid: '591'
   },
   {
     name: '上传直播间课件',
@@ -3789,7 +3789,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 331,
-    pid: '591',
+    pid: '591'
   },
   {
     name: '删除直播间课件',
@@ -3797,7 +3797,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 332,
-    pid: '591',
+    pid: '591'
   },
   {
     name: '搜索',
@@ -3805,7 +3805,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 937,
-    pid: '592',
+    pid: '592'
   },
   {
     name: '上传直播间课件',
@@ -3813,7 +3813,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 938,
-    pid: '592',
+    pid: '592'
   },
   {
     name: '删除直播间课件',
@@ -3821,7 +3821,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 939,
-    pid: '592',
+    pid: '592'
   },
   {
     name: '广告管理',
@@ -3829,7 +3829,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 334,
-    pid: '5a',
+    pid: '5a'
   },
   {
     name: '广告点击记录',
@@ -3837,7 +3837,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1067,
-    pid: '5a',
+    pid: '5a'
   },
   {
     name: '查询',
@@ -3845,7 +3845,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 335,
-    pid: '5a0',
+    pid: '5a0'
   },
   {
     name: '增加',
@@ -3853,7 +3853,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 336,
-    pid: '5a0',
+    pid: '5a0'
   },
   {
     name: '下架/上架',
@@ -3861,7 +3861,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 337,
-    pid: '5a0',
+    pid: '5a0'
   },
   {
     name: '置顶',
@@ -3869,7 +3869,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 338,
-    pid: '5a0',
+    pid: '5a0'
   },
   {
     name: '编辑',
@@ -3877,7 +3877,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 339,
-    pid: '5a0',
+    pid: '5a0'
   },
   {
     name: '官网弹层',
@@ -3885,7 +3885,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1039,
-    pid: '5a0',
+    pid: '5a0'
   },
   {
     name: '修改过期时间',
@@ -3893,7 +3893,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1066,
-    pid: '5a0',
+    pid: '5a0'
   },
   {
     name: '查询',
@@ -3901,7 +3901,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1068,
-    pid: '5a1',
+    pid: '5a1'
   },
   {
     name: '明星学员',
@@ -3909,7 +3909,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 341,
-    pid: '5b',
+    pid: '5b'
   },
   {
     name: '我要加入',
@@ -3917,7 +3917,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 348,
-    pid: '5b',
+    pid: '5b'
   },
   {
     name: '查询',
@@ -3925,7 +3925,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 342,
-    pid: '5b0',
+    pid: '5b0'
   },
   {
     name: '导出记录',
@@ -3933,7 +3933,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 343,
-    pid: '5b0',
+    pid: '5b0'
   },
   {
     name: '添加',
@@ -3941,7 +3941,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 344,
-    pid: '5b0',
+    pid: '5b0'
   },
   {
     name: '编辑',
@@ -3949,7 +3949,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 345,
-    pid: '5b0',
+    pid: '5b0'
   },
   {
     name: '屏蔽/恢复',
@@ -3957,7 +3957,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 346,
-    pid: '5b0',
+    pid: '5b0'
   },
   {
     name: '首页推荐/撤销',
@@ -3965,7 +3965,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 347,
-    pid: '5b0',
+    pid: '5b0'
   },
   {
     name: '查询',
@@ -3973,7 +3973,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 349,
-    pid: '5b1',
+    pid: '5b1'
   },
   {
     name: '分期申请查询',
@@ -3981,7 +3981,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 351,
-    pid: '5c',
+    pid: '5c'
   },
   {
     name: '查询',
@@ -3989,7 +3989,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 352,
-    pid: '5c0',
+    pid: '5c0'
   },
   {
     name: '详情',
@@ -3997,7 +3997,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 353,
-    pid: '5c0',
+    pid: '5c0'
   },
   {
     name: '口语测评评价模板',
@@ -4005,7 +4005,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 931,
-    pid: '5d',
+    pid: '5d'
   },
   {
     name: '查询',
@@ -4013,7 +4013,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 932,
-    pid: '5d0',
+    pid: '5d0'
   },
   {
     name: '新增模板页面',
@@ -4021,7 +4021,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 933,
-    pid: '5d0',
+    pid: '5d0'
   },
   {
     name: '新增',
@@ -4029,7 +4029,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 934,
-    pid: '5d0',
+    pid: '5d0'
   },
   {
     name: '运营支持',
@@ -4037,7 +4037,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 354,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '站内信',
@@ -4045,7 +4045,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 355,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '说客推广',
@@ -4053,7 +4053,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 367,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '友情链接',
@@ -4061,7 +4061,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 371,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '短信验证',
@@ -4069,7 +4069,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 380,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '短信通道切换',
@@ -4077,7 +4077,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 384,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '短信测试',
@@ -4085,7 +4085,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 388,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '短信黑名单',
@@ -4093,7 +4093,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 392,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '约课黑名单',
@@ -4101,7 +4101,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 397,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '请假延期白名单',
@@ -4109,7 +4109,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 412,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '密码错误解锁',
@@ -4117,7 +4117,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 841,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '图形验证码',
@@ -4125,7 +4125,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 845,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '品牌推广',
@@ -4133,7 +4133,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 835,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '微信分享',
@@ -4141,7 +4141,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 889,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '兑换码',
@@ -4149,7 +4149,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 919,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '积分商城',
@@ -4157,7 +4157,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 965,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '饭秀',
@@ -4165,7 +4165,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1013,
-    pid: '6',
+    pid: '6'
   },
   {
     name: '咨询建议管理',
@@ -4173,7 +4173,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 356,
-    pid: '60',
+    pid: '60'
   },
   {
     name: '系统消息管理',
@@ -4181,7 +4181,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 362,
-    pid: '60',
+    pid: '60'
   },
   {
     name: '发布消息管理',
@@ -4189,7 +4189,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 365,
-    pid: '60',
+    pid: '60'
   },
   {
     name: '查询',
@@ -4197,7 +4197,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 357,
-    pid: '600',
+    pid: '600'
   },
   {
     name: '查看记录',
@@ -4205,7 +4205,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 358,
-    pid: '600',
+    pid: '600'
   },
   {
     name: '回复',
@@ -4213,7 +4213,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 359,
-    pid: '600',
+    pid: '600'
   },
   {
     name: '标记已读',
@@ -4221,7 +4221,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 360,
-    pid: '600',
+    pid: '600'
   },
   {
     name: '删除',
@@ -4229,7 +4229,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 361,
-    pid: '600',
+    pid: '600'
   },
   {
     name: '查询',
@@ -4237,7 +4237,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 363,
-    pid: '601',
+    pid: '601'
   },
   {
     name: '删除/恢复',
@@ -4245,7 +4245,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 364,
-    pid: '601',
+    pid: '601'
   },
   {
     name: '发布',
@@ -4253,7 +4253,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 366,
-    pid: '602',
+    pid: '602'
   },
   {
     name: '说客推广',
@@ -4261,7 +4261,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 368,
-    pid: '61',
+    pid: '61'
   },
   {
     name: '代经销商充值',
@@ -4269,7 +4269,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 676,
-    pid: '61',
+    pid: '61'
   },
   {
     name: '发放',
@@ -4277,7 +4277,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 369,
-    pid: '610',
+    pid: '610'
   },
   {
     name: '导入用户',
@@ -4285,7 +4285,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 370,
-    pid: '610',
+    pid: '610'
   },
   {
     name: '友情链接',
@@ -4293,7 +4293,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 372,
-    pid: '62',
+    pid: '62'
   },
   {
     name: '查询',
@@ -4301,7 +4301,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 373,
-    pid: '620',
+    pid: '620'
   },
   {
     name: '添加',
@@ -4309,7 +4309,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 374,
-    pid: '620',
+    pid: '620'
   },
   {
     name: '修改',
@@ -4317,7 +4317,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 375,
-    pid: '620',
+    pid: '620'
   },
   {
     name: '删除',
@@ -4325,7 +4325,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 376,
-    pid: '620',
+    pid: '620'
   },
   {
     name: '短信验证',
@@ -4333,7 +4333,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 381,
-    pid: '64',
+    pid: '64'
   },
   {
     name: '查询',
@@ -4341,7 +4341,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 382,
-    pid: '640',
+    pid: '640'
   },
   {
     name: '提交',
@@ -4349,7 +4349,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 383,
-    pid: '640',
+    pid: '640'
   },
   {
     name: '短信通道切换',
@@ -4357,7 +4357,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 385,
-    pid: '65',
+    pid: '65'
   },
   {
     name: '短信模板',
@@ -4365,7 +4365,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1045,
-    pid: '65',
+    pid: '65'
   },
   {
     name: '查询',
@@ -4373,7 +4373,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 386,
-    pid: '650',
+    pid: '650'
   },
   {
     name: '提交',
@@ -4381,7 +4381,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 387,
-    pid: '650',
+    pid: '650'
   },
   {
     name: '查询',
@@ -4389,7 +4389,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1046,
-    pid: '651',
+    pid: '651'
   },
   {
     name: '编辑',
@@ -4397,7 +4397,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1047,
-    pid: '651',
+    pid: '651'
   },
   {
     name: '通道切换',
@@ -4405,7 +4405,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1048,
-    pid: '651',
+    pid: '651'
   },
   {
     name: '短信测试',
@@ -4413,7 +4413,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 389,
-    pid: '66',
+    pid: '66'
   },
   {
     name: '发送短信',
@@ -4421,7 +4421,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 945,
-    pid: '66',
+    pid: '66'
   },
   {
     name: '查询',
@@ -4429,7 +4429,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 390,
-    pid: '660',
+    pid: '660'
   },
   {
     name: '发送',
@@ -4437,7 +4437,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 391,
-    pid: '660',
+    pid: '660'
   },
   {
     name: '导入用户',
@@ -4445,7 +4445,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 946,
-    pid: '661',
+    pid: '661'
   },
   {
     name: '发送',
@@ -4453,7 +4453,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 947,
-    pid: '661',
+    pid: '661'
   },
   {
     name: '短信黑名单',
@@ -4461,7 +4461,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 393,
-    pid: '67',
+    pid: '67'
   },
   {
     name: '查询',
@@ -4469,7 +4469,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 394,
-    pid: '670',
+    pid: '670'
   },
   {
     name: '添加号码',
@@ -4477,7 +4477,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 395,
-    pid: '670',
+    pid: '670'
   },
   {
     name: '删除/恢复',
@@ -4485,7 +4485,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 396,
-    pid: '670',
+    pid: '670'
   },
   {
     name: '约课黄牛',
@@ -4493,7 +4493,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 398,
-    pid: '68',
+    pid: '68'
   },
   {
     name: '不提醒名单',
@@ -4501,7 +4501,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 402,
-    pid: '68',
+    pid: '68'
   },
   {
     name: '周异常查询',
@@ -4509,7 +4509,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 406,
-    pid: '68',
+    pid: '68'
   },
   {
     name: '可疑黄牛',
@@ -4517,7 +4517,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 409,
-    pid: '68',
+    pid: '68'
   },
   {
     name: '日异常查询',
@@ -4525,7 +4525,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 867,
-    pid: '68',
+    pid: '68'
   },
   {
     name: '查询',
@@ -4533,7 +4533,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 399,
-    pid: '680',
+    pid: '680'
   },
   {
     name: '增加',
@@ -4541,7 +4541,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 400,
-    pid: '680',
+    pid: '680'
   },
   {
     name: '删除/恢复',
@@ -4549,7 +4549,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 401,
-    pid: '680',
+    pid: '680'
   },
   {
     name: '查询',
@@ -4557,7 +4557,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 403,
-    pid: '681',
+    pid: '681'
   },
   {
     name: '增加',
@@ -4565,7 +4565,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 404,
-    pid: '681',
+    pid: '681'
   },
   {
     name: '删除/恢复',
@@ -4573,7 +4573,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 405,
-    pid: '681',
+    pid: '681'
   },
   {
     name: '查询',
@@ -4581,7 +4581,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 407,
-    pid: '682',
+    pid: '682'
   },
   {
     name: '导出',
@@ -4589,7 +4589,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 408,
-    pid: '682',
+    pid: '682'
   },
   {
     name: '查询',
@@ -4597,7 +4597,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 410,
-    pid: '683',
+    pid: '683'
   },
   {
     name: '导出',
@@ -4605,7 +4605,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 411,
-    pid: '683',
+    pid: '683'
   },
   {
     name: '查询',
@@ -4613,7 +4613,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 868,
-    pid: '684',
+    pid: '684'
   },
   {
     name: '导出',
@@ -4621,7 +4621,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 869,
-    pid: '684',
+    pid: '684'
   },
   {
     name: '请假延期白名单',
@@ -4629,7 +4629,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 413,
-    pid: '69',
+    pid: '69'
   },
   {
     name: '查询',
@@ -4637,7 +4637,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 414,
-    pid: '690',
+    pid: '690'
   },
   {
     name: '增加',
@@ -4645,7 +4645,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 415,
-    pid: '690',
+    pid: '690'
   },
   {
     name: '删除/恢复',
@@ -4653,7 +4653,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 416,
-    pid: '690',
+    pid: '690'
   },
   {
     name: '密码错误解锁',
@@ -4661,7 +4661,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 842,
-    pid: '6a',
+    pid: '6a'
   },
   {
     name: '查询',
@@ -4669,7 +4669,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 843,
-    pid: '6a0',
+    pid: '6a0'
   },
   {
     name: '解锁',
@@ -4677,7 +4677,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 844,
-    pid: '6a0',
+    pid: '6a0'
   },
   {
     name: '图形验证码',
@@ -4685,7 +4685,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 846,
-    pid: '6b',
+    pid: '6b'
   },
   {
     name: '查询',
@@ -4693,7 +4693,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 847,
-    pid: '6b0',
+    pid: '6b0'
   },
   {
     name: '保存',
@@ -4701,7 +4701,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 848,
-    pid: '6b0',
+    pid: '6b0'
   },
   {
     name: '品牌推广',
@@ -4709,7 +4709,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 836,
-    pid: '6c',
+    pid: '6c'
   },
   {
     name: '品牌推广模板',
@@ -4717,7 +4717,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1076,
-    pid: '6c',
+    pid: '6c'
   },
   {
     name: '添加',
@@ -4725,7 +4725,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 837,
-    pid: '6c0',
+    pid: '6c0'
   },
   {
     name: '查询',
@@ -4733,7 +4733,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 838,
-    pid: '6c0',
+    pid: '6c0'
   },
   {
     name: '上下架',
@@ -4741,7 +4741,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 839,
-    pid: '6c0',
+    pid: '6c0'
   },
   {
     name: '编辑',
@@ -4749,7 +4749,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 840,
-    pid: '6c0',
+    pid: '6c0'
   },
   {
     name: '查询',
@@ -4757,7 +4757,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1077,
-    pid: '6c1',
+    pid: '6c1'
   },
   {
     name: '新增',
@@ -4765,7 +4765,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1078,
-    pid: '6c1',
+    pid: '6c1'
   },
   {
     name: '上/下架',
@@ -4773,7 +4773,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1079,
-    pid: '6c1',
+    pid: '6c1'
   },
   {
     name: '积分规则',
@@ -4781,7 +4781,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 890,
-    pid: '6d',
+    pid: '6d'
   },
   {
     name: '分享记录',
@@ -4789,7 +4789,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 896,
-    pid: '6d',
+    pid: '6d'
   },
   {
     name: '邀请记录',
@@ -4797,7 +4797,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 962,
-    pid: '6d',
+    pid: '6d'
   },
   {
     name: '查询',
@@ -4805,7 +4805,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 891,
-    pid: '6d0',
+    pid: '6d0'
   },
   {
     name: '导出',
@@ -4813,7 +4813,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 892,
-    pid: '6d0',
+    pid: '6d0'
   },
   {
     name: '新增积分规则',
@@ -4821,7 +4821,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 893,
-    pid: '6d0',
+    pid: '6d0'
   },
   {
     name: '修改积分规则',
@@ -4829,7 +4829,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 894,
-    pid: '6d0',
+    pid: '6d0'
   },
   {
     name: '删除积分规则',
@@ -4837,7 +4837,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 895,
-    pid: '6d0',
+    pid: '6d0'
   },
   {
     name: '查询',
@@ -4845,7 +4845,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 897,
-    pid: '6d1',
+    pid: '6d1'
   },
   {
     name: '导出',
@@ -4853,7 +4853,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 898,
-    pid: '6d1',
+    pid: '6d1'
   },
   {
     name: '查询',
@@ -4861,7 +4861,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 963,
-    pid: '6d2',
+    pid: '6d2'
   },
   {
     name: '导出',
@@ -4869,7 +4869,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 964,
-    pid: '6d2',
+    pid: '6d2'
   },
   {
     name: '兑换码管理',
@@ -4877,7 +4877,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 920,
-    pid: '6e',
+    pid: '6e'
   },
   {
     name: '优学松鼠兑换码管理',
@@ -4885,7 +4885,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1040,
-    pid: '6e',
+    pid: '6e'
   },
   {
     name: '查询',
@@ -4893,7 +4893,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 921,
-    pid: '6e0',
+    pid: '6e0'
   },
   {
     name: '导出',
@@ -4901,7 +4901,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 922,
-    pid: '6e0',
+    pid: '6e0'
   },
   {
     name: '添加',
@@ -4909,7 +4909,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 923,
-    pid: '6e0',
+    pid: '6e0'
   },
   {
     name: '删除/批量删除',
@@ -4917,7 +4917,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 924,
-    pid: '6e0',
+    pid: '6e0'
   },
   {
     name: '查询',
@@ -4925,7 +4925,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1041,
-    pid: '6e1',
+    pid: '6e1'
   },
   {
     name: '导出',
@@ -4933,7 +4933,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1042,
-    pid: '6e1',
+    pid: '6e1'
   },
   {
     name: '添加',
@@ -4941,7 +4941,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1043,
-    pid: '6e1',
+    pid: '6e1'
   },
   {
     name: '删除/批量删除',
@@ -4949,7 +4949,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1044,
-    pid: '6e1',
+    pid: '6e1'
   },
   {
     name: '积分商城商品管理',
@@ -4957,7 +4957,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 966,
-    pid: '6f',
+    pid: '6f'
   },
   {
     name: '积分商城订单管理',
@@ -4965,7 +4965,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 967,
-    pid: '6f',
+    pid: '6f'
   },
   {
     name: '积分商城banner管理',
@@ -4973,7 +4973,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 968,
-    pid: '6f',
+    pid: '6f'
   },
   {
     name: '积分商城商品查询',
@@ -4981,7 +4981,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 980,
-    pid: '6f0',
+    pid: '6f0'
   },
   {
     name: '积分商城商品新增',
@@ -4989,7 +4989,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 981,
-    pid: '6f0',
+    pid: '6f0'
   },
   {
     name: '积分商城商品编辑',
@@ -4997,7 +4997,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 982,
-    pid: '6f0',
+    pid: '6f0'
   },
   {
     name: '积分商城商品上架下架',
@@ -5005,7 +5005,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 983,
-    pid: '6f0',
+    pid: '6f0'
   },
   {
     name: '积分商城订单查询',
@@ -5013,7 +5013,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 974,
-    pid: '6f1',
+    pid: '6f1'
   },
   {
     name: '积分商城订单导出',
@@ -5021,7 +5021,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 975,
-    pid: '6f1',
+    pid: '6f1'
   },
   {
     name: '积分商城订单发货',
@@ -5029,7 +5029,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 976,
-    pid: '6f1',
+    pid: '6f1'
   },
   {
     name: '积分商城订单改价',
@@ -5037,7 +5037,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 977,
-    pid: '6f1',
+    pid: '6f1'
   },
   {
     name: '积分商城订单取消',
@@ -5045,7 +5045,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 978,
-    pid: '6f1',
+    pid: '6f1'
   },
   {
     name: '积分商城订单完成',
@@ -5053,7 +5053,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 979,
-    pid: '6f1',
+    pid: '6f1'
   },
   {
     name: '积分商城banner查询',
@@ -5061,7 +5061,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 969,
-    pid: '6f2',
+    pid: '6f2'
   },
   {
     name: '积分商城banner新增',
@@ -5069,7 +5069,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 970,
-    pid: '6f2',
+    pid: '6f2'
   },
   {
     name: '积分商城banner置顶',
@@ -5077,7 +5077,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 971,
-    pid: '6f2',
+    pid: '6f2'
   },
   {
     name: '积分商城banner编辑',
@@ -5085,7 +5085,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 972,
-    pid: '6f2',
+    pid: '6f2'
   },
   {
     name: '积分商城banner上架下架',
@@ -5093,7 +5093,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 973,
-    pid: '6f2',
+    pid: '6f2'
   },
   {
     name: '主题页面',
@@ -5101,7 +5101,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1014,
-    pid: '6g',
+    pid: '6g'
   },
   {
     name: '留言处理',
@@ -5109,7 +5109,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1018,
-    pid: '6g',
+    pid: '6g'
   },
   {
     name: '查询',
@@ -5117,7 +5117,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1015,
-    pid: '6g0',
+    pid: '6g0'
   },
   {
     name: '新增',
@@ -5125,7 +5125,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1016,
-    pid: '6g0',
+    pid: '6g0'
   },
   {
     name: '下架',
@@ -5133,7 +5133,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1017,
-    pid: '6g0',
+    pid: '6g0'
   },
   {
     name: '查询',
@@ -5141,7 +5141,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1019,
-    pid: '6g1',
+    pid: '6g1'
   },
   {
     name: '新增评论',
@@ -5149,7 +5149,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1020,
-    pid: '6g1',
+    pid: '6g1'
   },
   {
     name: '屏蔽',
@@ -5157,7 +5157,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1021,
-    pid: '6g1',
+    pid: '6g1'
   },
   {
     name: 'CRM管理',
@@ -5165,7 +5165,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 417,
-    pid: '7',
+    pid: '7'
   },
   {
     name: '查询添加档案',
@@ -5173,7 +5173,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 418,
-    pid: '7',
+    pid: '7'
   },
   {
     name: '学生档案记录',
@@ -5181,7 +5181,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 421,
-    pid: '7',
+    pid: '7'
   },
   {
     name: 'CRM事件管理',
@@ -5189,7 +5189,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 426,
-    pid: '7',
+    pid: '7'
   },
   {
     name: '档案信息',
@@ -5197,7 +5197,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 419,
-    pid: '70',
+    pid: '70'
   },
   {
     name: '查询',
@@ -5205,7 +5205,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 420,
-    pid: '700',
+    pid: '700'
   },
   {
     name: '学生档案记录',
@@ -5213,7 +5213,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 422,
-    pid: '71',
+    pid: '71'
   },
   {
     name: '查询',
@@ -5221,7 +5221,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 423,
-    pid: '710',
+    pid: '710'
   },
   {
     name: '导出记录',
@@ -5229,7 +5229,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 424,
-    pid: '710',
+    pid: '710'
   },
   {
     name: '备注',
@@ -5237,7 +5237,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 425,
-    pid: '710',
+    pid: '710'
   },
   {
     name: 'CRM事件管理',
@@ -5245,7 +5245,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 427,
-    pid: '72',
+    pid: '72'
   },
   {
     name: '查询',
@@ -5253,7 +5253,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 428,
-    pid: '720',
+    pid: '720'
   },
   {
     name: '导出记录',
@@ -5261,7 +5261,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 429,
-    pid: '720',
+    pid: '720'
   },
   {
     name: '一键清空',
@@ -5269,7 +5269,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 430,
-    pid: '720',
+    pid: '720'
   },
   {
     name: '取消处理',
@@ -5277,7 +5277,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 431,
-    pid: '720',
+    pid: '720'
   },
   {
     name: '经销商',
@@ -5285,7 +5285,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 432,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '管理中心',
@@ -5293,7 +5293,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 433,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '账目明细',
@@ -5301,7 +5301,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 472,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '用户归属变更',
@@ -5309,7 +5309,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 482,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '加盟校管理',
@@ -5317,7 +5317,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 487,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '经销商申请管理',
@@ -5325,7 +5325,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 496,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '用户跟进',
@@ -5333,7 +5333,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 703,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '事务工单',
@@ -5341,7 +5341,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 878,
-    pid: '8',
+    pid: '8'
   },
   {
     name: '经销商管理',
@@ -5349,7 +5349,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 434,
-    pid: '80',
+    pid: '80'
   },
   {
     name: '订单查询',
@@ -5357,7 +5357,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 444,
-    pid: '80',
+    pid: '80'
   },
   {
     name: '用户查询',
@@ -5365,7 +5365,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 447,
-    pid: '80',
+    pid: '80'
   },
   {
     name: '货款结算',
@@ -5373,7 +5373,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 452,
-    pid: '80',
+    pid: '80'
   },
   {
     name: '分销结算',
@@ -5381,7 +5381,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 455,
-    pid: '80',
+    pid: '80'
   },
   {
     name: '充值记录',
@@ -5389,7 +5389,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 458,
-    pid: '80',
+    pid: '80'
   },
   {
     name: '下载中心',
@@ -5397,7 +5397,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 464,
-    pid: '80',
+    pid: '80'
   },
   {
     name: '查询',
@@ -5405,7 +5405,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 435,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '添加代理商',
@@ -5413,7 +5413,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 436,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '编辑(代理商)',
@@ -5421,7 +5421,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 437,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '编辑(分销商)',
@@ -5429,7 +5429,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 438,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '删除',
@@ -5437,7 +5437,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 439,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '查看进货折扣(代理商)',
@@ -5445,7 +5445,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 440,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '新增分销商',
@@ -5453,7 +5453,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 441,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '货款',
@@ -5461,7 +5461,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 442,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '城市保护',
@@ -5469,7 +5469,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 443,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '修改进货折扣(代理商)',
@@ -5477,7 +5477,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 627,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '用户归属迁移',
@@ -5485,7 +5485,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 777,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '导出',
@@ -5493,7 +5493,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 925,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '批量导入货款',
@@ -5501,7 +5501,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 929,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '货款更新',
@@ -5509,7 +5509,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1055,
-    pid: '800',
+    pid: '800'
   },
   {
     name: '查询',
@@ -5517,7 +5517,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 445,
-    pid: '801',
+    pid: '801'
   },
   {
     name: '导出记录',
@@ -5525,7 +5525,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 446,
-    pid: '801',
+    pid: '801'
   },
   {
     name: '查询',
@@ -5533,7 +5533,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 448,
-    pid: '802',
+    pid: '802'
   },
   {
     name: '导出记录',
@@ -5541,7 +5541,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 449,
-    pid: '802',
+    pid: '802'
   },
   {
     name: '查询',
@@ -5549,7 +5549,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 453,
-    pid: '803',
+    pid: '803'
   },
   {
     name: '导出记录',
@@ -5557,7 +5557,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 454,
-    pid: '803',
+    pid: '803'
   },
   {
     name: '查询',
@@ -5565,7 +5565,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 456,
-    pid: '804',
+    pid: '804'
   },
   {
     name: '导出记录',
@@ -5573,7 +5573,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 457,
-    pid: '804',
+    pid: '804'
   },
   {
     name: '查询',
@@ -5581,7 +5581,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 459,
-    pid: '805',
+    pid: '805'
   },
   {
     name: '导出记录',
@@ -5589,7 +5589,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 460,
-    pid: '805',
+    pid: '805'
   },
   {
     name: '查询',
@@ -5597,7 +5597,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 465,
-    pid: '807',
+    pid: '807'
   },
   {
     name: '添加资料',
@@ -5605,7 +5605,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 466,
-    pid: '807',
+    pid: '807'
   },
   {
     name: '播放',
@@ -5613,7 +5613,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 467,
-    pid: '807',
+    pid: '807'
   },
   {
     name: '下载',
@@ -5621,7 +5621,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 468,
-    pid: '807',
+    pid: '807'
   },
   {
     name: '删除',
@@ -5629,7 +5629,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 469,
-    pid: '807',
+    pid: '807'
   },
   {
     name: '修改',
@@ -5637,7 +5637,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 470,
-    pid: '807',
+    pid: '807'
   },
   {
     name: '置顶/取消',
@@ -5645,7 +5645,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 471,
-    pid: '807',
+    pid: '807'
   },
   {
     name: '经销商余额明细',
@@ -5653,7 +5653,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 473,
-    pid: '81',
+    pid: '81'
   },
   {
     name: '经销商货款记录',
@@ -5661,7 +5661,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 476,
-    pid: '81',
+    pid: '81'
   },
   {
     name: '经销商获益记录',
@@ -5669,7 +5669,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 479,
-    pid: '81',
+    pid: '81'
   },
   {
     name: '账目明细',
@@ -5677,7 +5677,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 798,
-    pid: '81',
+    pid: '81'
   },
   {
     name: '经销商货款充值记录',
@@ -5685,7 +5685,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1061,
-    pid: '81',
+    pid: '81'
   },
   {
     name: '实时获取转账记录',
@@ -5693,7 +5693,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1069,
-    pid: '81',
+    pid: '81'
   },
   {
     name: '查询',
@@ -5701,7 +5701,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 474,
-    pid: '810',
+    pid: '810'
   },
   {
     name: '导出记录',
@@ -5709,7 +5709,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 475,
-    pid: '810',
+    pid: '810'
   },
   {
     name: '查询',
@@ -5717,7 +5717,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 477,
-    pid: '811',
+    pid: '811'
   },
   {
     name: '导出记录',
@@ -5725,7 +5725,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 478,
-    pid: '811',
+    pid: '811'
   },
   {
     name: '查询',
@@ -5733,7 +5733,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 480,
-    pid: '812',
+    pid: '812'
   },
   {
     name: '导出记录',
@@ -5741,7 +5741,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 481,
-    pid: '812',
+    pid: '812'
   },
   {
     name: '查询',
@@ -5749,7 +5749,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 799,
-    pid: '813',
+    pid: '813'
   },
   {
     name: '导出',
@@ -5757,7 +5757,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 800,
-    pid: '813',
+    pid: '813'
   },
   {
     name: '调整',
@@ -5765,7 +5765,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 801,
-    pid: '813',
+    pid: '813'
   },
   {
     name: '查询',
@@ -5773,7 +5773,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1062,
-    pid: '814',
+    pid: '814'
   },
   {
     name: '查询',
@@ -5781,7 +5781,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1070,
-    pid: '815',
+    pid: '815'
   },
   {
     name: '更新货款',
@@ -5789,7 +5789,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1071,
-    pid: '815',
+    pid: '815'
   },
   {
     name: '变更-手机',
@@ -5797,7 +5797,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 483,
-    pid: '82',
+    pid: '82'
   },
   {
     name: '变更-talkid',
@@ -5805,7 +5805,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 485,
-    pid: '82',
+    pid: '82'
   },
   {
     name: '提交',
@@ -5813,7 +5813,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 484,
-    pid: '820',
+    pid: '820'
   },
   {
     name: '提交',
@@ -5821,7 +5821,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 486,
-    pid: '821',
+    pid: '821'
   },
   {
     name: '加盟校管理',
@@ -5829,7 +5829,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 488,
-    pid: '83',
+    pid: '83'
   },
   {
     name: '查询',
@@ -5837,7 +5837,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 489,
-    pid: '830',
+    pid: '830'
   },
   {
     name: '导出记录',
@@ -5845,7 +5845,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 490,
-    pid: '830',
+    pid: '830'
   },
   {
     name: '添加域名',
@@ -5853,7 +5853,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 491,
-    pid: '830',
+    pid: '830'
   },
   {
     name: '编辑',
@@ -5861,7 +5861,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 492,
-    pid: '830',
+    pid: '830'
   },
   {
     name: '屏蔽/恢复',
@@ -5869,7 +5869,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 493,
-    pid: '830',
+    pid: '830'
   },
   {
     name: '首页推荐/撤销',
@@ -5877,7 +5877,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 494,
-    pid: '830',
+    pid: '830'
   },
   {
     name: '启用/停止学校测评',
@@ -5885,7 +5885,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 495,
-    pid: '830',
+    pid: '830'
   },
   {
     name: '经销商申请管理',
@@ -5893,7 +5893,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 497,
-    pid: '84',
+    pid: '84'
   },
   {
     name: '查询',
@@ -5901,7 +5901,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 498,
-    pid: '840',
+    pid: '840'
   },
   {
     name: '查看详情',
@@ -5909,7 +5909,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 499,
-    pid: '840',
+    pid: '840'
   },
   {
     name: '导出',
@@ -5917,7 +5917,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1063,
-    pid: '840',
+    pid: '840'
   },
   {
     name: '用户跟进',
@@ -5925,7 +5925,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 704,
-    pid: '86',
+    pid: '86'
   },
   {
     name: '查询',
@@ -5933,7 +5933,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 705,
-    pid: '860',
+    pid: '860'
   },
   {
     name: '导出',
@@ -5941,7 +5941,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 706,
-    pid: '860',
+    pid: '860'
   },
   {
     name: '分配',
@@ -5949,7 +5949,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 707,
-    pid: '860',
+    pid: '860'
   },
   {
     name: '对接表管理',
@@ -5957,7 +5957,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 879,
-    pid: '87',
+    pid: '87'
   },
   {
     name: '工单处理',
@@ -5965,7 +5965,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 885,
-    pid: '87',
+    pid: '87'
   },
   {
     name: '查询',
@@ -5973,7 +5973,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 880,
-    pid: '870',
+    pid: '870'
   },
   {
     name: '新增',
@@ -5981,7 +5981,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 881,
-    pid: '870',
+    pid: '870'
   },
   {
     name: '导出记录',
@@ -5989,7 +5989,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 882,
-    pid: '870',
+    pid: '870'
   },
   {
     name: '编辑',
@@ -5997,7 +5997,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 883,
-    pid: '870',
+    pid: '870'
   },
   {
     name: '删除|恢复',
@@ -6005,7 +6005,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 884,
-    pid: '870',
+    pid: '870'
   },
   {
     name: '对接人',
@@ -6013,7 +6013,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 926,
-    pid: '870',
+    pid: '870'
   },
   {
     name: '查询',
@@ -6021,7 +6021,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 886,
-    pid: '871',
+    pid: '871'
   },
   {
     name: '导出记录',
@@ -6029,7 +6029,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 887,
-    pid: '871',
+    pid: '871'
   },
   {
     name: '处理/驳回',
@@ -6037,7 +6037,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 888,
-    pid: '871',
+    pid: '871'
   },
   {
     name: '口语大赛',
@@ -6045,7 +6045,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 500,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '初赛试题',
@@ -6053,7 +6053,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 501,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '复赛试题',
@@ -6061,7 +6061,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 508,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '初赛管理',
@@ -6069,7 +6069,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 515,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '复赛管理',
@@ -6077,7 +6077,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 527,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '决赛管理',
@@ -6085,7 +6085,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 533,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '投票管理',
@@ -6093,7 +6093,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 552,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '资讯管理',
@@ -6101,7 +6101,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 558,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '饭没了秀参赛视频',
@@ -6109,7 +6109,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 990,
-    pid: '9',
+    pid: '9'
   },
   {
     name: '初赛试题',
@@ -6117,7 +6117,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 502,
-    pid: '90',
+    pid: '90'
   },
   {
     name: '查询',
@@ -6125,7 +6125,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 503,
-    pid: '900',
+    pid: '900'
   },
   {
     name: '录入试题',
@@ -6133,7 +6133,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 504,
-    pid: '900',
+    pid: '900'
   },
   {
     name: '导出记录',
@@ -6141,7 +6141,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 505,
-    pid: '900',
+    pid: '900'
   },
   {
     name: '查看',
@@ -6149,7 +6149,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 506,
-    pid: '900',
+    pid: '900'
   },
   {
     name: '删除/恢复',
@@ -6157,7 +6157,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 507,
-    pid: '900',
+    pid: '900'
   },
   {
     name: '复赛试题',
@@ -6165,7 +6165,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 509,
-    pid: '91',
+    pid: '91'
   },
   {
     name: '查询',
@@ -6173,7 +6173,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 510,
-    pid: '910',
+    pid: '910'
   },
   {
     name: '录入试题',
@@ -6181,7 +6181,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 511,
-    pid: '910',
+    pid: '910'
   },
   {
     name: '导出记录',
@@ -6189,7 +6189,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 512,
-    pid: '910',
+    pid: '910'
   },
   {
     name: '查看',
@@ -6197,7 +6197,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 513,
-    pid: '910',
+    pid: '910'
   },
   {
     name: '删除/恢复',
@@ -6205,7 +6205,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 514,
-    pid: '910',
+    pid: '910'
   },
   {
     name: '考试查询',
@@ -6213,7 +6213,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 516,
-    pid: '92',
+    pid: '92'
   },
   {
     name: '复赛选手',
@@ -6221,7 +6221,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 521,
-    pid: '92',
+    pid: '92'
   },
   {
     name: '查询',
@@ -6229,7 +6229,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 517,
-    pid: '920',
+    pid: '920'
   },
   {
     name: '导出记录',
@@ -6237,7 +6237,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 518,
-    pid: '920',
+    pid: '920'
   },
   {
     name: '详情',
@@ -6245,7 +6245,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 519,
-    pid: '920',
+    pid: '920'
   },
   {
     name: '作废',
@@ -6253,7 +6253,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 520,
-    pid: '920',
+    pid: '920'
   },
   {
     name: '查询',
@@ -6261,7 +6261,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 522,
-    pid: '921',
+    pid: '921'
   },
   {
     name: '导出记录',
@@ -6269,7 +6269,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 523,
-    pid: '921',
+    pid: '921'
   },
   {
     name: '设置复赛选手',
@@ -6277,7 +6277,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 524,
-    pid: '921',
+    pid: '921'
   },
   {
     name: '修改姓名',
@@ -6285,7 +6285,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 525,
-    pid: '921',
+    pid: '921'
   },
   {
     name: '退出比赛',
@@ -6293,7 +6293,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 526,
-    pid: '921',
+    pid: '921'
   },
   {
     name: '复赛管理',
@@ -6301,7 +6301,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 528,
-    pid: '93',
+    pid: '93'
   },
   {
     name: '查询',
@@ -6309,7 +6309,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 529,
-    pid: '930',
+    pid: '930'
   },
   {
     name: '导出记录',
@@ -6317,7 +6317,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 530,
-    pid: '930',
+    pid: '930'
   },
   {
     name: '详情',
@@ -6325,7 +6325,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 531,
-    pid: '930',
+    pid: '930'
   },
   {
     name: '作废',
@@ -6333,7 +6333,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 532,
-    pid: '930',
+    pid: '930'
   },
   {
     name: '图片管理',
@@ -6341,7 +6341,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 534,
-    pid: '94',
+    pid: '94'
   },
   {
     name: '视频管理',
@@ -6349,7 +6349,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 540,
-    pid: '94',
+    pid: '94'
   },
   {
     name: '评委管理',
@@ -6357,7 +6357,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 546,
-    pid: '94',
+    pid: '94'
   },
   {
     name: '查询',
@@ -6365,7 +6365,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 535,
-    pid: '940',
+    pid: '940'
   },
   {
     name: '添加图片',
@@ -6373,7 +6373,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 536,
-    pid: '940',
+    pid: '940'
   },
   {
     name: '编辑',
@@ -6381,7 +6381,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 537,
-    pid: '940',
+    pid: '940'
   },
   {
     name: '删除/恢复',
@@ -6389,7 +6389,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 538,
-    pid: '940',
+    pid: '940'
   },
   {
     name: '排序',
@@ -6397,7 +6397,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 539,
-    pid: '940',
+    pid: '940'
   },
   {
     name: '查询',
@@ -6405,7 +6405,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 541,
-    pid: '941',
+    pid: '941'
   },
   {
     name: '添加视频',
@@ -6413,7 +6413,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 542,
-    pid: '941',
+    pid: '941'
   },
   {
     name: '编辑',
@@ -6421,7 +6421,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 543,
-    pid: '941',
+    pid: '941'
   },
   {
     name: '删除/恢复',
@@ -6429,7 +6429,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 544,
-    pid: '941',
+    pid: '941'
   },
   {
     name: '排序',
@@ -6437,7 +6437,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 545,
-    pid: '941',
+    pid: '941'
   },
   {
     name: '查询',
@@ -6445,7 +6445,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 547,
-    pid: '942',
+    pid: '942'
   },
   {
     name: '添加评委',
@@ -6453,7 +6453,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 548,
-    pid: '942',
+    pid: '942'
   },
   {
     name: '编辑',
@@ -6461,7 +6461,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 549,
-    pid: '942',
+    pid: '942'
   },
   {
     name: '删除/恢复',
@@ -6469,7 +6469,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 550,
-    pid: '942',
+    pid: '942'
   },
   {
     name: '排序',
@@ -6477,7 +6477,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 551,
-    pid: '942',
+    pid: '942'
   },
   {
     name: '投票管理',
@@ -6485,7 +6485,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 553,
-    pid: '95',
+    pid: '95'
   },
   {
     name: '查询',
@@ -6493,7 +6493,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 554,
-    pid: '950',
+    pid: '950'
   },
   {
     name: '导出记录',
@@ -6501,7 +6501,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 555,
-    pid: '950',
+    pid: '950'
   },
   {
     name: '退赛',
@@ -6509,7 +6509,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 556,
-    pid: '950',
+    pid: '950'
   },
   {
     name: '查看',
@@ -6517,7 +6517,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 557,
-    pid: '950',
+    pid: '950'
   },
   {
     name: '资讯管理',
@@ -6525,7 +6525,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 559,
-    pid: '96',
+    pid: '96'
   },
   {
     name: '查询',
@@ -6533,7 +6533,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 560,
-    pid: '960',
+    pid: '960'
   },
   {
     name: '增加',
@@ -6541,7 +6541,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 561,
-    pid: '960',
+    pid: '960'
   },
   {
     name: '编辑',
@@ -6549,7 +6549,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 562,
-    pid: '960',
+    pid: '960'
   },
   {
     name: '删除',
@@ -6557,7 +6557,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 563,
-    pid: '960',
+    pid: '960'
   },
   {
     name: '参赛视频管理',
@@ -6565,7 +6565,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 991,
-    pid: '97',
+    pid: '97'
   },
   {
     name: '查询',
@@ -6573,7 +6573,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 992,
-    pid: '970',
+    pid: '970'
   },
   {
     name: '下载',
@@ -6581,7 +6581,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 993,
-    pid: '970',
+    pid: '970'
   },
   {
     name: '操作记录',
@@ -6589,7 +6589,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 575,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '说客推广记录',
@@ -6597,7 +6597,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 576,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '订单操作记录',
@@ -6605,7 +6605,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 579,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '套餐操作记录',
@@ -6613,7 +6613,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 583,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '约课记录',
@@ -6621,7 +6621,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 587,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '归属变更记录',
@@ -6629,7 +6629,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 591,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '手机号码变更记录',
@@ -6637,7 +6637,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 598,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '消费明细',
@@ -6645,7 +6645,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 602,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '积分记录',
@@ -6653,7 +6653,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 606,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '短信记录',
@@ -6661,7 +6661,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 610,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '代金券记录',
@@ -6669,7 +6669,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 614,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '老师时间记录',
@@ -6677,7 +6677,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 618,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '测评报告查看记录',
@@ -6685,7 +6685,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 699,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '用户跟进分配记录',
@@ -6693,7 +6693,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 708,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '日志',
@@ -6701,7 +6701,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 770,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '基地教师级别调整记录',
@@ -6709,7 +6709,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 803,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '巡视记录',
@@ -6717,7 +6717,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 814,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '订单改价记录',
@@ -6725,7 +6725,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 857,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '手机号码查看记录',
@@ -6733,7 +6733,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 862,
-    pid: 'a',
+    pid: 'a'
   },
   {
     name: '发放记录',
@@ -6741,7 +6741,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 577,
-    pid: 'a0',
+    pid: 'a0'
   },
   {
     name: '查询',
@@ -6749,7 +6749,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 578,
-    pid: 'a00',
+    pid: 'a00'
   },
   {
     name: '导出',
@@ -6757,7 +6757,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 899,
-    pid: 'a00',
+    pid: 'a00'
   },
   {
     name: '订单操作记录',
@@ -6765,7 +6765,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 580,
-    pid: 'a1',
+    pid: 'a1'
   },
   {
     name: '查询',
@@ -6773,7 +6773,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 581,
-    pid: 'a10',
+    pid: 'a10'
   },
   {
     name: '导出记录',
@@ -6781,7 +6781,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 582,
-    pid: 'a10',
+    pid: 'a10'
   },
   {
     name: '套餐操作记录',
@@ -6789,7 +6789,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 584,
-    pid: 'a2',
+    pid: 'a2'
   },
   {
     name: '查询',
@@ -6797,7 +6797,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 585,
-    pid: 'a20',
+    pid: 'a20'
   },
   {
     name: '导出记录',
@@ -6805,7 +6805,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 586,
-    pid: 'a20',
+    pid: 'a20'
   },
   {
     name: '约课记录',
@@ -6813,7 +6813,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 588,
-    pid: 'a3',
+    pid: 'a3'
   },
   {
     name: '查询',
@@ -6821,7 +6821,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 589,
-    pid: 'a30',
+    pid: 'a30'
   },
   {
     name: '导出记录',
@@ -6829,7 +6829,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 590,
-    pid: 'a30',
+    pid: 'a30'
   },
   {
     name: '归属变更记录',
@@ -6837,7 +6837,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 592,
-    pid: 'a4',
+    pid: 'a4'
   },
   {
     name: '异常变更',
@@ -6845,7 +6845,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 595,
-    pid: 'a4',
+    pid: 'a4'
   },
   {
     name: '查询',
@@ -6853,7 +6853,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 593,
-    pid: 'a40',
+    pid: 'a40'
   },
   {
     name: '导出记录',
@@ -6861,7 +6861,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 594,
-    pid: 'a40',
+    pid: 'a40'
   },
   {
     name: '查询',
@@ -6869,7 +6869,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 596,
-    pid: 'a41',
+    pid: 'a41'
   },
   {
     name: '详情',
@@ -6877,7 +6877,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 597,
-    pid: 'a41',
+    pid: 'a41'
   },
   {
     name: '手机号码变更记录',
@@ -6885,7 +6885,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 599,
-    pid: 'a5',
+    pid: 'a5'
   },
   {
     name: '查询',
@@ -6893,7 +6893,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 600,
-    pid: 'a50',
+    pid: 'a50'
   },
   {
     name: '导出记录',
@@ -6901,7 +6901,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 601,
-    pid: 'a50',
+    pid: 'a50'
   },
   {
     name: '消费明细',
@@ -6909,7 +6909,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 603,
-    pid: 'a6',
+    pid: 'a6'
   },
   {
     name: '查询',
@@ -6917,7 +6917,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 604,
-    pid: 'a60',
+    pid: 'a60'
   },
   {
     name: '导出记录',
@@ -6925,7 +6925,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 605,
-    pid: 'a60',
+    pid: 'a60'
   },
   {
     name: '积分记录',
@@ -6933,7 +6933,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 607,
-    pid: 'a7',
+    pid: 'a7'
   },
   {
     name: '查询',
@@ -6941,7 +6941,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 608,
-    pid: 'a70',
+    pid: 'a70'
   },
   {
     name: '导出记录',
@@ -6949,7 +6949,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 609,
-    pid: 'a70',
+    pid: 'a70'
   },
   {
     name: '短信记录',
@@ -6957,7 +6957,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 611,
-    pid: 'a8',
+    pid: 'a8'
   },
   {
     name: '查询',
@@ -6965,7 +6965,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 612,
-    pid: 'a80',
+    pid: 'a80'
   },
   {
     name: '导出记录',
@@ -6973,7 +6973,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 613,
-    pid: 'a80',
+    pid: 'a80'
   },
   {
     name: '代金券记录',
@@ -6981,7 +6981,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 615,
-    pid: 'a9',
+    pid: 'a9'
   },
   {
     name: '查询',
@@ -6989,7 +6989,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 616,
-    pid: 'a90',
+    pid: 'a90'
   },
   {
     name: '导出记录',
@@ -6997,7 +6997,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 617,
-    pid: 'a90',
+    pid: 'a90'
   },
   {
     name: '老师时间记录',
@@ -7005,7 +7005,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 619,
-    pid: 'aa',
+    pid: 'aa'
   },
   {
     name: '查询',
@@ -7013,7 +7013,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 620,
-    pid: 'aa0',
+    pid: 'aa0'
   },
   {
     name: '测评报告查看记录',
@@ -7021,7 +7021,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 700,
-    pid: 'ab',
+    pid: 'ab'
   },
   {
     name: '查询',
@@ -7029,7 +7029,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 701,
-    pid: 'ab0',
+    pid: 'ab0'
   },
   {
     name: '导出',
@@ -7037,7 +7037,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 702,
-    pid: 'ab0',
+    pid: 'ab0'
   },
   {
     name: '用户跟进分配记录',
@@ -7045,7 +7045,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 709,
-    pid: 'ac',
+    pid: 'ac'
   },
   {
     name: '查询',
@@ -7053,7 +7053,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 710,
-    pid: 'ac0',
+    pid: 'ac0'
   },
   {
     name: '导出',
@@ -7061,7 +7061,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 711,
-    pid: 'ac0',
+    pid: 'ac0'
   },
   {
     name: '访问日志',
@@ -7069,7 +7069,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 771,
-    pid: 'ad',
+    pid: 'ad'
   },
   {
     name: '登录日志',
@@ -7077,7 +7077,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 774,
-    pid: 'ad',
+    pid: 'ad'
   },
   {
     name: 'eClass课堂日志',
@@ -7085,7 +7085,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 832,
-    pid: 'ad',
+    pid: 'ad'
   },
   {
     name: '约课APP日志',
@@ -7093,7 +7093,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 849,
-    pid: 'ad',
+    pid: 'ad'
   },
   {
     name: '直播间日志',
@@ -7101,7 +7101,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 940,
-    pid: 'ad',
+    pid: 'ad'
   },
   {
     name: '用户实时上课工具日志',
@@ -7109,7 +7109,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 942,
-    pid: 'ad',
+    pid: 'ad'
   },
   {
     name: '查询',
@@ -7117,7 +7117,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 772,
-    pid: 'ad0',
+    pid: 'ad0'
   },
   {
     name: '导出',
@@ -7125,7 +7125,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 773,
-    pid: 'ad0',
+    pid: 'ad0'
   },
   {
     name: '查询',
@@ -7133,7 +7133,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 775,
-    pid: 'ad1',
+    pid: 'ad1'
   },
   {
     name: '导出记录',
@@ -7141,7 +7141,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 776,
-    pid: 'ad1',
+    pid: 'ad1'
   },
   {
     name: '查询',
@@ -7149,7 +7149,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 833,
-    pid: 'ad2',
+    pid: 'ad2'
   },
   {
     name: '导出',
@@ -7157,7 +7157,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 834,
-    pid: 'ad2',
+    pid: 'ad2'
   },
   {
     name: '查询',
@@ -7165,7 +7165,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 850,
-    pid: 'ad3',
+    pid: 'ad3'
   },
   {
     name: '查询',
@@ -7173,7 +7173,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 941,
-    pid: 'ad4',
+    pid: 'ad4'
   },
   {
     name: '导出',
@@ -7181,7 +7181,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 948,
-    pid: 'ad4',
+    pid: 'ad4'
   },
   {
     name: '临时拉取学点云日志',
@@ -7189,7 +7189,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 984,
-    pid: 'ad4',
+    pid: 'ad4'
   },
   {
     name: '查询',
@@ -7197,7 +7197,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 943,
-    pid: 'ad5',
+    pid: 'ad5'
   },
   {
     name: '基地教师级别调整记录',
@@ -7205,7 +7205,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 804,
-    pid: 'ae',
+    pid: 'ae'
   },
   {
     name: '查询',
@@ -7213,7 +7213,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 805,
-    pid: 'ae0',
+    pid: 'ae0'
   },
   {
     name: '导出',
@@ -7221,7 +7221,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 806,
-    pid: 'ae0',
+    pid: 'ae0'
   },
   {
     name: '巡视记录',
@@ -7229,7 +7229,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 815,
-    pid: 'af',
+    pid: 'af'
   },
   {
     name: '查询',
@@ -7237,7 +7237,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 816,
-    pid: 'af0',
+    pid: 'af0'
   },
   {
     name: '导出记录',
@@ -7245,7 +7245,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 817,
-    pid: 'af0',
+    pid: 'af0'
   },
   {
     name: '订单改价记录',
@@ -7253,7 +7253,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 858,
-    pid: 'ag',
+    pid: 'ag'
   },
   {
     name: '查询',
@@ -7261,7 +7261,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 859,
-    pid: 'ag0',
+    pid: 'ag0'
   },
   {
     name: '导出记录',
@@ -7269,7 +7269,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 860,
-    pid: 'ag0',
+    pid: 'ag0'
   },
   {
     name: '手机号码查看记录',
@@ -7277,7 +7277,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 863,
-    pid: 'ah',
+    pid: 'ah'
   },
   {
     name: '查询',
@@ -7285,7 +7285,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 864,
-    pid: 'ah0',
+    pid: 'ah0'
   },
   {
     name: '帐户管理',
@@ -7293,7 +7293,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 621,
-    pid: 'b',
+    pid: 'b'
   },
   {
     name: '修改密码',
@@ -7301,7 +7301,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 622,
-    pid: 'b',
+    pid: 'b'
   },
   {
     name: '修改密码',
@@ -7309,7 +7309,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 623,
-    pid: 'b0',
+    pid: 'b0'
   },
   {
     name: '修改',
@@ -7317,7 +7317,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 624,
-    pid: 'b00',
+    pid: 'b00'
   },
   {
     name: '测练管理',
@@ -7325,7 +7325,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 634,
-    pid: 'c',
+    pid: 'c'
   },
   {
     name: '预复习测评',
@@ -7333,7 +7333,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 635,
-    pid: 'c',
+    pid: 'c'
   },
   {
     name: '词汇量测试',
@@ -7341,7 +7341,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 689,
-    pid: 'c',
+    pid: 'c'
   },
   {
     name: '学校测评',
@@ -7349,7 +7349,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 564,
-    pid: 'c',
+    pid: 'c'
   },
   {
     name: '口语练习场',
@@ -7357,7 +7357,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 721,
-    pid: 'c',
+    pid: 'c'
   },
   {
     name: '模块管理',
@@ -7365,7 +7365,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 636,
-    pid: 'c0',
+    pid: 'c0'
   },
   {
     name: '模块删除',
@@ -7373,7 +7373,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 637,
-    pid: 'c0',
+    pid: 'c0'
   },
   {
     name: '题库管理',
@@ -7381,7 +7381,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 639,
-    pid: 'c0',
+    pid: 'c0'
   },
   {
     name: '试卷模板管理',
@@ -7389,7 +7389,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 646,
-    pid: 'c0',
+    pid: 'c0'
   },
   {
     name: '试卷管理',
@@ -7397,7 +7397,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 653,
-    pid: 'c0',
+    pid: 'c0'
   },
   {
     name: '成绩查询',
@@ -7405,7 +7405,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 660,
-    pid: 'c0',
+    pid: 'c0'
   },
   {
     name: '查询',
@@ -7413,7 +7413,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 640,
-    pid: 'c02',
+    pid: 'c02'
   },
   {
     name: '录入试题',
@@ -7421,7 +7421,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 641,
-    pid: 'c02',
+    pid: 'c02'
   },
   {
     name: '查看',
@@ -7429,7 +7429,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 642,
-    pid: 'c02',
+    pid: 'c02'
   },
   {
     name: '修改',
@@ -7437,7 +7437,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 643,
-    pid: 'c02',
+    pid: 'c02'
   },
   {
     name: '删除',
@@ -7445,7 +7445,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 644,
-    pid: 'c02',
+    pid: 'c02'
   },
   {
     name: '查询',
@@ -7453,7 +7453,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 647,
-    pid: 'c03',
+    pid: 'c03'
   },
   {
     name: '添加模板',
@@ -7461,7 +7461,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 648,
-    pid: 'c03',
+    pid: 'c03'
   },
   {
     name: '查看',
@@ -7469,7 +7469,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 649,
-    pid: 'c03',
+    pid: 'c03'
   },
   {
     name: '删除',
@@ -7477,7 +7477,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 650,
-    pid: 'c03',
+    pid: 'c03'
   },
   {
     name: '编辑',
@@ -7485,7 +7485,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 651,
-    pid: 'c03',
+    pid: 'c03'
   },
   {
     name: '查询',
@@ -7493,7 +7493,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 654,
-    pid: 'c04',
+    pid: 'c04'
   },
   {
     name: '生成试卷',
@@ -7501,7 +7501,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 655,
-    pid: 'c04',
+    pid: 'c04'
   },
   {
     name: '查看',
@@ -7509,7 +7509,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 656,
-    pid: 'c04',
+    pid: 'c04'
   },
   {
     name: '发布',
@@ -7517,7 +7517,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 657,
-    pid: 'c04',
+    pid: 'c04'
   },
   {
     name: '删除',
@@ -7525,7 +7525,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 658,
-    pid: 'c04',
+    pid: 'c04'
   },
   {
     name: '查询',
@@ -7533,7 +7533,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 661,
-    pid: 'c05',
+    pid: 'c05'
   },
   {
     name: '查看',
@@ -7541,7 +7541,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 662,
-    pid: 'c05',
+    pid: 'c05'
   },
   {
     name: '作废',
@@ -7549,7 +7549,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 663,
-    pid: 'c05',
+    pid: 'c05'
   },
   {
     name: '导出',
@@ -7557,7 +7557,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 797,
-    pid: 'c05',
+    pid: 'c05'
   },
   {
     name: '词汇量题库',
@@ -7565,7 +7565,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 690,
-    pid: 'c5',
+    pid: 'c5'
   },
   {
     name: '词汇量查询',
@@ -7573,7 +7573,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 695,
-    pid: 'c5',
+    pid: 'c5'
   },
   {
     name: '查询',
@@ -7581,7 +7581,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 691,
-    pid: 'c50',
+    pid: 'c50'
   },
   {
     name: '录入试题',
@@ -7589,7 +7589,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 692,
-    pid: 'c50',
+    pid: 'c50'
   },
   {
     name: '查看',
@@ -7597,7 +7597,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 693,
-    pid: 'c50',
+    pid: 'c50'
   },
   {
     name: '删除/恢复',
@@ -7605,7 +7605,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 694,
-    pid: 'c50',
+    pid: 'c50'
   },
   {
     name: '查询',
@@ -7613,7 +7613,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 696,
-    pid: 'c51',
+    pid: 'c51'
   },
   {
     name: '导出记录',
@@ -7621,7 +7621,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 697,
-    pid: 'c51',
+    pid: 'c51'
   },
   {
     name: '查看',
@@ -7629,7 +7629,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 698,
-    pid: 'c51',
+    pid: 'c51'
   },
   {
     name: '学校管理',
@@ -7637,7 +7637,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 565,
-    pid: 'c7',
+    pid: 'c7'
   },
   {
     name: '测评查询',
@@ -7645,7 +7645,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 570,
-    pid: 'c7',
+    pid: 'c7'
   },
   {
     name: '查询',
@@ -7653,7 +7653,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 566,
-    pid: 'c70',
+    pid: 'c70'
   },
   {
     name: '添加学校',
@@ -7661,7 +7661,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 567,
-    pid: 'c70',
+    pid: 'c70'
   },
   {
     name: '编辑',
@@ -7669,7 +7669,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 568,
-    pid: 'c70',
+    pid: 'c70'
   },
   {
     name: '恢复/删除',
@@ -7677,7 +7677,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 569,
-    pid: 'c70',
+    pid: 'c70'
   },
   {
     name: '查询',
@@ -7685,7 +7685,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 571,
-    pid: 'c71',
+    pid: 'c71'
   },
   {
     name: '导出记录',
@@ -7693,7 +7693,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 572,
-    pid: 'c71',
+    pid: 'c71'
   },
   {
     name: '详情',
@@ -7701,7 +7701,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 573,
-    pid: 'c71',
+    pid: 'c71'
   },
   {
     name: '作废',
@@ -7709,7 +7709,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 574,
-    pid: 'c71',
+    pid: 'c71'
   },
   {
     name: '成绩查询',
@@ -7717,7 +7717,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 722,
-    pid: 'c8',
+    pid: 'c8'
   },
   {
     name: '查询',
@@ -7725,7 +7725,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 723,
-    pid: 'c80',
+    pid: 'c80'
   },
   {
     name: '导出',
@@ -7733,7 +7733,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 724,
-    pid: 'c80',
+    pid: 'c80'
   },
   {
     name: '详情',
@@ -7741,7 +7741,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 725,
-    pid: 'c80',
+    pid: 'c80'
   },
   {
     name: '统计中心',
@@ -7749,7 +7749,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 664,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '课程统计',
@@ -7757,7 +7757,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 207,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '活跃度统计',
@@ -7765,7 +7765,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 665,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '客户端统计',
@@ -7773,7 +7773,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 377,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '收入统计',
@@ -7781,7 +7781,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 672,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '教务运营统计',
@@ -7789,7 +7789,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 684,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '体验课转化记录',
@@ -7797,7 +7797,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 746,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: 'ST数据统计',
@@ -7805,7 +7805,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 755,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '教材统计',
@@ -7813,7 +7813,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 780,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '后台用户操作记录统计',
@@ -7821,7 +7821,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1025,
-    pid: 'd',
+    pid: 'd'
   },
   {
     name: '开课统计',
@@ -7829,7 +7829,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 208,
-    pid: 'd0',
+    pid: 'd0'
   },
   {
     name: '转化率统计',
@@ -7837,7 +7837,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 211,
-    pid: 'd0',
+    pid: 'd0'
   },
   {
     name: '评价统计',
@@ -7845,7 +7845,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 718,
-    pid: 'd0',
+    pid: 'd0'
   },
   {
     name: 'VIP续课失败统计',
@@ -7853,7 +7853,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1036,
-    pid: 'd0',
+    pid: 'd0'
   },
   {
     name: '查询',
@@ -7861,7 +7861,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 209,
-    pid: 'd00',
+    pid: 'd00'
   },
   {
     name: '导出记录',
@@ -7869,7 +7869,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 210,
-    pid: 'd00',
+    pid: 'd00'
   },
   {
     name: '查询',
@@ -7877,7 +7877,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 212,
-    pid: 'd01',
+    pid: 'd01'
   },
   {
     name: '查询',
@@ -7885,7 +7885,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 719,
-    pid: 'd02',
+    pid: 'd02'
   },
   {
     name: '导出',
@@ -7893,7 +7893,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 720,
-    pid: 'd02',
+    pid: 'd02'
   },
   {
     name: '查询',
@@ -7901,7 +7901,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 1037,
-    pid: 'd03',
+    pid: 'd03'
   },
   {
     name: '导出',
@@ -7909,7 +7909,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1038,
-    pid: 'd03',
+    pid: 'd03'
   },
   {
     name: '经销商活跃度',
@@ -7917,7 +7917,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 666,
-    pid: 'd1',
+    pid: 'd1'
   },
   {
     name: '用户活跃度',
@@ -7925,7 +7925,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 669,
-    pid: 'd1',
+    pid: 'd1'
   },
   {
     name: '查询',
@@ -7933,7 +7933,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 667,
-    pid: 'd10',
+    pid: 'd10'
   },
   {
     name: '导出',
@@ -7941,7 +7941,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 668,
-    pid: 'd10',
+    pid: 'd10'
   },
   {
     name: '查询',
@@ -7949,7 +7949,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 670,
-    pid: 'd11',
+    pid: 'd11'
   },
   {
     name: '导出',
@@ -7957,7 +7957,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 671,
-    pid: 'd11',
+    pid: 'd11'
   },
   {
     name: '客户端统计',
@@ -7965,7 +7965,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 378,
-    pid: 'd2',
+    pid: 'd2'
   },
   {
     name: '查询',
@@ -7973,7 +7973,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 379,
-    pid: 'd20',
+    pid: 'd20'
   },
   {
     name: '收入统计（旧版）',
@@ -7981,7 +7981,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 673,
-    pid: 'd3',
+    pid: 'd3'
   },
   {
     name: '待确认收入（旧版）',
@@ -7989,7 +7989,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 740,
-    pid: 'd3',
+    pid: 'd3'
   },
   {
     name: '禁止强制激活套餐',
@@ -7997,7 +7997,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 900,
-    pid: 'd3',
+    pid: 'd3'
   },
   {
     name: '套餐收入统计（新版）',
@@ -8005,7 +8005,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 903,
-    pid: 'd3',
+    pid: 'd3'
   },
   {
     name: '查询',
@@ -8013,7 +8013,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 674,
-    pid: 'd30',
+    pid: 'd30'
   },
   {
     name: '导出',
@@ -8021,7 +8021,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 675,
-    pid: 'd30',
+    pid: 'd30'
   },
   {
     name: '查询',
@@ -8029,7 +8029,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 741,
-    pid: 'd31',
+    pid: 'd31'
   },
   {
     name: '导出',
@@ -8037,7 +8037,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 742,
-    pid: 'd31',
+    pid: 'd31'
   },
   {
     name: '查询',
@@ -8045,7 +8045,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 901,
-    pid: 'd32',
+    pid: 'd32'
   },
   {
     name: '导出',
@@ -8053,7 +8053,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 902,
-    pid: 'd32',
+    pid: 'd32'
   },
   {
     name: '查询',
@@ -8061,7 +8061,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 904,
-    pid: 'd33',
+    pid: 'd33'
   },
   {
     name: '导出',
@@ -8069,7 +8069,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 905,
-    pid: 'd33',
+    pid: 'd33'
   },
   {
     name: '教务运营统计',
@@ -8077,7 +8077,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 685,
-    pid: 'd4',
+    pid: 'd4'
   },
   {
     name: '测评运营统计',
@@ -8085,7 +8085,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 787,
-    pid: 'd4',
+    pid: 'd4'
   },
   {
     name: '实时统计',
@@ -8093,7 +8093,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 949,
-    pid: 'd4',
+    pid: 'd4'
   },
   {
     name: '实时统计详情',
@@ -8101,7 +8101,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 951,
-    pid: 'd4',
+    pid: 'd4'
   },
   {
     name: '上课短信提醒',
@@ -8109,7 +8109,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1073,
-    pid: 'd4',
+    pid: 'd4'
   },
   {
     name: '查询',
@@ -8117,7 +8117,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 686,
-    pid: 'd40',
+    pid: 'd40'
   },
   {
     name: '导出',
@@ -8125,7 +8125,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 687,
-    pid: 'd40',
+    pid: 'd40'
   },
   {
     name: '查询',
@@ -8133,7 +8133,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 788,
-    pid: 'd41',
+    pid: 'd41'
   },
   {
     name: '导出记录',
@@ -8141,7 +8141,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 789,
-    pid: 'd41',
+    pid: 'd41'
   },
   {
     name: '实时统计',
@@ -8149,7 +8149,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 950,
-    pid: 'd42',
+    pid: 'd42'
   },
   {
     name: '查询',
@@ -8157,7 +8157,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 952,
-    pid: 'd43',
+    pid: 'd43'
   },
   {
     name: '巡视',
@@ -8165,7 +8165,7 @@ export const resultData = [
     status: 0,
     checked: true,
     rid: 953,
-    pid: 'd43',
+    pid: 'd43'
   },
   {
     name: '查询',
@@ -8173,7 +8173,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1074,
-    pid: 'd44',
+    pid: 'd44'
   },
   {
     name: '导出记录',
@@ -8181,7 +8181,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1075,
-    pid: 'd44',
+    pid: 'd44'
   },
   {
     name: '体验课转化记录',
@@ -8189,7 +8189,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 747,
-    pid: 'd5',
+    pid: 'd5'
   },
   {
     name: '查询',
@@ -8197,7 +8197,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 748,
-    pid: 'd50',
+    pid: 'd50'
   },
   {
     name: '导出',
@@ -8205,7 +8205,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 749,
-    pid: 'd50',
+    pid: 'd50'
   },
   {
     name: '预复习测试统计',
@@ -8213,7 +8213,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 756,
-    pid: 'd6',
+    pid: 'd6'
   },
   {
     name: 'ST学员统计',
@@ -8221,7 +8221,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 794,
-    pid: 'd6',
+    pid: 'd6'
   },
   {
     name: '查询',
@@ -8229,7 +8229,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 757,
-    pid: 'd60',
+    pid: 'd60'
   },
   {
     name: '导出',
@@ -8237,7 +8237,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 758,
-    pid: 'd60',
+    pid: 'd60'
   },
   {
     name: '查询',
@@ -8245,7 +8245,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 795,
-    pid: 'd61',
+    pid: 'd61'
   },
   {
     name: '导出',
@@ -8253,7 +8253,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 796,
-    pid: 'd61',
+    pid: 'd61'
   },
   {
     name: '教材使用排名',
@@ -8261,7 +8261,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 781,
-    pid: 'd7',
+    pid: 'd7'
   },
   {
     name: '查询',
@@ -8269,7 +8269,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 782,
-    pid: 'd70',
+    pid: 'd70'
   },
   {
     name: '导出记录',
@@ -8277,7 +8277,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 783,
-    pid: 'd70',
+    pid: 'd70'
   },
   {
     name: '后台用户操作记录统计',
@@ -8285,7 +8285,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1026,
-    pid: 'd8',
+    pid: 'd8'
   },
   {
     name: '后台用户操作记录统计',
@@ -8293,7 +8293,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 1027,
-    pid: 'd80',
+    pid: 'd80'
   },
   {
     name: '权限管理',
@@ -8301,7 +8301,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 13,
-    pid: 'y',
+    pid: 'y'
   },
   {
     name: '用户管理',
@@ -8309,7 +8309,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 14,
-    pid: 'y',
+    pid: 'y'
   },
   {
     name: '角色管理',
@@ -8317,7 +8317,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 16,
-    pid: 'y',
+    pid: 'y'
   },
   {
     name: '用户管理',
@@ -8325,7 +8325,7 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 15,
-    pid: 'y0',
+    pid: 'y0'
   },
   {
     name: '角色管理',
@@ -8333,6 +8333,6 @@ export const resultData = [
     status: 1,
     checked: false,
     rid: 17,
-    pid: 'y1',
-  },
+    pid: 'y1'
+  }
 ]

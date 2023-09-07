@@ -1,49 +1,63 @@
 <template>
   <div class="app-container">
     <el-form
-        :inline="true"
-        class="form-border"
-        autocomplete="on"
-        :model="formData"
-        onsubmit="return false"
+      :inline="true"
+      class="form-border"
+      autocomplete="on"
+      :model="formData"
+      onsubmit="return false"
     >
       <el-row>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item label="手机号码">
-            <el-input v-model="formData.accountName" placeholder="手机号码" class="input" />
+            <el-input v-model="formData.phone" placeholder="手机号码" class="input" />
           </el-form-item>
         </el-col>
         <el-col :sm="24" :md="12" :lg="10" :xl="10">
           <el-form-item label="发送时间">
             <el-date-picker
-                v-model="formData.date1"
-                value-format="yyyy-MM-dd"
-                type="date"
-                class="date"
-                placeholder="选择日期"
+              v-model="formData.beginTime"
+              value-format="yyyy-MM-dd"
+              type="date"
+              class="date"
+              placeholder="选择日期"
             />
             <span class="date-line">-</span>
             <el-date-picker
-                v-model="formData.date2"
-                value-format="yyyy-MM-dd"
-                type="date"
-                class="date"
-                placeholder="选择日期"
+              v-model="formData.endTime"
+              value-format="yyyy-MM-dd"
+              type="date"
+              class="date"
+              placeholder="选择日期"
             />
           </el-form-item>
         </el-col>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
-          <el-form-item label="短信类型">
-            <el-select class="select" v-model="formData.type" placeholder="请选择">
+          <el-form-item label="短信模板类型">
+            <el-select class="select" clearable v-model="formData.contentId" placeholder="请选择">
               <el-option label="全部" value="" />
+              <el-option
+                v-for="item in smsTypeList"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id"
+              />
             </el-select>
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
-          <el-form-item label="用户编号">
-            <el-input v-model="formData.accountName" placeholder="用户编号" class="input" />
+          <el-form-item label="通道类型">
+            <el-select class="select" clearable v-model="formData.channelId" placeholder="请选择">
+              <el-option label="全部" value="" />
+              <el-option
+                v-for="item in channelList"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id"
+              />
+            </el-select>
           </el-form-item>
         </el-col>
         <el-col :sm="24" :md="12" :lg="10" :xl="10">
@@ -52,19 +66,9 @@
               <el-radio label="">全部</el-radio>
               <el-radio :label="0">成功</el-radio>
               <el-radio :label="1">失败</el-radio>
-              <el-radio :label="2">待确认</el-radio>
             </el-radio-group>
           </el-form-item>
         </el-col>
-        <el-col :sm="24" :md="12" :lg="7" :xl="7">
-          <el-form-item label="通道类型">
-            <el-select class="select" v-model="formData.type" placeholder="请选择">
-              <el-option label="全部" value="" />
-            </el-select>
-          </el-form-item>
-        </el-col>
-      </el-row>
-      <el-row>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item>
             <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
@@ -75,34 +79,44 @@
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
-        <el-table-column align="center" label="用户编号" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="手机号码" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="短信内容" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="通道类型" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="短信类型" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="手机号码" prop="phone"></el-table-column>
+        <el-table-column align="center" label="短信内容" prop="content"></el-table-column>
+        <el-table-column align="center" label="通道类型" prop="channelName"></el-table-column>
+        <!--        <el-table-column align="center" label="短信类型" prop="createTime"></el-table-column>-->
         <el-table-column align="center" label="发送时间" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="操作人" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="状态" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="操作人" prop="createUser"></el-table-column>
+        <el-table-column align="center" label="状态">
+          <template #default="{ row }">
+            {{ row.status === 0 ? '正常' : '失败' }}
+          </template>
+        </el-table-column>
       </el-table>
       <pagination
-          v-show="total > 0"
-          :total="total"
-          v-model:page="listQuery.currPage"
-          v-model:limit="listQuery.pageSize"
-          @pagination="getList"
+        v-show="total > 0"
+        :total="total"
+        v-model:page="listQuery.currPage"
+        v-model:limit="listQuery.pageSize"
+        @pagination="getList"
       />
     </div>
   </div>
 </template>
 
 <script setup name="SMSRecord">
-import { list } from '@/api'
-
 const { proxy } = getCurrentInstance()
 
-const data = reactive({
-  formData: {},
+const state = reactive({
+  formData: {
+    beginTime: '',
+    endTime: '',
+    channelId: '',
+    contentId: '',
+    phone: '',
+    status: ''
+  },
   tableDataLoading: false,
+  channelList: [],
+  smsTypeList: [],
   tableData: [],
   total: 0,
   listQuery: {
@@ -110,10 +124,11 @@ const data = reactive({
     pageSize: 10
   }
 })
-const { formData, tableDataLoading, tableData, total, listQuery } = toRefs(data)
+const { formData, tableDataLoading, tableData, total, listQuery, channelList, smsTypeList } =
+  toRefs(state)
 
 function search() {
-  listQuery.value.currPage = 0
+  listQuery.value.currPage = 1
   getList()
 }
 
@@ -124,8 +139,8 @@ const getList = async () => {
       ...formData.value,
       ...listQuery.value
     }
-    const { resultData, totalCount } = await list(params)
-    tableData.value = resultData
+    const { data, totalCount } = await proxy.$http.operation.smsRecord(params)
+    tableData.value = data
     total.value = totalCount
   } catch (e) {
     console.log(e, 'error')
@@ -133,8 +148,24 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+const getChannelList = async () => {
+  try {
+    const { data } = await proxy.$http.operation.queryChannel()
+    channelList.value = data
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+const getSmsTypeList = async () => {
+  try {
+    const { data } = await proxy.$http.operation.smsType()
+    smsTypeList.value = data
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+getChannelList()
+getSmsTypeList()
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

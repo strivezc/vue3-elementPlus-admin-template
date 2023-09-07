@@ -30,9 +30,9 @@ router.beforeEach((to, from, next) => {
         try {
           usePermissionStore()
             .generateRoutes()
-            .then((accessRoutes) => {
+            .then(accessRoutes => {
               // 根据roles权限生成可访问的路由表
-              accessRoutes.forEach((route) => {
+              accessRoutes.forEach(route => {
                 if (!isHttp(route.path)) {
                   router.addRoute(route) // 动态添加可访问路由表
                 }
@@ -43,7 +43,7 @@ router.beforeEach((to, from, next) => {
           useUserStore()
             .resetToken()
             .then(() => {
-              ElMessage.error(error || 'Has Error')
+              ElMessage.error(e || 'Has Error')
               next({ path: '/' })
             })
         }

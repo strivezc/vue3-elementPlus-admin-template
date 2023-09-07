@@ -106,6 +106,9 @@
 .select .el-input__wrapper {
   width: 185px;
 }
+.small-select .el-input__wrapper {
+  width: 120px;
+}
 .date {
   width: 160px !important;
   .el-input__wrapper {
@@ -116,7 +119,7 @@
   .el-input__wrapper {
   }
 }
-.form-date{
+.form-date {
   width: 220px !important;
   .el-input__wrapper {
     width: 220px !important;
@@ -142,4 +145,7 @@
   height: 36px !important;
   .el-input__wrapper {
   }
+}
+.el-radio {
+  margin-right: 15px !important;
 }

@@ -39,24 +39,24 @@ export const constantRoutes = [
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect/index.vue'),
-      },
-    ],
+        component: () => import('@/views/redirect/index.vue')
+      }
+    ]
   },
   {
     path: '/login',
     component: () => import('@/views/login'),
-    hidden: true,
+    hidden: true
   },
   {
     path: '/:pathMatch(.*)*',
     component: () => import('@/views/error/404'),
-    hidden: true,
+    hidden: true
   },
   {
     path: '/401',
     component: () => import('@/views/error/401'),
-    hidden: true,
+    hidden: true
   },
   {
     path: '',
@@ -67,14 +67,14 @@ export const constantRoutes = [
         path: '/index',
         component: () => import('@/views/index'),
         name: 'Index',
-        meta: { title: '首页', icon: 'house', affix: true },
-      },
-    ],
-  },
+        meta: { title: '首页', icon: 'house', affix: true }
+      }
+    ]
+  }
 ]
 
 // 动态路由，基于用户权限动态去加载
-export const asyncRoutes = [user, content, operations,operationLog,system,account]
+export const asyncRoutes = [user, content, operations, operationLog, system, account]
 
 const router = createRouter({
   history: createWebHistory(),
@@ -85,7 +85,7 @@ const router = createRouter({
     } else {
       return { top: 0 }
     }
-  },
+  }
 })
 
 export default router
