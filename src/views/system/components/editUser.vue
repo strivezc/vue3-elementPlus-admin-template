@@ -52,7 +52,7 @@ export default {
         const { data } = await this.$http.user.toEditAdminUser(this.$route.query.id)
         this.form = data
         this.roleInfoList = this.form.roleInfo
-        this.roleInfoList.forEach(item => {
+        this.roleInfoList.forEach((item) => {
           if (item.checked == 0) {
             this.checkList.push(item.id)
           }
@@ -62,7 +62,7 @@ export default {
       }
     },
     submitForm(formName) {
-      this.$refs[formName].validate(valid => {
+      this.$refs[formName].validate((valid) => {
         if (valid) {
           this.$modal.confirm('确定提交用户信息吗？').then(async () => {
             this.submit()

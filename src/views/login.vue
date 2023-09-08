@@ -2,9 +2,9 @@
   <div class="login">
     <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
       <h3 class="title">后台管理系统</h3>
-      <el-form-item prop="username">
+      <el-form-item prop="account">
         <el-input
-          v-model="loginForm.username"
+          v-model="loginForm.account"
           type="text"
           size="large"
           auto-complete="off"
@@ -53,10 +53,10 @@
           @change="changeRequestPath"
         >
           <el-option
-            label="http://10.204.42.157:9000"
-            value="http://10.204.42.157:9000"
+            label="http://10.204.42.157:9090"
+            value="http://10.204.42.157:9090"
           ></el-option>
-          <el-option label="http://10.204.42.89:9000" value="http://10.204.42.89:9000"></el-option>
+          <el-option label="http://10.204.42.89:9090" value="http://10.204.42.89:9090"></el-option>
           <el-option label="https://test.talk915.com" value="https://test.talk915.com"></el-option>
         </el-select>
       </el-form-item>
@@ -80,13 +80,13 @@ const { proxy } = getCurrentInstance()
 const MODE = import.meta.env.MODE
 const requestPath = ref('')
 const loginForm = ref({
-  username: 'admin',
-  password: '123456',
+  account: '',
+  password: '',
   rememberMe: false
 })
 
 const loginRules = {
-  username: [{ required: true, trigger: 'blur', message: '请输入您的账号' }],
+  account: [{ required: true, trigger: 'blur', message: '请输入您的账号' }],
   password: [{ required: true, trigger: 'blur', message: '请输入您的密码' }]
 }
 
@@ -97,17 +97,17 @@ function changeRequestPath(path) {
   setRequestPath(path)
 }
 function handleLogin() {
-  proxy.$refs.loginRef.validate(valid => {
+  proxy.$refs.loginRef.validate((valid) => {
     if (valid) {
       loading.value = true
       // 勾选了需要记住密码设置在 cookie 中设置记住用户名和密码
       if (loginForm.value.rememberMe) {
-        Cookies.set('username', loginForm.value.username, { expires: 30 })
+        Cookies.set('account', loginForm.value.account, { expires: 30 })
         Cookies.set('password', encrypt(loginForm.value.password), { expires: 30 })
         Cookies.set('rememberMe', loginForm.value.rememberMe, { expires: 30 })
       } else {
         // 否则移除
-        Cookies.remove('username')
+        Cookies.remove('account')
         Cookies.remove('password')
         Cookies.remove('rememberMe')
       }
@@ -125,11 +125,11 @@ function handleLogin() {
 }
 
 function getCookie() {
-  const username = Cookies.get('username')
+  const account = Cookies.get('account')
   const password = Cookies.get('password')
   const rememberMe = Cookies.get('rememberMe')
   loginForm.value = {
-    username: username === undefined ? loginForm.value.username : username,
+    account: account === undefined ? loginForm.value.account : account,
     password: password === undefined ? loginForm.value.password : decrypt(password),
     rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
   }
@@ -137,7 +137,7 @@ function getCookie() {
 }
 
 if (MODE === 'development') {
-  requestPath.value = getRequestPath() ? getRequestPath() : 'http://10.204.42.157:9091'
+  requestPath.value = getRequestPath() ? getRequestPath() : 'http://10.204.42.157:9090'
   setRequestPath(requestPath.value)
 }
 getCookie()

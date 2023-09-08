@@ -5,6 +5,7 @@
     :style="`width:${realWidth};height:${realHeight};`"
     :preview-src-list="realSrcList"
     append-to-body="true"
+    preview-teleported
   >
     <template #error>
       <div class="image-slot">
@@ -49,7 +50,7 @@ const realSrcList = computed(() => {
   }
   let real_src_list = props.src.split(',')
   let srcList = []
-  real_src_list.forEach(item => {
+  real_src_list.forEach((item) => {
     if (isExternal(item)) {
       return srcList.push(item)
     }

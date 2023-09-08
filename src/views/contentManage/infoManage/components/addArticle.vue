@@ -27,7 +27,7 @@
             :http-request="uploadImg"
             action=""
             :show-file-list="false"
-            accept=".jpg, .jpeg, .png, .gif, .bmp"
+            accept=".jpg, .jpeg, .png"
           >
             <el-button type="warning" :loading="loading">点击上传</el-button>
             <!--            <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>-->
@@ -79,7 +79,7 @@ const formRules = ref({
 const ruleFormRef = ref()
 
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       await proxy.$http.content.addInfoContent(form.value)
       proxy.$modal.alert('新增成功!', '提示').then(() => {
@@ -90,7 +90,7 @@ const submit = async () => {
     }
   })
 }
-const uploadImg = async file => {
+const uploadImg = async (file) => {
   if (file.file.size / 1024 / 1024 > 10) {
     proxy.$modal.msgError('文件大小不能超过10MB')
     return false

@@ -136,11 +136,10 @@ export function contentList(data) {
     data
   })
 }
-export function queryChannel(data) {
+export function queryChannel() {
   return request({
     url: `/config/smsConfig/queryChannel`,
-    method: 'post',
-    data
+    method: 'get',
   })
 }
 export function updateContentChannel(data) {
@@ -251,5 +250,11 @@ export function addTestUser(data) {
     url: `/config/userTest/addTestUser`,
     method: 'post',
     data
+  })
+}
+export function feedbackTypes() {
+  return request({
+    url: `/user/setUp/feedbackTypes`,
+    method: 'get',
   })
 }

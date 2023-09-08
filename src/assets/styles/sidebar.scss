@@ -81,6 +81,7 @@
 
     .el-menu-item .el-menu-tooltip__trigger {
       display: inline-block !important;
+      padding-left: 16px;
     }
 
     // menu hover
@@ -163,6 +164,13 @@
             overflow: hidden;
             visibility: hidden;
             display: inline-block;
+          }
+          & > .el-icon:first-child {
+            height: auto;
+            width: auto;
+            margin-left: 19px;
+            margin-right: 12px;
+            visibility: visible;
           }
         }
       }

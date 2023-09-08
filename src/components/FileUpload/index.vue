@@ -89,13 +89,13 @@ const showTip = computed(() => props.isShowTip && (props.fileType || props.fileS
 
 watch(
   () => props.modelValue,
-  val => {
+  (val) => {
     if (val) {
       let temp = 1
       // 首先将值转为数组
       const list = Array.isArray(val) ? val : props.modelValue.split(',')
       // 然后将数组转为对象数组
-      fileList.value = list.map(item => {
+      fileList.value = list.map((item) => {
         if (typeof item === 'string') {
           item = { name: item, url: item }
         }
@@ -168,7 +168,7 @@ function handleDelete(index) {
 // 上传结束处理
 function uploadedSuccessfully() {
   if (number.value > 0 && uploadList.value.length === number.value) {
-    fileList.value = fileList.value.filter(f => f.url !== undefined).concat(uploadList.value)
+    fileList.value = fileList.value.filter((f) => f.url !== undefined).concat(uploadList.value)
     uploadList.value = []
     number.value = 0
     emit('update:modelValue', listToString(fileList.value))

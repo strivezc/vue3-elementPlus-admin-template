@@ -242,7 +242,7 @@ const getList = async () => {
   }
 }
 const submit = async () => {
-  await ruleFormRef.value.validate(async valid => {
+  await ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       if (isEdit.value) {
         await proxy.$http.operation.editVersion(form.value)
@@ -265,7 +265,7 @@ const updateStatus = async (id, status) => {
 
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach(key => {
+  Object.keys(form.value).forEach((key) => {
     form.value[key] = row[key]
   })
   showDialog.value = true

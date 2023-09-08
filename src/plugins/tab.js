@@ -6,7 +6,7 @@ export default {
   refreshPage(obj) {
     const { path, query, matched } = router.currentRoute.value
     if (obj === undefined) {
-      matched.forEach(m => {
+      matched.forEach((m) => {
         if (m.components && m.components.default && m.components.default.name) {
           if (!['Layout', 'ParentView'].includes(m.components.default.name)) {
             obj = { name: m.components.default.name, path: path, query: query }

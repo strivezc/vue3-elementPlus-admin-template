@@ -96,7 +96,7 @@ const handleClick = async () => {
   }
 }
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       try {
         await updateAgreement(form.value)

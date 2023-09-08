@@ -59,7 +59,7 @@ export default {
     submit() {
       let checkNodes = this.ztreeObj.getCheckedNodes(true)
       let ids = []
-      checkNodes.forEach(item => {
+      checkNodes.forEach((item) => {
         if (item.checked == true) {
           ids.push(item.rid)
         }

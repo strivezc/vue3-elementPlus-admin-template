@@ -3,7 +3,7 @@
     <quill-editor
       v-model:content="content"
       contentType="html"
-      @textChange="e => $emit('update:modelValue', content)"
+      @textChange="(e) => $emit('update:modelValue', content)"
       :options="options"
       :style="styles"
     />
@@ -113,7 +113,7 @@ const styles = computed(() => {
 const content = ref('')
 watch(
   () => props.modelValue,
-  v => {
+  (v) => {
     if (v !== content.value) {
       content.value = v === undefined ? '<p></p>' : v
     }

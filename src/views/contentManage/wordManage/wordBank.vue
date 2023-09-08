@@ -292,14 +292,14 @@ const updateStatus = async (id, status) => {
 }
 
 function edit(row) {
-  Object.keys(form.value).forEach(key => {
+  Object.keys(form.value).forEach((key) => {
     form.value[key] = row[key]
   })
   showDialog.value = true
 }
 
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       await proxy.$http.content.wordEditSubmit(form.value)
       proxy.$modal.msgSuccess('操作成功!')
@@ -310,7 +310,7 @@ const submit = async () => {
 }
 const submitWordGroup = async () => {
   console.log(formWordGroup.value, 'formWordGroup.value')
-  ruleFormWordGroup.value.validate(async valid => {
+  ruleFormWordGroup.value.validate(async (valid) => {
     if (valid) {
       await proxy.$http.content.addExpand(formWordGroup.value)
       proxy.$modal.msgSuccess('操作成功!')

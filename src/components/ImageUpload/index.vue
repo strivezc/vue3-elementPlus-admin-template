@@ -78,12 +78,12 @@ const showTip = computed(() => props.isShowTip && (props.fileType || props.fileS
 
 watch(
   () => props.modelValue,
-  val => {
+  (val) => {
     if (val) {
       // 首先将值转为数组
       const list = Array.isArray(val) ? val : props.modelValue.split(',')
       // 然后将数组转为对象数组
-      fileList.value = list.map(item => {
+      fileList.value = list.map((item) => {
         if (typeof item === 'string') {
           if (item.indexOf(baseUrl) === -1) {
             item = { name: baseUrl + item, url: baseUrl + item }
@@ -109,7 +109,7 @@ function handleBeforeUpload(file) {
     if (file.name.lastIndexOf('.') > -1) {
       fileExtension = file.name.slice(file.name.lastIndexOf('.') + 1)
     }
-    isImg = props.fileType.some(type => {
+    isImg = props.fileType.some((type) => {
       if (file.type.indexOf(type) > -1) return true
       if (fileExtension && fileExtension.indexOf(type) > -1) return true
       return false
@@ -153,7 +153,7 @@ function handleUploadSuccess(res, file) {
 
 // 删除图片
 function handleDelete(file) {
-  const findex = fileList.value.map(f => f.name).indexOf(file.name)
+  const findex = fileList.value.map((f) => f.name).indexOf(file.name)
   if (findex > -1 && uploadList.value.length === number.value) {
     fileList.value.splice(findex, 1)
     emit('update:modelValue', listToString(fileList.value))
@@ -164,7 +164,7 @@ function handleDelete(file) {
 // 上传结束处理
 function uploadedSuccessfully() {
   if (number.value > 0 && uploadList.value.length === number.value) {
-    fileList.value = fileList.value.filter(f => f.url !== undefined).concat(uploadList.value)
+    fileList.value = fileList.value.filter((f) => f.url !== undefined).concat(uploadList.value)
     uploadList.value = []
     number.value = 0
     emit('update:modelValue', listToString(fileList.value))

@@ -149,7 +149,7 @@
               :http-request="uploadImg"
               action=""
               :show-file-list="false"
-              accept=".jpg, .jpeg, .png, .gif, .bmp"
+              accept=".jpg, .jpeg, .png"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
               <!--              <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>-->
@@ -218,7 +218,7 @@ function close() {
   ruleFormRef.value.resetFields()
 }
 
-const importBookList = async file => {
+const importBookList = async (file) => {
   if (file.file.size / 1024 / 1024 > 10) {
     proxy.$modal.msgError('文件大小不能超过10MB')
     return false
@@ -237,7 +237,7 @@ const importBookList = async file => {
 }
 
 function edit(row) {
-  Object.keys(form.value).forEach(key => {
+  Object.keys(form.value).forEach((key) => {
     form.value[key] = row[key]
   })
   showDialog.value = true
@@ -264,7 +264,7 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
-const uploadImg = async file => {
+const uploadImg = async (file) => {
   if (file.file.size / 1024 / 1024 > 10) {
     proxy.$modal.msgError('文件大小不能超过10MB')
     return false
@@ -297,7 +297,7 @@ const updateRecommend = async (id, status) => {
     })
 }
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       await proxy.$http.content.editSubmit(form.value)
       proxy.$modal.msgSuccess('操作成功!')

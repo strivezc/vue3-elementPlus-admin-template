@@ -44,7 +44,7 @@ const emit = defineEmits(['selected'])
 function filterIcons() {
   iconList.value = icons
   if (iconName.value) {
-    iconList.value = icons.filter(item => item.indexOf(iconName.value) !== -1)
+    iconList.value = icons.filter((item) => item.indexOf(iconName.value) !== -1)
   }
 }
 

@@ -168,7 +168,7 @@ function addDict() {
 
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach(key => {
+  Object.keys(form.value).forEach((key) => {
     form.value[key] = row[key]
   })
   showDialog.value = true
@@ -183,7 +183,7 @@ function close() {
 }
 
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       try {
         if (isEdit.value) {

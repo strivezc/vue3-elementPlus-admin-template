@@ -99,3 +99,16 @@ export function addRobotConfig(data) {
     data
   })
 }
+export function userList(data) {
+  return request({
+    url: `/user/userInfo/userList`,
+    method: 'post',
+    data
+  })
+}
+export function queryRobotConfig(userId) {
+  return request({
+    url: `/user/userInfo/queryRobotConfig/${userId}`,
+    method: 'get'
+  })
+}

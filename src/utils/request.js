@@ -18,12 +18,12 @@ function getBaseURL() {
 // 创建axios实例
 const service = axios.create({
   // baseURL: import.meta.env.VITE_APP_BASE_API,
-  timeout: 10000
+  timeout: 20000
 })
 
 // request拦截器
 service.interceptors.request.use(
-  config => {
+  (config) => {
     config.baseURL = getBaseURL()
     if (useUserStore().token) {
       config.headers['token'] = getToken()
@@ -63,7 +63,7 @@ service.interceptors.request.use(
     }
     return config
   },
-  error => {
+  (error) => {
     console.log(error)
     Promise.reject(error)
   }
@@ -71,7 +71,7 @@ service.interceptors.request.use(
 
 // 响应拦截器
 service.interceptors.response.use(
-  response => {
+  (response) => {
     const res = response.data
     // if the custom code is not 200, it is judged as an error.
     if (res.code !== 0) {
@@ -80,10 +80,10 @@ service.interceptors.response.use(
         if (response.config.hideMessage) {
           return Promise.reject(res || 'Error')
         } else {
-          ElMessage.error(res.resultMessage)
+          ElMessage.error(res.msg)
         }
       } else if (res.code === -4) {
-        ElMessageBox.confirm(res.resultMessage, '提示', {
+        ElMessageBox.confirm(res.msg, '提示', {
           confirmButtonText: '确认',
           showCancelButton: false,
           showClose: false,
@@ -120,7 +120,7 @@ service.interceptors.response.use(
       return res
     }
   },
-  err => {
+  (err) => {
     let { message } = err
     if (message === 'Network Error') {
       message = '系统接口连接异常'

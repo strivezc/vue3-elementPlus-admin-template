@@ -1,4 +1,4 @@
-import { login, logout, getInfo } from '@/api/login'
+import { login, logout, getPermissionInfo } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import defAva from '@/assets/images/profile.jpg'
 
@@ -6,51 +6,41 @@ const useUserStore = defineStore('user', {
   state: () => ({
     token: getToken(),
     name: '',
+    talkId: '',
     avatar: defAva,
-    roles: [],
-    permissions: []
+    menuList: [],
+    permissionFlag: false
   }),
   actions: {
     // 登录
     login(userInfo) {
-      const username = userInfo.username.trim()
-      const password = userInfo.password
-      const code = userInfo.code
-      const uuid = userInfo.uuid
+      const account = userInfo.account.trim()
+      const password = userInfo.password.trim()
       return new Promise((resolve, reject) => {
-        // login(username, password, code, uuid).then(res => {
-        const token = '123456'
-        setToken(token)
-        this.token = token
-        resolve()
-        // }).catch(error => {
-        //   reject(error)
-        // })
+        login({ account, password })
+          .then((res) => {
+            const token = res.data.token
+            setToken(token)
+            this.token = token
+            this.talkId = res.data.talkId
+            resolve()
+          })
+          .catch((error) => {
+            reject(error)
+          })
       })
     },
     // 获取用户信息
-    getInfo() {
+    getPermission() {
       return new Promise((resolve, reject) => {
-        getInfo()
-          .then(res => {
-            const user = res.user
-            const avatar =
-              user.avatar == '' || user.avatar == null
-                ? defAva
-                : import.meta.env.VITE_APP_BASE_API + user.avatar
-
-            if (res.roles && res.roles.length > 0) {
-              // 验证返回的roles是否是一个非空数组
-              this.roles = res.roles
-              this.permissions = res.permissions
-            } else {
-              this.roles = ['ROLE_DEFAULT']
-            }
-            this.name = user.userName
-            this.avatar = avatar
-            resolve(res)
+        getPermissionInfo()
+          .then((res) => {
+            this.menuList = res.data
+            this.permissionFlag = true
+            resolve(res.data)
           })
-          .catch(error => {
+          .catch((error) => {
+            this.permissionFlag = false
             reject(error)
           })
       })
@@ -60,19 +50,17 @@ const useUserStore = defineStore('user', {
       return new Promise((resolve, reject) => {
         logout(this.token)
           .then(() => {
-            this.token = ''
-            this.roles = []
-            this.permissions = []
-            removeToken()
+            this.resetToken()
+            this.menuList = []
             resolve()
           })
-          .catch(error => {
+          .catch((error) => {
             reject(error)
           })
       })
     },
     resetToken() {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         this.token = ''
         removeToken()
         resolve()

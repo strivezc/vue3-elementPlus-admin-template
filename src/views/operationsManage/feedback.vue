@@ -10,6 +10,7 @@
       <el-form-item label="问题分类">
         <el-select class="select" clearable v-model="formData.typeId" placeholder="请选择">
           <el-option label="全部" value="" />
+          <el-option v-for="item in feedbackTypes" :key="item.id" :label="item.dataName" :value="item.id" />
         </el-select>
       </el-form-item>
       <el-form-item>
@@ -120,7 +121,8 @@ const state = reactive({
   formRules: {
     replyResult: [{ required: true, message: '请选择处理结果！', trigger: 'change' }]
   },
-  content: ''
+  content: '',
+  feedbackTypes:[]
 })
 const ruleFormRef = ref()
 const {
@@ -132,6 +134,7 @@ const {
   form,
   formRules,
   showDialog,
+  feedbackTypes,
   content
 } = toRefs(state)
 
@@ -150,7 +153,7 @@ const submit = async () => {
   })
 }
 
-const reply = async id => {
+const reply = async (id) => {
   try {
     form.value.id = id
     const { data } = await proxy.$http.operation.queryFeedbackContent(id)
@@ -189,6 +192,15 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+const getFeedbackTypes=async ()=>{
+  try {
+    const {data} =await proxy.$http.operation.feedbackTypes()
+    feedbackTypes.value=data
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+getFeedbackTypes()
 </script>
 
 <style scoped lang="scss"></style>

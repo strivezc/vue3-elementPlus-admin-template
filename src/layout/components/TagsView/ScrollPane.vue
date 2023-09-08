@@ -57,7 +57,7 @@ function moveToTarget(currentTag) {
     $scrollWrapper.scrollLeft = $scrollWrapper.scrollWidth - $containerWidth
   } else {
     const tagListDom = document.getElementsByClassName('tags-view-item')
-    const currentIndex = visitedViews.value.findIndex(item => item === currentTag)
+    const currentIndex = visitedViews.value.findIndex((item) => item === currentTag)
     let prevTag = null
     let nextTag = null
     for (const k in tagListDom) {

@@ -217,14 +217,14 @@ const getList = async () => {
 
 function edit(row) {
   showDialog.value = true
-  Object.keys(form.value).forEach(key => {
+  Object.keys(form.value).forEach((key) => {
     form.value[key] = row[key]
   })
   showDialog.value = true
 }
 
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       if (isEdit.value) {
         await proxy.$http.operation.editTestUser(form.value)

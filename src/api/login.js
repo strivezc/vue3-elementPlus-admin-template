@@ -1,47 +1,25 @@
 import request from '@/utils/request'
 
 // 登录方法
-export function login(username, password, code, uuid) {
-  const data = {
-    username,
-    password,
-    code,
-    uuid
-  }
+export function login(data) {
   return request({
-    url: '/login',
-    headers: {
-      isToken: false
-    },
+    url: '/user/login/adminLogin',
     method: 'post',
-    data: data
+    data
   })
 }
 
-// 注册方法
-export function register(data) {
+export function logout() {
   return request({
-    url: '/register',
-    headers: {
-      isToken: false
-    },
-    method: 'post',
-    data: data
+    url: '/user/login/logout',
+    method: 'get',
   })
 }
 
 // 获取用户详细信息
-export function getInfo() {
+export function getPermissionInfo() {
   return request({
-    url: '/getInfo',
+    url: '/user/userPermission/permissionInfo',
     method: 'get'
-  })
-}
-
-// 退出方法
-export function logout() {
-  return request({
-    url: '/logout',
-    method: 'post'
   })
 }

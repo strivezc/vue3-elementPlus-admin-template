@@ -22,22 +22,27 @@ router.beforeEach((to, from, next) => {
       NProgress.done()
     } else {
       const hasRoles =
-        (usePermissionStore().menuList && usePermissionStore().menuList.length > 0) ||
-        usePermissionStore().permissionFlag
+        (useUserStore().menuList && useUserStore().menuList.length > 0) ||
+        useUserStore().permissionFlag
       if (hasRoles) {
         next()
       } else {
         try {
-          usePermissionStore()
-            .generateRoutes()
-            .then(accessRoutes => {
-              // 根据roles权限生成可访问的路由表
-              accessRoutes.forEach(route => {
-                if (!isHttp(route.path)) {
-                  router.addRoute(route) // 动态添加可访问路由表
-                }
-              })
-              next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+          useUserStore()
+            .getPermission()
+            .then((res) => {
+              const data = res.data
+              usePermissionStore()
+                .generateRoutes(data)
+                .then((accessRoutes) => {
+                  // 根据roles权限生成可访问的路由表
+                  accessRoutes.forEach((route) => {
+                    if (!isHttp(route.path)) {
+                      router.addRoute(route) // 动态添加可访问路由表
+                    }
+                  })
+                  next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+                })
             })
         } catch (e) {
           useUserStore()

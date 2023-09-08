@@ -195,3 +195,73 @@ export function updateWordStatus(id) {
     method: 'get'
   })
 }
+export function addAiType(data) {
+  return request({
+    url: '/config/ai/addAiType',
+    method: 'post',
+    data: data,
+    isRepeatSubmit: true
+  })
+}
+export function updateAiType(data) {
+  return request({
+    url: '/config/ai/updateAiType',
+    method: 'post',
+    data: data
+  })
+}
+export function queryAiType(data) {
+  return request({
+    url: '/config/ai/queryAiType',
+    method: 'post',
+    data: data
+  })
+}
+export function updateAiTypeStatus(data) {
+  return request({
+    url: '/config/ai/updateAiTypeStatus',
+    method: 'post',
+    data: data
+  })
+}
+export function queryAiTypeDownList() {
+  return request({
+    url: '/config/ai/queryAiTypeDownList',
+    method: 'get'
+  })
+}
+export function queryRobot(data) {
+  return request({
+    url: '/config/ai/queryRobot',
+    method: 'post',
+    data: data
+  })
+}
+export function addRobot(data) {
+  return request({
+    url: '/config/ai/addRobot',
+    method: 'post',
+    data: data,
+    isRepeatSubmit: true
+  })
+}
+export function updateRobot(data) {
+  return request({
+    url: '/config/ai/updateRobot',
+    method: 'post',
+    data: data
+  })
+}
+export function updateRobotStatus(data) {
+  return request({
+    url: '/config/ai/updateRobotStatus',
+    method: 'post',
+    data: data
+  })
+}
+export function queryRobotOne(id) {
+  return request({
+    url: `/config/ai/queryRobotOne/${id}`,
+    method: 'get',
+  })
+}

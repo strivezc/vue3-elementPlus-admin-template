@@ -155,7 +155,7 @@ const getAllRoleList = async () => {
     console.log(e, 'error')
   }
 }
-const deleteRole = async params => {
+const deleteRole = async (params) => {
   try {
     await proxy.$http.user.updateAdminUserStatus(params)
     getList()
@@ -176,7 +176,7 @@ function deleteItem(row) {
       cancelButtonText: '取消',
       cancelButtonClass: 'btn-custom-cancel',
       autofocus: false,
-      inputValidator: value => {
+      inputValidator: (value) => {
         if (value ?? '' === '') {
           return true
         }

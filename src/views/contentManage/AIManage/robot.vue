@@ -10,7 +10,15 @@
       <el-row>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item label="分类名称">
-            <el-input v-model="formData.accountName" placeholder="分类名称" class="input" />
+            <el-select class="select" clearable v-model="formData.typeId" placeholder="请选择">
+              <el-option label="全部" value=""/>
+              <el-option
+                  v-for="item in aiTypeDownList"
+                  :key="item.id"
+                  :label="item.typeName"
+                  :value="item.id"
+              />
+            </el-select>
           </el-form-item>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
@@ -23,6 +31,17 @@
           </el-form-item>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
+          <el-form-item label="是否为热门推荐">
+            <el-radio-group v-model="formData.flag">
+              <el-radio label="">全部</el-radio>
+              <el-radio :label="0">是</el-radio>
+              <el-radio :label="1">否</el-radio>
+            </el-radio-group>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
             <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
             <el-button type="success" @click="add">新增</el-button>
@@ -33,14 +52,37 @@
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
-        <el-table-column align="center" label="ID" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="名称" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="分类" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="简介" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="封面图" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="热门" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="状态" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="操作" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="ID" prop="id"></el-table-column>
+        <el-table-column align="center" label="名称" prop="robotName"></el-table-column>
+        <el-table-column align="center" label="分类" prop="typeName"></el-table-column>
+        <el-table-column align="center" label="简介" prop="intro"></el-table-column>
+        <el-table-column align="center" label="封面图">
+          <template #default="{ row }">
+            <div class="img">
+              <ImagePreview :src="row.imgUrl"></ImagePreview>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" label="热门" prop="createTime">
+          <template #default="{ row }">
+            {{ row.status === 0 ? '是' : '否' }}
+          </template>
+        </el-table-column>
+        <el-table-column align="center" label="状态">
+          <template #default="{ row }">
+            {{ row.status === 0 ? '正常' : '删除' }}
+          </template>
+        </el-table-column>
+        <el-table-column align="center" label="操作">
+          <template #default="{ row }">
+            <div class="button-box-row">
+              <el-button type="danger" plain size="small" v-if="row.status === 0" @click="updateStatus(row.id, 1)">下架
+              </el-button>
+              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)">上架</el-button>
+              <el-button type="primary" plain size="small" @click="edit(row.id)">编辑</el-button>
+            </div>
+          </template>
+        </el-table-column>
       </el-table>
       <pagination
         v-show="total > 0"
@@ -50,66 +92,66 @@
         @pagination="getList"
       />
     </div>
-    <el-dialog title="新增" draggable v-model="showDialog" :before-close="close" width="600px">
+    <el-dialog :title="isEdit?'编辑':'新增'" draggable v-model="showDialog" :before-close="close" width="600px">
       <el-form
-        :model="form"
-        :rules="formRules"
-        ref="ruleFormRef"
-        label-position="right"
-        label-width="80px"
+          :model="form"
+          :rules="formRules"
+          ref="ruleFormRef"
+          label-position="right"
+          label-width="90px"
       >
-        <el-form-item label="名称:" prop="accountName">
-          <el-input v-model="form.accountName" placeholder="名称" class="input form-input" />
+        <el-form-item label="名称:" prop="robotName">
+          <el-input v-model="form.robotName" maxlength="30" placeholder="名称" class="input form-input"/>
         </el-form-item>
-        <el-form-item label="分类:">
-          <el-select class="form-select" v-model="form.topic" placeholder="请选择">
-            <el-option label="全部" value="" />
+        <el-form-item label="分类:" prop="typeId">
+          <el-select class="select" clearable v-model="form.typeId" placeholder="请选择">
+            <el-option
+                v-for="item in aiTypeDownList"
+                :key="item.id"
+                :label="item.typeName"
+                :value="item.id"
+            />
           </el-select>
         </el-form-item>
-        <el-form-item label="简介:" prop="reply">
+        <el-form-item label="简介:" prop="intro">
           <el-input
-            class="form-textarea"
-            v-model="form.reply"
-            placeholder="最多输入500个字符"
-            type="textarea"
-            maxlength="500"
-            :autosize="{ minRows: 4, maxRows: 6 }"
-            show-word-limit
+              class="form-textarea"
+              v-model="form.intro"
+              placeholder="最多输入100个字符"
+              type="textarea"
+              maxlength="100"
+              :autosize="{ minRows: 4, maxRows: 6 }"
+              show-word-limit
           />
         </el-form-item>
-        <el-form-item prop="barrierImg" label="封面图">
+        <el-form-item prop="imgUrl" label="封面图:">
           <div class="flex-column">
             <el-upload
-              ref="barrierImg"
-              :http-request="uploadImg"
-              action=""
-              :show-file-list="false"
-              accept=".jpg, .jpeg, .png, .gif, .bmp"
+                ref="imgUrl"
+                :http-request="uploadImg"
+                action=""
+                :show-file-list="false"
+                accept=".jpg, .jpeg, .png"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
-              <template #tip>
-                <span class="remarks ml15">注：建议尺寸：750*750px</span>
-              </template>
+              <!--              <template #tip>-->
+              <!--                <span class="remarks ml15">注：建议尺寸：750*750px</span>-->
+              <!--              </template>-->
             </el-upload>
-            <img :src="form.barrierImg" v-if="form.barrierImg" class="cover" />
+            <img :src="form.imgUrl" v-if="form.imgUrl" class="cover"/>
           </div>
         </el-form-item>
-        <el-form-item label="设为热门:">
-          <el-radio-group v-model="form.status">
+        <el-form-item label="设为热门:" prop="flag">
+          <el-radio-group v-model="form.flag">
             <el-radio :label="0">是</el-radio>
             <el-radio :label="1">否</el-radio>
           </el-radio-group>
         </el-form-item>
-        <el-form-item label="提示文案:" prop="reply">
-          <el-input
-            class="form-textarea"
-            v-model="form.reply"
-            placeholder="最多输入500个字符"
-            type="textarea"
-            maxlength="500"
-            :autosize="{ minRows: 4, maxRows: 6 }"
-            show-word-limit
-          />
+        <el-form-item label="提示文案:">
+          <div class="flex-column">
+            <el-input v-for="(item,index) in form.contents" :key="index" v-model="form.contents[index]"
+                      class="form-input mb18"/>
+          </div>
         </el-form-item>
       </el-form>
       <template #footer>
@@ -123,14 +165,17 @@
 </template>
 
 <script setup name="Robot">
-import { list } from '@/api'
-
 const { proxy } = getCurrentInstance()
 
 const state = reactive({
-  formData: {},
+  formData: {
+    flag: '',
+    status: '',
+    typeId: ''
+  },
   tableDataLoading: false,
   tableData: [],
+  aiTypeDownList: [],
   total: 0,
   listQuery: {
     currPage: 1,
@@ -139,11 +184,22 @@ const state = reactive({
   loading: false,
   showDialog: false,
   form: {
-    accountName: ''
+    contents: ['', '', ''],
+    flag: 1,
+    id: '',
+    imgUrl: '',
+    intro: '',
+    robotName: '',
+    typeId: ''
   },
   formRules: {
-    accountName: [{ required: true, message: '请输入', trigger: 'blur' }]
-  }
+    typeId: [{ required: true, message: '请选择分类！', trigger: 'change' }],
+    robotName: [{ required: true, message: '请输入名称！', trigger: 'blur' }],
+    intro: [{ required: true, message: '请输入简介！', trigger: 'blur' }],
+    imgUrl: [{ required: true, message: '请上传封面图！', trigger: 'blur' }],
+    flag: [{ required: true, message: '请选择是否为热门推荐！', trigger: 'blur' }]
+  },
+  isEdit: false
 })
 
 const ruleFormRef = ref()
@@ -157,24 +213,17 @@ const {
   form,
   formRules,
   showDialog,
+  aiTypeDownList,
+  isEdit,
   loading
 } = toRefs(state)
-
-const submit = async () => {
-  await ruleFormRef.value.validate((valid, fields) => {
-    if (valid) {
-      console.log('submit!')
-    } else {
-      console.log('error submit!', fields)
-    }
-  })
-}
 
 function close() {
   showDialog.value = false
   ruleFormRef.value.resetFields()
 }
 function add() {
+  isEdit.value = false
   showDialog.value = true
 }
 function search() {
@@ -189,7 +238,7 @@ const getList = async () => {
       ...formData.value,
       ...listQuery.value
     }
-    const { data, totalCount } = await list(params)
+    const { data, totalCount } = await proxy.$http.content.queryRobot(params)
     tableData.value = data
     total.value = totalCount
   } catch (e) {
@@ -198,6 +247,84 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+const getAiTypeDownList = async () => {
+  try {
+    const { data } = await proxy.$http.content.queryAiTypeDownList()
+    aiTypeDownList.value = data
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+const uploadImg = async (file) => {
+  if (file.file.size / 1024 / 1024 > 10) {
+    proxy.$modal.msgError('文件大小不能超过10MB')
+    return false
+  }
+  loading.value = true
+  let formData = new FormData()
+  formData.append('file', file.file)
+  try {
+    const { data } = await proxy.$http.common.uploadFile(formData)
+    form.value.imgUrl = data.fileUrl
+    loading.value = false
+  } catch (e) {
+    loading.value = false
+  }
+}
+const updateStatus = async (id, status) => {
+  proxy.$modal.confirm(status === 0 ? '确定要上架吗？' : '确定要下架吗？').then(async () => {
+    await proxy.$http.content.updateRobotStatus({ id, status })
+    proxy.$modal.msgSuccess('操作成功!')
+    getList()
+  })
+}
+const edit = async (id) => {
+  try {
+    const { data } = await proxy.$http.content.queryRobotOne(id)
+    let contents = ['', '', '']
+    let dataC = data && data.contents || []
+    Object.keys(form.value).forEach(key => {
+      form.value[key] = data[key]
+    })
+    for (let i = 0; i < contents.length; i++) {
+      contents[i] = dataC[i] || ''
+    }
+    form.value.contents = contents
+    isEdit.value = true
+    showDialog.value = true
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+const submit = async () => {
+  ruleFormRef.value.validate(async (valid) => {
+    if (valid) {
+      const contents = form.value.contents.filter(item => {
+        return (item ?? '') !== ''
+      })
+      let params = {
+        contents,
+        flag: form.value.flag,
+        id: '',
+        imgUrl: form.value.imgUrl,
+        intro: form.value.intro,
+        robotName: form.value.robotName,
+        typeId: form.value.typeId
+      }
+      if (isEdit.value) {
+        params.id = form.value.id
+        await proxy.$http.content.updateRobot(params)
+      } else {
+        await proxy.$http.content.addRobot(params)
+      }
+      proxy.$modal.msgSuccess('操作成功!')
+      close()
+      getList()
+    }
+  })
+}
+
+getAiTypeDownList()
 </script>
 
 <style scoped lang="scss">
@@ -212,5 +339,10 @@ const getList = async () => {
 .remarks {
   color: #ff574e;
   font-size: 14px;
+}
+
+.img {
+  max-width: 250px;
+  max-height: 250px;
 }
 </style>

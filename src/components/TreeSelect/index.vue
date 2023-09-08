@@ -71,7 +71,7 @@ const emit = defineEmits(['update:value'])
 
 const valueId = computed({
   get: () => props.value,
-  set: val => {
+  set: (val) => {
     emit('update:value', val)
   }
 })
@@ -115,7 +115,7 @@ function clearHandle() {
 }
 function clearSelected() {
   const allNode = document.querySelectorAll('#tree-option .el-tree-node')
-  allNode.forEach(element => element.classList.remove('is-current'))
+  allNode.forEach((element) => element.classList.remove('is-current'))
 }
 
 onMounted(() => {

@@ -152,7 +152,7 @@ function close() {
 }
 
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       try {
         let params = {
@@ -188,7 +188,7 @@ function addInfo() {
 }
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach(key => {
+  Object.keys(form.value).forEach((key) => {
     form.value[key] = row[key]
   })
   form.value.dataInfoId = row.id

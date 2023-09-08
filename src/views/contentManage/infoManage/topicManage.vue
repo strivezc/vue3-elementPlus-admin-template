@@ -148,7 +148,7 @@
               :http-request="uploadImg"
               action=""
               :show-file-list="false"
-              accept=".jpg, .jpeg, .png, .gif, .bmp"
+              accept=".jpg, .jpeg, .png"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
               <!--              <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>-->
@@ -331,7 +331,7 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
-const uploadImg = async file => {
+const uploadImg = async (file) => {
   if (file.file.size / 1024 / 1024 > 10) {
     proxy.$modal.msgError('文件大小不能超过10MB')
     return false
@@ -411,14 +411,14 @@ const updateStatus = async (id, status) => {
 
 function editSubject(row) {
   isEditSubject.value = true
-  Object.keys(formTopic.value).forEach(key => {
+  Object.keys(formTopic.value).forEach((key) => {
     formTopic.value[key] = row[key]
   })
   showDialogTopic.value = true
 }
 function editType(row) {
   isEditType.value = true
-  Object.keys(form.value).forEach(key => {
+  Object.keys(form.value).forEach((key) => {
     form.value[key] = row[key]
   })
   showDialog.value = true

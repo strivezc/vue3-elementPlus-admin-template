@@ -1,10 +1,10 @@
-import usePermissionStore from '@/store/modules/permission'
+import useUserStore from '@/store/modules/user'
 
 export default {
   mounted(el, binding) {
     let { value } = binding
     value = value && value.toString()
-    const menuList = usePermissionStore().menuList
+    const menuList = useUserStore().menuList
     if (value) {
       const hasPermission = menuList.includes(value)
       if (!hasPermission) {

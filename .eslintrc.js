@@ -41,5 +41,6 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'no-undef': 'off', // 关闭检查全局变量
     'no-empty': 'off', // 关闭检查空语句块
+    'prettier/prettier': 'off', // 发现使用webstorm时error  Delete `········␍⏎`  prettier/prettier 过多，每次修改代码都会出现这个错误，操作起来很麻烦。于是选择直接关闭 Prettier代码规范
   }
 }

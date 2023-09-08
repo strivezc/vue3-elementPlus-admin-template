@@ -9,9 +9,9 @@
     >
       <el-row>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
-          <el-form-item label="用户编号" prop="accountName">
+          <el-form-item label="用户编号" prop="userId">
             <el-input
-              v-model="formData.accountName"
+              v-model="formData.userId"
               placeholder="用户编号"
               autocomplete="on"
               name="userInfo"
@@ -22,7 +22,7 @@
         <el-col :sm="24" :md="12" :lg="10" :xl="10">
           <el-form-item label="注册时间">
             <el-date-picker
-              v-model="formData.date1"
+              v-model="formData.beginDate"
               value-format="yyyy-MM-dd"
               type="date"
               class="date"
@@ -30,7 +30,7 @@
             />
             <span class="date-line">-</span>
             <el-date-picker
-              v-model="formData.date2"
+              v-model="formData.endDate"
               value-format="yyyy-MM-dd"
               type="date"
               class="date"
@@ -52,13 +52,6 @@
       </el-row>
       <el-row>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
-          <el-form-item label="账号状态">
-            <el-select class="select" v-model="formData.accountStatus" placeholder="请选择">
-              <el-option label="全部" value="" />
-            </el-select>
-          </el-form-item>
-        </el-col>
-        <el-col :sm="24" :md="12" :lg="10" :xl="10">
           <el-form-item>
             <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
           </el-form-item>
@@ -68,13 +61,17 @@
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
-        <el-table-column align="center" label="用户编号" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="用户名" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="用户编号" prop="id"></el-table-column>
+        <el-table-column align="center" label="用户名" prop="userName"></el-table-column>
         <el-table-column align="center" label="注册时间" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="手机号码" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="年龄" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="职业/年级" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="状态" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="手机号码" prop="hidePhone"></el-table-column>
+        <el-table-column align="center" label="年龄" prop="age"></el-table-column>
+        <el-table-column align="center" label="职业/年级" prop="gradeName"></el-table-column>
+        <el-table-column align="center" label="状态">
+          <template #default="{ row }">
+            {{ row.status === 0 ? '正常' : '删除' }}
+          </template>
+        </el-table-column>
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
             <div class="button-box-row">
@@ -151,7 +148,12 @@
 const { proxy } = getCurrentInstance()
 
 const state = reactive({
-  formData: {},
+  formData: {
+    beginDate: '',
+    endDate: '',
+    phone: '',
+    userId: ''
+  },
   tableDataLoading: false,
   tableData: [{}],
   total: 0,
@@ -187,9 +189,17 @@ function close() {
   ruleFormRef.value.resetFields()
 }
 
-function AIUseSet(row) {
-  form.value.userId = row.userId
-  showDialog.value = true
+const AIUseSet = async (row) => {
+  form.value.userId = row.id
+  try {
+    const { data } = proxy.$http.user.userList(params)
+    form.value.type = data.type
+    form.value.useNum = data.useNum
+    form.value.validDate = data.validDate
+    showDialog.value = true
+  } catch (e) {
+    console.log(e, 'error')
+  }
 }
 
 function search() {
@@ -212,7 +222,7 @@ const getList = async () => {
       ...formData.value,
       ...listQuery.value
     }
-    const { data, totalCount } = await proxy.$http.index.list(params)
+    const { data, totalCount } = await proxy.$http.user.userList(params)
     tableData.value = data
     total.value = totalCount
   } catch (e) {
@@ -222,7 +232,7 @@ const getList = async () => {
   }
 }
 const submit = async () => {
-  ruleFormRef.value.validate(async valid => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
       await proxy.$http.user.addRobotConfig(form.value)
       proxy.$modal.msgSuccess('操作成功!')

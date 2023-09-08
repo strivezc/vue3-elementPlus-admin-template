@@ -50,5 +50,9 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svg-icons": "2.0.1",
     "vite-plugin-vue-setup-extend": "0.4.0"
+  },
+  "engines": {
+    "node": ">=14.18.0",
+    "npm": ">=3.0.0"
   }
 }

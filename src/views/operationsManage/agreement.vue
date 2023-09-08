@@ -8,10 +8,10 @@
       </el-table-column>
       <el-table-column align="center" label="内容类型">
         <template #default="{ row }">
-          {{ resourceType[row.resourceType] }}
+          {{ resourceType[row.type] }}
         </template>
       </el-table-column>
-      <el-table-column align="center" label="更新日期" prop="createTime"></el-table-column>
+      <el-table-column align="center" label="更新日期" prop="updateTime"></el-table-column>
       <el-table-column align="center" label="操作">
         <template #default="{ row }">
           <el-button type="primary" plain size="small" @click="edit(row.resourceType)"
