@@ -16,19 +16,18 @@ import { QuillEditor, Quill } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
 import 'quill-image-uploader/dist/quill.imageUploader.min.css'
 import ImageUploader from 'quill-image-uploader'
-import BlotFormatter from 'quill-blot-formatter'
+import BlotFormatter from 'quill-blot-formatter/dist/BlotFormatter'
 
 Quill.register('modules/ImageUploader', ImageUploader)
 Quill.register('modules/blotFormatter', BlotFormatter)
 // 自定义字体
-const fontFamily = Quill.imports['attributors/style/font']
-fontFamily.whitelist = ['SimSun', 'SimHei', 'Microsoft-YaHei', 'KaiTi', 'FangSong', 'Arial']
-Quill.register(fontFamily, true)
+const fontFamily = ['SimSun', 'SimHei', 'Microsoft-YaHei', 'KaiTi', 'FangSong', 'Arial']
+Quill.imports['attributors/style/font'].whitelist = fontFamily;
+Quill.register(Quill.imports['attributors/style/font'],true);
 // 自定义字号
 const sizes = [false, '16px', '18px', '20px', '22px', '26px', '28px', '32px']
-const fontSize = Quill.imports['attributors/style/size']
-fontSize.whitelist = sizes
-Quill.register(fontSize, true)
+Quill.imports['attributors/style/size'].whitelist = sizes;
+Quill.register(Quill.imports['attributors/style/size'],true);
 const props = defineProps({
   /* 编辑器的内容 */
   modelValue: {
