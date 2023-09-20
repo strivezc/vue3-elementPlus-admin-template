@@ -70,6 +70,11 @@ export const constantRoutes = [
         meta: { title: '首页', icon: 'house', affix: true }
       }
     ]
+  },
+  {
+    path: '/test',
+    component: () => import('@/views/pubuliu'),
+    hidden: true
   }
 ]
 
