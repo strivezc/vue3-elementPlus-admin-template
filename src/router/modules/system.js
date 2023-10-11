@@ -15,20 +15,21 @@ const system = {
   alwaysShow: true,
   meta: {
     title: '权限管理',
-    icon: 'menu'
+    icon: 'menu',
+    menuId: 'c'
   },
   children: [
     {
       path: 'user',
       name: 'User',
       component: components.User,
-      meta: { title: '用户管理' }
+      meta: { title: '用户管理', menuId: 'c0' }
     },
     {
       path: 'role',
       name: 'Role',
       component: components.Role,
-      meta: { title: '角色管理' }
+      meta: { title: '角色管理', menuId: 'c1' }
     },
     {
       path: 'roleLimit',

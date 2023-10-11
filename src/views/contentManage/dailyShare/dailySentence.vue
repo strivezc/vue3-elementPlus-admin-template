@@ -12,7 +12,7 @@
           <el-form-item label="日期">
             <el-date-picker
               v-model="formData.shareDate"
-              value-format="yyyy-MM-dd"
+              value-format="YYYY-MM-DD"
               type="date"
               class="date"
               placeholder="选择日期"
@@ -30,8 +30,10 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-            <el-button type="success" @click="add">新增</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'2000'"
+              >查询</el-button
+            >
+            <el-button type="success" @click="add" v-permission="'2002'">新增</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -61,16 +63,25 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
+                v-permission="'2004'"
                 plain
                 size="small"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >删除
               </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
+              <el-button
+                type="primary"
+                v-permission="'2004'"
+                plain
+                size="small"
+                v-else
+                @click="updateStatus(row.id, 0)"
                 >启用</el-button
               >
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'2003'"
+                >编辑</el-button
+              >
             </div>
           </template>
         </el-table-column>
@@ -101,7 +112,7 @@
         <el-form-item label="日期:" prop="shareDate">
           <el-date-picker
             v-model="form.shareDate"
-            value-format="yyyy-MM-dd"
+            value-format="YYYY-MM-DD"
             type="date"
             class="form-date"
             placeholder="选择日期"
@@ -113,34 +124,38 @@
             v-model="form.enText"
             placeholder="英文"
             type="textarea"
+            maxlength="300"
             :autosize="{ minRows: 4, maxRows: 6 }"
             show-word-limit
           />
         </el-form-item>
         <el-form-item label="中文:" prop="cnText">
           <el-input
-            class="form-textarea"
-            v-model="form.cnText"
-            placeholder="中文"
-            type="textarea"
-            :autosize="{ minRows: 4, maxRows: 6 }"
-            show-word-limit
+              class="form-textarea"
+              v-model="form.cnText"
+              placeholder="中文"
+              type="textarea"
+              maxlength="300"
+              :autosize="{ minRows: 4, maxRows: 6 }"
+              show-word-limit
           />
         </el-form-item>
-        <el-form-item label="作者:" prop="authorName">
-          <el-input v-model="form.authorName" placeholder="作者" class="input form-input" />
+        <el-form-item label="作者:">
+          <el-input v-model="form.authorName" placeholder="作者" class="input form-input"/>
         </el-form-item>
         <el-form-item prop="imgUrl" label="封面图">
           <div class="flex-column">
             <el-upload
-              ref="imgUrl"
-              :http-request="uploadImg"
-              action=""
-              :show-file-list="false"
-              accept=".jpg, .jpeg, .png"
+                ref="imgUrl"
+                :http-request="uploadImg"
+                action=""
+                :show-file-list="false"
+                accept=".jpg, .jpeg, .png"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
-              <!--              <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>-->
+              <template #tip>
+                <span class="remarks ml15">注：建议尺寸：600px*780px</span>
+              </template>
             </el-upload>
             <img :src="form.imgUrl" v-if="form.imgUrl" class="cover" />
           </div>
@@ -281,10 +296,12 @@ const updateStatus = async (id, status) => {
 }
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+  })
 }
 </script>
 
@@ -292,9 +309,7 @@ function edit(row) {
 .cover {
   margin-top: 15px;
   min-width: 300px;
-  min-height: 300px;
   max-width: 500px;
-  max-height: 500px;
 }
 
 .remarks {

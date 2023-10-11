@@ -42,8 +42,10 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-            <el-button type="success" @click="addTopic">新增专题</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'2100'"
+              >查询</el-button
+            >
+            <el-button type="success" @click="addTopic" v-permission="'2102'">新增专题</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -66,24 +68,47 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
+                v-permission="'2106'"
                 plain
                 size="small"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >下架
               </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
+              <el-button
+                type="primary"
+                v-permission="'2106'"
+                plain
+                size="small"
+                v-else
+                @click="updateStatus(row.id, 0)"
                 >上架</el-button
               >
               <template v-if="!row.parentId">
-                <el-button type="primary" plain size="small" @click="editSubject(row)"
+                <el-button
+                  type="primary"
+                  plain
+                  size="small"
+                  v-permission="'2105'"
+                  @click="editSubject(row)"
                   >编辑</el-button
                 >
-                <el-button type="primary" plain size="small" @click="addType(row)"
+                <el-button
+                  type="primary"
+                  plain
+                  size="small"
+                  v-permission="'2104'"
+                  @click="addType(row)"
                   >新增分类</el-button
                 >
               </template>
-              <el-button v-else type="primary" plain size="small" @click="editType(row)"
+              <el-button
+                v-else
+                type="primary"
+                plain
+                size="small"
+                v-permission="'2103'"
+                @click="editType(row)"
                 >编辑</el-button
               >
             </div>
@@ -114,7 +139,7 @@
         label-width="90px"
       >
         <el-form-item label="所属专题">
-          <el-select class="form-select" v-model="form.parentId" clearable placeholder="请选择">
+          <el-select class="form-select" v-model="form.parentId" placeholder="请选择">
             <el-option
               disabled
               v-for="item in subjectDownList"
@@ -144,14 +169,16 @@
         <el-form-item prop="imgUrl" label="封面图">
           <div class="flex-column">
             <el-upload
-              ref="imgUrl"
-              :http-request="uploadImg"
-              action=""
-              :show-file-list="false"
-              accept=".jpg, .jpeg, .png"
+                ref="imgUrl"
+                :http-request="uploadImg"
+                action=""
+                :show-file-list="false"
+                accept=".jpg, .jpeg, .png"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
-              <!--              <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>-->
+              <template #tip>
+                <span class="remarks ml15">注：建议尺寸：140px*140px</span>
+              </template>
             </el-upload>
             <img :src="form.imgUrl" v-if="form.imgUrl" class="cover" />
           </div>
@@ -354,6 +381,7 @@ const submitTopic = async () => {
         await proxy.$http.content.updateSubject(formTopic.value)
       } else {
         await proxy.$http.content.addSubject(formTopic.value)
+        getSubjectDownList()
       }
       proxy.$modal.msgSuccess('操作成功!')
       closeTopic()
@@ -398,7 +426,9 @@ const getTypeDownList = async () => {
 
 function changeSubject(val) {
   formData.value.typeId = ''
-  getTypeDownList()
+  if (val) {
+    getTypeDownList()
+  }
 }
 
 const updateStatus = async (id, status) => {
@@ -411,17 +441,21 @@ const updateStatus = async (id, status) => {
 
 function editSubject(row) {
   isEditSubject.value = true
-  Object.keys(formTopic.value).forEach((key) => {
-    formTopic.value[key] = row[key]
-  })
   showDialogTopic.value = true
+  nextTick(() => {
+    Object.keys(formTopic.value).forEach((key) => {
+      formTopic.value[key] = row[key]
+    })
+  })
 }
 function editType(row) {
   isEditType.value = true
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+  })
 }
 
 getSubjectDownList()
@@ -430,10 +464,8 @@ getSubjectDownList()
 <style scoped lang="scss">
 .cover {
   margin-top: 15px;
-  min-width: 300px;
-  min-height: 300px;
-  max-width: 500px;
-  max-height: 500px;
+  min-width: 140px;
+  max-width: 280px;
 }
 
 .remarks {

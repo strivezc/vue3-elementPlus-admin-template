@@ -21,7 +21,9 @@ export default {
   },
   // 弹出提示
   alert(content) {
-    return ElMessageBox.alert(content, '提示')
+    return ElMessageBox.alert(content, '提示', {
+      autofocus: false
+    })
   },
   // 错误提示
   alertError(content) {

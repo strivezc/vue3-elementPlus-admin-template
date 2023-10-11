@@ -11,14 +11,15 @@ const account = {
   alwaysShow: true,
   meta: {
     title: '账户管理',
-    icon: 'lock'
+    icon: 'lock',
+    menuId: '5'
   },
   children: [
     {
       path: 'editPassword',
       name: 'EditPassword',
       component: components.EditPassword,
-      meta: { title: '修改密码' }
+      meta: { title: '修改密码', menuId: '50' }
     }
   ]
 }

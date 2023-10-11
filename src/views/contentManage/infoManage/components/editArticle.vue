@@ -81,8 +81,10 @@ const ruleFormRef = ref()
 const getDetails = async () => {
   try {
     const { data } = await proxy.$http.content.queryOneInfoContent(form.value.id)
-    Object.keys(form.value).forEach((key) => {
-      form.value[key] = data[key]
+    nextTick(() => {
+      Object.keys(form.value).forEach((key) => {
+        form.value[key] = data[key]
+      })
     })
   } catch (e) {
     console.log(e, 'error')
@@ -130,9 +132,7 @@ getDetails()
 .cover {
   margin-top: 15px;
   min-width: 300px;
-  min-height: 300px;
   max-width: 500px;
-  max-height: 500px;
 }
 
 .remarks {

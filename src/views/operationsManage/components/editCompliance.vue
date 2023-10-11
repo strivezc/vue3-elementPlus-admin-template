@@ -11,7 +11,7 @@
         <el-input v-model="title" readonly class="input form-input" />
       </el-form-item>
       <div class="ml-120">
-        <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+        <el-tabs v-model="activeName" type="card" @tab-change="handleClick">
           <el-tab-pane label="web" name="0"></el-tab-pane>
           <el-tab-pane label="android" name="1"></el-tab-pane>
           <el-tab-pane label="ios" name="2"></el-tab-pane>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <el-form-item label="资讯正文:" prop="content">
-        <editor v-model="form.content" />
+        <editor v-model="form.content" style="width: 85%" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submit">提交</el-button>
@@ -75,7 +75,8 @@ const getDetail = async () => {
     console.log(e, 'error')
   }
 }
-const handleClick = async () => {
+const handleClick = async (val) => {
+  activeName.value = val
   if ((!form.value.content && !oldContent.value) || form.value.content == oldContent.value) {
     form.value.platformType = activeName.value
     await getDetail()

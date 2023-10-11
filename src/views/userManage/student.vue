@@ -23,7 +23,7 @@
           <el-form-item label="注册时间">
             <el-date-picker
               v-model="formData.beginDate"
-              value-format="yyyy-MM-dd"
+              value-format="YYYY-MM-DD"
               type="date"
               class="date"
               placeholder="选择日期"
@@ -31,7 +31,7 @@
             <span class="date-line">-</span>
             <el-date-picker
               v-model="formData.endDate"
-              value-format="yyyy-MM-dd"
+              value-format="YYYY-MM-DD"
               type="date"
               class="date"
               placeholder="选择日期"
@@ -53,7 +53,9 @@
       <el-row>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'1000'"
+              >查询</el-button
+            >
           </el-form-item>
         </el-col>
       </el-row>
@@ -64,9 +66,18 @@
         <el-table-column align="center" label="用户编号" prop="id"></el-table-column>
         <el-table-column align="center" label="用户名" prop="userName"></el-table-column>
         <el-table-column align="center" label="注册时间" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="手机号码" prop="hidePhone"></el-table-column>
+        <el-table-column align="center" label="手机号码">
+          <template #default="{ row }">
+            <span>{{ row.hidePhone }}</span>
+            <!--            <query-user-phone-->
+            <!--                v-if="row.hidePhone && showPermission"-->
+            <!--                permissionValue="5910"-->
+            <!--                :userId="row.id"-->
+            <!--            ></query-user-phone>-->
+          </template>
+        </el-table-column>
         <el-table-column align="center" label="年龄" prop="age"></el-table-column>
-        <el-table-column align="center" label="职业/年级" prop="gradeName"></el-table-column>
+        <el-table-column align="center" label="学历/年级" prop="gradeName"></el-table-column>
         <el-table-column align="center" label="状态">
           <template #default="{ row }">
             {{ row.status === 0 ? '正常' : '删除' }}
@@ -75,7 +86,12 @@
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
             <div class="button-box-row">
-              <el-button type="primary" plain size="small" @click="AIUseSet(row)"
+              <el-button
+                type="primary"
+                plain
+                size="small"
+                v-permission="'1002'"
+                @click="AIUseSet(row)"
                 >AI使用设置</el-button
               >
             </div>
@@ -126,7 +142,7 @@
           <el-date-picker
             :disabled="form.type === 1 || form.type === 2"
             v-model="form.validDate"
-            value-format="yyyy-MM-dd"
+            value-format="YYYY-MM-DD"
             type="date"
             class="form-date"
             placeholder="选择日期"
@@ -155,7 +171,7 @@ const state = reactive({
     userId: ''
   },
   tableDataLoading: false,
-  tableData: [{}],
+  tableData: [],
   total: 0,
   listQuery: {
     currPage: 1,
@@ -192,10 +208,14 @@ function close() {
 const AIUseSet = async (row) => {
   form.value.userId = row.id
   try {
-    const { data } = proxy.$http.user.userList(params)
-    form.value.type = data.type
-    form.value.useNum = data.useNum
-    form.value.validDate = data.validDate
+    const { data } = await proxy.$http.user.queryRobotConfig(row.id)
+    console.log(data, 'data')
+    if (data) {
+      form.value.type = data.type
+      form.value.useNum = data.useNum || data.tokensNum
+      form.value.validDate = data.validDate
+    }
+    console.log(form.value, ' form.value')
     showDialog.value = true
   } catch (e) {
     console.log(e, 'error')

@@ -1,6 +1,6 @@
 <template>
   <div class="editor">
-    <quill-editor
+    <QuillEditor
       v-model:content="content"
       contentType="html"
       @textChange="(e) => $emit('update:modelValue', content)"
@@ -22,12 +22,13 @@ Quill.register('modules/ImageUploader', ImageUploader)
 Quill.register('modules/blotFormatter', BlotFormatter)
 // 自定义字体
 const fontFamily = ['SimSun', 'SimHei', 'Microsoft-YaHei', 'KaiTi', 'FangSong', 'Arial']
-Quill.imports['attributors/style/font'].whitelist = fontFamily;
-Quill.register(Quill.imports['attributors/style/font'],true);
+Quill.imports['attributors/style/font'].whitelist = fontFamily
+Quill.register(Quill.imports['attributors/style/font'], true)
 // 自定义字号
 const sizes = [false, '16px', '18px', '20px', '22px', '26px', '28px', '32px']
-Quill.imports['attributors/style/size'].whitelist = sizes;
-Quill.register(Quill.imports['attributors/style/size'],true);
+Quill.imports['attributors/style/size'].whitelist = sizes
+Quill.register(Quill.imports['attributors/style/size'], true)
+
 const props = defineProps({
   /* 编辑器的内容 */
   modelValue: {
@@ -36,12 +37,12 @@ const props = defineProps({
   /* 高度 */
   height: {
     type: Number,
-    default: 400
+    default: 500
   },
   /* 最小高度 */
   minHeight: {
     type: Number,
-    default: 400
+    default: 200
   },
   /* 只读 */
   readOnly: {
@@ -57,7 +58,7 @@ const options = ref({
   modules: {
     // 工具栏配置
     toolbar: [
-      [{ font: fontFamily.whitelist }], // 字体
+      [{ font: fontFamily }], // 字体
       [{ size: sizes }], // 字体大小
       ['bold', 'italic', 'underline', 'strike'], // 加粗 斜体 下划线 删除线
       [{ color: [] }, { background: [] }], // 字体颜色、字体背景颜色
@@ -67,7 +68,7 @@ const options = ref({
       [{ list: 'ordered' }, { list: 'bullet' }], // 有序、无序列表
       [{ indent: '-1' }, { indent: '+1' }], // 缩进
       [{ align: [] }], // 对齐方式
-      ['link', 'image', 'video', 'formula'], // 链接、图片、视频、数学公式
+      ['link', 'image', 'video'], // 链接、图片、视频
       ['clean'] // 清除文本格式
     ],
     ImageUploader: {
@@ -81,8 +82,8 @@ const options = ref({
           let formData = new FormData()
           formData.append('file', file)
           try {
-            uploadFile(formData).then(({ resultData }) => {
-              resolve(resultData.fileUrl)
+            uploadFile(formData).then((res) => {
+              resolve(res.data.fileUrl)
             })
           } catch (e) {
             reject('Upload failed')
@@ -114,7 +115,8 @@ watch(
   () => props.modelValue,
   (v) => {
     if (v !== content.value) {
-      content.value = v === undefined ? '<p></p>' : v
+      content.value = (v ?? '') === '' ? '<p></p>' : v
+      console.log(content.value, 'content.value1')
     }
   },
   { immediate: true }

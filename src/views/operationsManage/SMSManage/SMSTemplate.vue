@@ -29,7 +29,9 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3410'"
+          >查询</el-button
+        >
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -47,16 +49,36 @@
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
             <div class="button-box-row">
-              <el-button type="primary" plain size="small" @click="openDialog(row, 1)"
+              <el-button
+                type="primary"
+                v-permission="'3413'"
+                plain
+                size="small"
+                @click="openDialog(row, 1)"
                 >切换通道</el-button
               >
-              <el-button type="primary" plain size="small" @click="openDialog(row, 2)"
+              <el-button
+                type="primary"
+                v-permission="'3412'"
+                plain
+                size="small"
+                @click="openDialog(row, 2)"
                 >编辑内容</el-button
               >
-              <el-button type="primary" plain size="small" @click="openDialog(row, 4)"
+              <el-button
+                type="primary"
+                v-permission="'3414'"
+                plain
+                size="small"
+                @click="openDialog(row, 4)"
                 >限制次数</el-button
               >
-              <el-button type="primary" plain size="small" @click="openDialog(row, 3)"
+              <el-button
+                type="primary"
+                v-permission="'3415'"
+                plain
+                size="small"
+                @click="openDialog(row, 3)"
                 >发送短信</el-button
               >
             </div>
@@ -108,7 +130,7 @@
             <el-input
               class="form-textarea"
               v-model="form.content"
-              placeholder="更新内容"
+              placeholder="短信内容"
               type="textarea"
               :autosize="{ minRows: 4, maxRows: 6 }"
               show-word-limit
@@ -249,7 +271,7 @@ const getChannelList = async () => {
 function openDialog(row, dialogType) {
   type.value = dialogType
   form.value.id = row.id
-  form.content = row.content
+  form.value.content = row.content
   showDialog.value = true
 }
 

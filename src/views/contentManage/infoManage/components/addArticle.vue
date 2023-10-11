@@ -18,7 +18,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="标题:" prop="title">
-        <el-input v-model="form.title" maxlength="50" placeholder="排序" class="input form-input" />
+        <el-input v-model="form.title" maxlength="50" placeholder="标题" class="input form-input" />
       </el-form-item>
       <el-form-item prop="imgUrl" label="封面图">
         <div class="flex-column">
@@ -45,7 +45,7 @@
         />
       </el-form-item>
       <el-form-item label="内容" prop="content">
-        <editor v-model="form.content" />
+        <editor v-model="form.content" style="width: 80%" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submit">提交</el-button>
@@ -121,9 +121,7 @@ getAllTypeDownList()
 .cover {
   margin-top: 15px;
   min-width: 300px;
-  min-height: 300px;
   max-width: 500px;
-  max-height: 500px;
 }
 
 .remarks {

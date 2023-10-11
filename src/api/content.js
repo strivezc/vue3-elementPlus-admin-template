@@ -259,9 +259,29 @@ export function updateRobotStatus(data) {
     data: data
   })
 }
+export function createReview(data) {
+  return request({
+    url: '/config/wordBook/createReview',
+    method: 'post',
+    data: data
+  })
+}
 export function queryRobotOne(id) {
   return request({
     url: `/config/ai/queryRobotOne/${id}`,
-    method: 'get',
+    method: 'get'
+  })
+}
+export function typeList(id) {
+  return request({
+    url: `/study/wordCollect/typeList`,
+    method: 'get'
+  })
+}
+
+export function queryWordBookDownList() {
+  return request({
+    url: `/config/wordBook/queryWordBookDownList`,
+    method: 'get'
   })
 }

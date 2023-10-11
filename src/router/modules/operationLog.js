@@ -14,14 +14,15 @@ const operationLog = {
   alwaysShow: true,
   meta: {
     title: '操作记录',
-    icon: 'edit'
+    icon: 'edit',
+    menuId: '4'
   },
   children: [
     {
       path: 'log',
       component: components.Log,
       name: 'Log',
-      meta: { title: '日志' },
+      meta: { title: '日志', menuId: '40' },
       redirect: 'noRedirect',
       alwaysShow: true,
       children: [
@@ -29,19 +30,19 @@ const operationLog = {
           path: 'accessLog',
           component: components.AccessLog,
           name: 'AccessLog',
-          meta: { title: '访问日志' }
+          meta: { title: '访问日志', menuId: '400' }
         },
         {
           path: 'loginLog',
           component: components.LoginLog,
           name: 'LoginLog',
-          meta: { title: '登录日志' }
+          meta: { title: '登录日志', menuId: '401' }
         },
         {
           path: 'SMSRecord',
           component: components.SMSRecord,
           name: 'SMSRecord',
-          meta: { title: '短信记录' }
+          meta: { title: '短信记录', menuId: '402' }
         }
       ]
     }

@@ -1,19 +1,12 @@
 <template>
   <div class="app-container">
-    <el-form
-      :inline="true"
-      class="form-border"
-      autocomplete="on"
-      :model="formData"
-      onsubmit="return false"
-    >
+    <el-form :inline="true" class="form-border">
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-        <el-button type="success" @click="addInfo">新增明细</el-button>
+        <el-button type="primary" @click="getList" v-permission="'3504'">查询</el-button>
+        <el-button type="success" @click="addInfo" v-permission="'3505'">新增明细</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
-      <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
         <el-table-column align="center" label="字典所属" prop="parentName"></el-table-column>
         <el-table-column align="center" label="标签" prop="dataName"></el-table-column>
@@ -29,7 +22,9 @@
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
             <div class="button-box-row">
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'3506'"
+                >编辑</el-button
+              >
             </div>
           </template>
         </el-table-column>
@@ -112,8 +107,8 @@ const state = reactive({
   tableData: [],
   total: 0,
   showDialog: false,
+  dataId: '',
   form: {
-    dataId: '',
     dataInfoId: '',
     dataName: '',
     dataSort: '',
@@ -136,7 +131,7 @@ const ruleFormRef = ref()
 const getList = async () => {
   tableDataLoading.value = true
   try {
-    const { data, totalCount } = await proxy.$http.operation.dataInfoList(state.form.dataId)
+    const { data, totalCount } = await proxy.$http.operation.dataInfoList(state.dataId)
     tableData.value = data
     total.value = totalCount
   } catch (e) {
@@ -149,6 +144,14 @@ const getList = async () => {
 function close() {
   showDialog.value = false
   ruleFormRef.value.resetFields()
+  // form.value.dataInfoId = ''
+  // form.value.dataName = ''
+  // form.value.dataSort = ''
+  // form.value.dataValue = ''
+  // form.value.remark = ''
+  // form.value.extendType = ''
+  // form.value.extendText = ''
+  // form.value.status = 0
 }
 
 const submit = async () => {
@@ -170,7 +173,7 @@ const submit = async () => {
           params.dataInfoId = form.value.dataInfoId
           await proxy.$http.operation.editInfo(params)
         } else {
-          params.dataId = form.value.dataId
+          params.dataId = state.dataId
           await proxy.$http.operation.addInfo(params)
         }
         proxy.$modal.msgSuccess('操作成功!')
@@ -188,14 +191,16 @@ function addInfo() {
 }
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
-  form.value.dataInfoId = row.id
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+    form.value.dataInfoId = row.id
+  })
 }
 
-state.form.dataId = proxy.$route.params.id
+state.dataId = proxy.$route.params.id
 state.dictType = proxy.$route.query.dictType
 getList()
 </script>

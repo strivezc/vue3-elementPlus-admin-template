@@ -11,16 +11,16 @@
         <el-col :sm="24" :md="12" :lg="10" :xl="10">
           <el-form-item label="日期">
             <el-date-picker
-              v-model="formData.date1"
-              value-format="yyyy-MM-dd"
+              v-model="formData.startDate"
+              value-format="YYYY-MM-DD"
               type="date"
               class="date"
               placeholder="选择日期"
             />
             <span class="date-line">-</span>
             <el-date-picker
-              v-model="formData.date2"
-              value-format="yyyy-MM-dd"
+              v-model="formData.endDate"
+              value-format="YYYY-MM-DD"
               type="date"
               class="date"
               placeholder="选择日期"
@@ -29,12 +29,12 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item label="用户编号">
-            <el-input v-model="formData.accountName" placeholder="用户编号" class="input" />
+            <el-input v-model="formData.userId" placeholder="用户编号" class="input" />
           </el-form-item>
         </el-col>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item label="URL">
-            <el-input v-model="formData.accountName" placeholder="URL" class="input" />
+            <el-input v-model="formData.requestUrl" placeholder="URL" class="input" />
           </el-form-item>
         </el-col>
       </el-row>
@@ -68,7 +68,9 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'4000'"
+              >查询</el-button
+            >
           </el-form-item>
         </el-col>
       </el-row>
@@ -77,12 +79,20 @@
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
         <el-table-column align="center" label="访问时间" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="用户编号" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="用户名" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="用户类型" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="ip" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="url" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="平台类型" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="用户编号" prop="userId"></el-table-column>
+        <el-table-column align="center" label="用户名" prop="userName"></el-table-column>
+        <el-table-column align="center" label="用户类型">
+          <template #default="{ row }">
+            <span v-if="row.userType === -1">游客</span>
+            <span v-else-if="row.userType === 0">管理员</span>
+            <span v-else-if="row.userType === 1">学员</span>
+            <span v-else-if="row.userType === 2">老师</span>
+            <span v-else-if="row.userType === 99">超级管理员</span>
+          </template>
+        </el-table-column>
+        <el-table-column align="center" label="ip" prop="ip"></el-table-column>
+        <el-table-column align="center" label="url" prop="requestUrl"></el-table-column>
+        <el-table-column align="center" label="平台类型" prop="platformType"></el-table-column>
       </el-table>
       <pagination
         v-show="total > 0"
@@ -96,12 +106,17 @@
 </template>
 
 <script setup name="AccessLog">
-import { list } from '@/api'
-
 const { proxy } = getCurrentInstance()
 
 const state = reactive({
-  formData: {},
+  formData: {
+    startDate:'',
+    endDate:'',
+    userId:'',
+    requestUrl:'',
+    startTime:'',
+    endTime:'',
+  },
   tableDataLoading: false,
   tableData: [],
   total: 0,
@@ -124,7 +139,7 @@ const getList = async () => {
       ...formData.value,
       ...listQuery.value
     }
-    const { data, totalCount } = await list(params)
+    const { data, totalCount } = await proxy.$http.operation.queryAccessLog(params)
     tableData.value = data
     total.value = totalCount
   } catch (e) {

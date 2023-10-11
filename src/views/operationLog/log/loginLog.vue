@@ -9,44 +9,50 @@
     >
       <el-form-item label="操作日期">
         <el-date-picker
-          v-model="formData.date1"
-          value-format="yyyy-MM-dd"
+          v-model="formData.createStartTime"
+          value-format="YYYY-MM-DD"
           type="date"
           class="date"
           placeholder="选择日期"
         />
         <span class="date-line">-</span>
         <el-date-picker
-          v-model="formData.date2"
-          value-format="yyyy-MM-dd"
+          v-model="formData.createEndTime"
+          value-format="YYYY-MM-DD"
           type="date"
           class="date"
           placeholder="选择日期"
         />
       </el-form-item>
       <el-form-item label="用户编号">
-        <el-input v-model="formData.accountName" placeholder="用户编号" class="input" />
+        <el-input v-model="formData.userId" placeholder="用户编号" class="input" />
       </el-form-item>
       <el-form-item label="类型">
-        <el-radio-group v-model="formData.status">
+        <el-radio-group v-model="formData.type">
           <el-radio label="">全部</el-radio>
-          <el-radio :label="0">登录</el-radio>
-          <el-radio :label="1">退出</el-radio>
+          <el-radio :label="1">登录</el-radio>
+          <el-radio :label="2">退出</el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'4010'"
+          >查询</el-button
+        >
       </el-form-item>
     </el-form>
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
-        <el-table-column align="center" label="用户id" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="用户名" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="类型" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="用户id" prop="userId"></el-table-column>
+        <el-table-column align="center" label="用户名" prop="userName"></el-table-column>
+        <el-table-column align="center" label="类型">
+          <template #default="{ row }">
+            {{ row.type == 1 ? '登录' : '退出' }}
+          </template>
+        </el-table-column>
         <el-table-column align="center" label="创建时间" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="ip" prop="createTime"></el-table-column>
-        <el-table-column align="center" label="地点" prop="createTime"></el-table-column>
+        <el-table-column align="center" label="ip" prop="ip"></el-table-column>
+        <!--        <el-table-column align="center" label="地点" prop="createTime"></el-table-column>-->
       </el-table>
       <pagination
         v-show="total > 0"
@@ -60,12 +66,15 @@
 </template>
 
 <script setup name="LoginLog">
-import { list } from '@/api'
-
 const { proxy } = getCurrentInstance()
 
 const state = reactive({
-  formData: {},
+  formData: {
+    createStartTime:'',
+    createEndTime:'',
+    userId:'',
+    type:'',
+  },
   tableDataLoading: false,
   tableData: [],
   total: 0,
@@ -88,7 +97,7 @@ const getList = async () => {
       ...formData.value,
       ...listQuery.value
     }
-    const { data, totalCount } = await list(params)
+    const { data, totalCount } = await proxy.$http.operation.queryLoginRecord(params)
     tableData.value = data
     total.value = totalCount
   } catch (e) {

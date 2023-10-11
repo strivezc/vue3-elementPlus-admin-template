@@ -30,8 +30,7 @@ router.beforeEach((to, from, next) => {
         try {
           useUserStore()
             .getPermission()
-            .then((res) => {
-              const data = res.data
+            .then((data) => {
               usePermissionStore()
                 .generateRoutes(data)
                 .then((accessRoutes) => {

@@ -3,7 +3,6 @@ import useUserStore from '@/store/modules/user'
 export default {
   mounted(el, binding) {
     let { value } = binding
-    value = value && value.toString()
     const menuList = useUserStore().menuList
     if (value) {
       const hasPermission = menuList.includes(value)

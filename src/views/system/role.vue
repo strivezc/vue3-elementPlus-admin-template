@@ -18,8 +18,10 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-        <el-button type="success" @click="add">添加角色</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'c100'"
+          >查询</el-button
+        >
+        <el-button type="success" @click="add" v-permission="'c101'">添加角色</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -37,6 +39,7 @@
           <template #default="{ row }">
             <div class="button-box-row">
               <el-button
+                v-permission="'c102'"
                 type="primary"
                 plain
                 @click="deleteItem(row.roleId, row.status)"
@@ -44,9 +47,14 @@
               >
                 {{ row.status == 1 ? '恢复' : '删除' }}
               </el-button>
-              <el-button type="primary" plain size="small" @click="setLimit(row.roleId)"
-                >设置权限</el-button
-              >
+              <el-button
+                type="primary"
+                v-permission="'c103'"
+                plain
+                size="small"
+                @click="setLimit(row.roleId)"
+                >设置权限
+              </el-button>
             </div>
           </template>
         </el-table-column>
@@ -138,6 +146,7 @@ const submit = async () => {
       try {
         await proxy.$http.user.addRole(form.value.roleName)
         close()
+        getList()
         proxy.$modal.msgSuccess('新增成功!')
       } catch (e) {
         console.log(e, 'error')

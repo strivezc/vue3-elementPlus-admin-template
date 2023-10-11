@@ -26,6 +26,12 @@
           <el-form-item label="分类">
             <el-select class="select" v-model="formData.typeId" placeholder="请选择">
               <el-option label="全部" value="" />
+              <el-option
+                v-for="item in typeList"
+                :key="item.id"
+                :label="item.dataName"
+                :value="item.id"
+              />
             </el-select>
           </el-form-item>
         </el-col>
@@ -33,8 +39,11 @@
       <el-row>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'2200'"
+              >查询</el-button
+            >
             <el-upload
+              v-permission="'2202'"
               ref="uploadFile"
               :http-request="importBookList"
               action=""
@@ -52,7 +61,7 @@
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
         <el-table-column align="center" label="词本" prop="bookName"></el-table-column>
-        <el-table-column align="center" label="所属分类" prop="typeId"></el-table-column>
+        <el-table-column align="center" label="所属分类" prop="dataName"></el-table-column>
         <el-table-column align="center" label="简介" prop="intro"></el-table-column>
         <el-table-column align="center" label="封面图">
           <template #default="{ row }">
@@ -77,17 +86,25 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
+                v-permission="'2204'"
                 plain
                 size="small"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >下架
               </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
-                >上架</el-button
-              >
+              <el-button
+                type="primary"
+                v-permission="'2204'"
+                plain
+                size="small"
+                v-else
+                @click="updateStatus(row.id, 0)"
+                >上架
+              </el-button>
               <el-button
                 type="danger"
+                v-permission="'2205'"
                 plain
                 size="small"
                 v-if="row.recommend === 0"
@@ -96,14 +113,23 @@
                 取消推荐
               </el-button>
               <el-button
-                type="primary"
-                plain
-                size="small"
-                v-else
-                @click="updateRecommend(row.id, 0)"
-                >设为推荐</el-button
+                  type="primary"
+                  v-permission="'2205'"
+                  plain
+                  size="small"
+                  v-else
+                  @click="updateRecommend(row.id, 0)"
+              >设为推荐
+              </el-button>
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'2203'"
+              >编辑
+              </el-button
               >
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
+              <el-button type="primary" v-if="row.reviewStatus===1" plain size="small" v-permission="'2207'"
+                         @click="createReview(row.id)"
+              >复习题库
+              </el-button
+              >
               <!--              <el-button type="primary" plain size="small">查看单词</el-button>-->
             </div>
           </template>
@@ -118,7 +144,7 @@
       />
     </div>
 
-    <el-dialog title="编辑" draggable v-model="showDialog" :before-close="close" width="550px">
+    <el-dialog title="编辑" draggable v-model="showDialog" :before-close="close" width="580px">
       <el-form
         :model="form"
         :rules="formRules"
@@ -130,7 +156,14 @@
           <el-input v-model="form.bookName" placeholder="词本名" class="input form-input" />
         </el-form-item>
         <el-form-item label="分类:" prop="typeId">
-          <el-select class="form-select" v-model="form.typeId" placeholder="请选择"> </el-select>
+          <el-select class="form-select" v-model="form.typeId" placeholder="请选择">
+            <el-option
+              v-for="item in typeList"
+              :key="item.id"
+              :label="item.dataName"
+              :value="item.id"
+            />
+          </el-select>
         </el-form-item>
         <el-form-item label="简介:" prop="intro">
           <el-input
@@ -138,6 +171,7 @@
             v-model="form.intro"
             placeholder="简介"
             type="textarea"
+            maxlength="35"
             :autosize="{ minRows: 4, maxRows: 6 }"
             show-word-limit
           />
@@ -152,7 +186,9 @@
               accept=".jpg, .jpeg, .png"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
-              <!--              <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>-->
+              <template #tip>
+              <span class="remarks ml15">注：建议尺寸：132px*178px</span>
+              </template>
             </el-upload>
             <img :src="form.imgUrl" v-if="form.imgUrl" class="cover" />
           </div>
@@ -179,6 +215,7 @@ const state = reactive({
   },
   tableDataLoading: false,
   tableData: [],
+  typeList: [],
   total: 0,
   listQuery: {
     currPage: 1,
@@ -210,6 +247,7 @@ const {
   formRules,
   showDialog,
   loading,
+  typeList,
   uploadLoading
 } = toRefs(state)
 
@@ -237,10 +275,14 @@ const importBookList = async (file) => {
 }
 
 function edit(row) {
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
+  form.value.typeId = row.dataId
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+    form.value.typeId=row.dataId
+  })
 }
 
 function search() {
@@ -296,6 +338,15 @@ const updateRecommend = async (id, status) => {
       getList()
     })
 }
+const createReview = async (id) => {
+  proxy.$modal
+    .confirm('确定要生成单词复习题库吗？')
+    .then(async () => {
+      await proxy.$http.content.createReview({ bookId:id })
+      proxy.$modal.msgSuccess('操作成功!')
+      getList()
+    })
+}
 const submit = async () => {
   ruleFormRef.value.validate(async (valid) => {
     if (valid) {
@@ -306,15 +357,22 @@ const submit = async () => {
     }
   })
 }
+const getTypeList = async () => {
+  try {
+    const { data } = await proxy.$http.content.typeList()
+    typeList.value = data
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+getTypeList()
 </script>
 
 <style scoped lang="scss">
 .cover {
   margin-top: 15px;
   min-width: 150px;
-  min-height: 150px;
   max-width: 200px;
-  max-height: 200px;
 }
 
 .remarks {

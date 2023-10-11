@@ -14,7 +14,7 @@
       <el-table-column align="center" label="更新日期" prop="updateTime"></el-table-column>
       <el-table-column align="center" label="操作">
         <template #default="{ row }">
-          <el-button type="primary" plain size="small" @click="edit(row.resourceType)"
+          <el-button type="primary" v-permission="'3001'" plain size="small" @click="edit(row.type)"
             >编辑</el-button
           >
         </template>

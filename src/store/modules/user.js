@@ -1,5 +1,5 @@
 import { login, logout, getPermissionInfo } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getToken, setToken, removeToken, setTalkId, removeTalkId } from '@/utils/auth'
 import defAva from '@/assets/images/profile.jpg'
 
 const useUserStore = defineStore('user', {
@@ -23,6 +23,7 @@ const useUserStore = defineStore('user', {
             setToken(token)
             this.token = token
             this.talkId = res.data.talkId
+            setTalkId(res.data.talkId)
             resolve()
           })
           .catch((error) => {
@@ -63,6 +64,7 @@ const useUserStore = defineStore('user', {
       return new Promise((resolve) => {
         this.token = ''
         removeToken()
+        removeTalkId()
         resolve()
       })
     }

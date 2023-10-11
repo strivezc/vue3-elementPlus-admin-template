@@ -18,14 +18,16 @@
         <el-input v-model="formData.name" placeholder="类型名称" class="input" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3400'"
+          >查询</el-button
+        >
       </el-form-item>
     </el-form>
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
         <el-table-column align="center" label="通道名" prop="name"></el-table-column>
-        <el-table-column align="center" label="账号" prop="accunt"></el-table-column>
+        <el-table-column align="center" label="账号" prop="account"></el-table-column>
         <el-table-column align="center" label="签名" prop="sign"></el-table-column>
         <el-table-column align="center" label="状态">
           <template #default="{ row }">
@@ -36,13 +38,20 @@
           <template #default="{ row }">
             <el-button
               type="danger"
+              v-permission="'3402'"
               plain
               size="small"
               v-if="row.status === 0"
               @click="updateStatus(row.id, 1)"
               >下架
             </el-button>
-            <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
+            <el-button
+              type="primary"
+              v-permission="'3402'"
+              plain
+              size="small"
+              v-else
+              @click="updateStatus(row.id, 0)"
               >上架</el-button
             >
           </template>

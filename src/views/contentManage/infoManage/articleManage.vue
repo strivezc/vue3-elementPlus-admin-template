@@ -58,8 +58,10 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-            <el-button type="success" @click="add">新增</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'2110'"
+              >查询</el-button
+            >
+            <el-button type="success" @click="add" v-permission="'2112'">新增</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -84,16 +86,30 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
+                v-permission="'2114'"
                 plain
                 size="small"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >下架
               </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
+              <el-button
+                type="primary"
+                v-permission="'2114'"
+                plain
+                size="small"
+                v-else
+                @click="updateStatus(row.id, 0)"
                 >上架</el-button
               >
-              <el-button type="primary" plain size="small" @click="edit(row.id)">编辑</el-button>
+              <el-button
+                type="primary"
+                plain
+                size="small"
+                @click="edit(row.id)"
+                v-permission="'2113'"
+                >编辑</el-button
+              >
             </div>
           </template>
         </el-table-column>
@@ -187,7 +203,9 @@ const getTypeDownList = async () => {
 }
 function changeSubject(val) {
   formData.value.typeId = ''
-  getTypeDownList()
+  if (val) {
+    getTypeDownList()
+  }
 }
 const updateStatus = async (id, status) => {
   proxy.$modal.confirm(status === 0 ? '确定要上架吗？' : '确定要下架吗？').then(async () => {
@@ -197,7 +215,7 @@ const updateStatus = async (id, status) => {
   })
 }
 
-// getSubjectDownList()
+getSubjectDownList()
 </script>
 
 <style scoped lang="scss"></style>

@@ -10,17 +10,28 @@
       <el-form-item label="问题分类">
         <el-select class="select" clearable v-model="formData.typeId" placeholder="请选择">
           <el-option label="全部" value="" />
-          <el-option v-for="item in feedbackTypes" :key="item.id" :label="item.dataName" :value="item.id" />
+          <el-option
+            v-for="item in feedbackTypes"
+            :key="item.id"
+            :label="item.dataName"
+            :value="item.id"
+          />
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3100'"
+          >查询</el-button
+        >
       </el-form-item>
     </el-form>
     <div class="pt20">
       <total-count :total="total"></total-count>
       <el-table v-loading="tableDataLoading" :data="tableData" border>
-        <el-table-column align="center" label="所属分类" prop="typeId"></el-table-column>
+        <el-table-column align="center" label="所属分类">
+          <template #default="{ row }">
+            {{formatType(row.typeId)}}
+          </template>
+        </el-table-column>
         <el-table-column align="center" label="提交时间" prop="createTime"></el-table-column>
         <el-table-column align="center" label="提交人" prop="createUser"></el-table-column>
         <el-table-column align="center" label="状态">
@@ -38,7 +49,14 @@
         </el-table-column>
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
-            <el-button type="primary" plain size="small" @click="reply(row.id)">回复</el-button>
+            <el-button
+              type="primary"
+              plain
+              size="small"
+              @click="reply(row.id)"
+              v-permission="'3102'"
+              >回复</el-button
+            >
           </template>
         </el-table-column>
       </el-table>
@@ -122,7 +140,7 @@ const state = reactive({
     replyResult: [{ required: true, message: '请选择处理结果！', trigger: 'change' }]
   },
   content: '',
-  feedbackTypes:[]
+  feedbackTypes: []
 })
 const ruleFormRef = ref()
 const {
@@ -138,12 +156,27 @@ const {
   content
 } = toRefs(state)
 
+function formatType(val) {
+  let str = ''
+  if (feedbackTypes.value && feedbackTypes.value.length > 0) {
+    str = feedbackTypes.value.find(item => {
+      return item.id === Number(val)
+    })['dataName']
+  }
+  return str
+}
+
+function close() {
+  showDialog.value = false
+  ruleFormRef.value.resetFields()
+}
 const submit = async () => {
   await ruleFormRef.value.validate(async (valid, fields) => {
     if (valid) {
       try {
         await proxy.$http.operation.handleFeedback(form.value)
         proxy.$modal.msgSuccess('操作成功!')
+        close()
       } catch (e) {
         console.log(e, 'error')
       }
@@ -164,11 +197,6 @@ const reply = async (id) => {
   } catch (e) {
     console.log(e, 'error')
   }
-}
-
-function close() {
-  showDialog.value = false
-  ruleFormRef.value.resetFields()
 }
 
 function search() {
@@ -192,10 +220,10 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
-const getFeedbackTypes=async ()=>{
+const getFeedbackTypes = async () => {
   try {
-    const {data} =await proxy.$http.operation.feedbackTypes()
-    feedbackTypes.value=data
+    const { data } = await proxy.$http.operation.feedbackTypes()
+    feedbackTypes.value = data
   } catch (e) {
     console.log(e, 'error')
   }

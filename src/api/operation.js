@@ -139,7 +139,7 @@ export function contentList(data) {
 export function queryChannel() {
   return request({
     url: `/config/smsConfig/queryChannel`,
-    method: 'get',
+    method: 'get'
   })
 }
 export function updateContentChannel(data) {
@@ -255,6 +255,61 @@ export function addTestUser(data) {
 export function feedbackTypes() {
   return request({
     url: `/user/setUp/feedbackTypes`,
-    method: 'get',
+    method: 'get'
+  })
+}
+export function queryLoginRecord(data) {
+  return request({
+    url: `/config/record/queryLoginRecord`,
+    method: 'post',
+    data
+  })
+}
+export function queryAccessLog(data) {
+  return request({
+    url: `/config/record/queryAccessLog`,
+    method: 'post',
+    data
+  })
+}
+export function versionReview(data) {
+  return request({
+    url: `/config/version/versionReview`,
+    method: 'post',
+    data
+  })
+}
+export function queryVersionReview(type) {
+  return request({
+    url: `/config/version/queryVersionReview/${type}`,
+    method: 'get'
+  })
+}
+export function addAppRecommend(data) {
+  return request({
+    url: `/config/appRecommend/addAppRecommend`,
+    method: 'post',
+    data
+  })
+}
+export function queryAppRecommend(data) {
+  return request({
+    url: `/config/appRecommend/queryAppRecommend`,
+    method: 'post',
+    data
+  })
+}
+export function updateAppRecommend(data) {
+  return request({
+    url: `/config/appRecommend/updateAppRecommend`,
+    method: 'post',
+    data
+  })
+}
+export function updateAppRecommendStatus(data) {
+  return request({
+    url: `/config/appRecommend/updateAppRecommendStatus`,
+    method: 'post',
+    data
   })
 }

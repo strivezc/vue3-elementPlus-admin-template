@@ -5,11 +5,12 @@ import { getToken, getRequestPath } from '@/utils/auth'
 import cache from '@/plugins/cache'
 import useUserStore from '@/store/modules/user'
 
+let MODE=import.meta.env.MODE
 function getBaseURL() {
   let baseURL = ''
-  if (import.meta.env.MODE === 'development') {
+  if (MODE === 'development') {
     const devRequestPath = getRequestPath()
-    baseURL = devRequestPath ? devRequestPath : 'http://10.204.42.157:9091'
+    baseURL = devRequestPath ? devRequestPath : 'http://10.204.42.157:9090'
   } else {
     baseURL = import.meta.env.VITE_APP_BASE_API
   }
@@ -18,7 +19,7 @@ function getBaseURL() {
 // 创建axios实例
 const service = axios.create({
   // baseURL: import.meta.env.VITE_APP_BASE_API,
-  timeout: 20000
+  timeout: 60000
 })
 
 // request拦截器

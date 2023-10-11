@@ -10,6 +10,17 @@
       <el-form-item label="单词">
         <el-input v-model="formData.text" placeholder="单词" class="input" />
       </el-form-item>
+      <el-form-item label="词本名">
+        <el-select class="select" v-model="formData.bookId" clearable placeholder="请选择">
+          <el-option label="全部" value="" />
+          <el-option
+              v-for="item in bookList"
+              :key="item.id"
+              :label="item.bookName"
+              :value="item.id"
+          />
+        </el-select>
+      </el-form-item>
       <el-form-item label="状态">
         <el-radio-group v-model="formData.status">
           <el-radio label="">全部</el-radio>
@@ -18,7 +29,9 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'2210'"
+          >查询</el-button
+        >
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -30,21 +43,31 @@
         <el-table-column align="center" label="释义" prop="paraphrase"></el-table-column>
         <el-table-column align="center" label="音频" prop="audioUrl" width="302px">
           <template #default="{ row }">
-            <audio :src="row.audioUrl" controls="controls" style="width: 276px">
+            <audio :src="row.audioUrl" v-if="row.audioUrl" controls="controls" style="width: 276px">
               Your browser does not support the audio element.
             </audio>
           </template>
         </el-table-column>
-        <el-table-column align="center" label="单词搭配">
+        <el-table-column align="center" label="单词搭配" width="110px">
           <template #default="{ row }">
-            <el-button type="primary" plain size="small" @click="watchWordGroup(row.id, 1)"
+            <el-button
+              type="primary"
+              v-permission="'2214'"
+              plain
+              size="small"
+              @click="watchWordGroup(row.id, 1)"
               >查看</el-button
             >
           </template>
         </el-table-column>
-        <el-table-column align="center" label="例句">
+        <el-table-column align="center" label="例句" width="110px">
           <template #default="{ row }">
-            <el-button type="primary" plain size="small" @click="watchWordGroup(row.id, 2)"
+            <el-button
+              type="primary"
+              v-permission="'2214'"
+              plain
+              size="small"
+              @click="watchWordGroup(row.id, 2)"
               >查看</el-button
             >
           </template>
@@ -57,18 +80,28 @@
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
             <div class="button-box-row">
+<!--              2023-10-10屏蔽-->
+<!--              <el-button-->
+<!--                type="danger"-->
+<!--                v-permission="'2213'"-->
+<!--                plain-->
+<!--                size="small"-->
+<!--                v-if="row.status === 0"-->
+<!--                @click="updateStatus(row.id, 1)"-->
+<!--                >删除-->
+<!--              </el-button>-->
               <el-button
-                type="danger"
+                type="primary"
+                v-permission="'2213'"
                 plain
                 size="small"
-                v-if="row.status === 0"
-                @click="updateStatus(row.id, 1)"
-                >删除
-              </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
+                v-if="row.status !== 0"
+                @click="updateStatus(row.id, 0)"
                 >启用</el-button
               >
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'2212'"
+                >编辑</el-button
+              >
             </div>
           </template>
         </el-table-column>
@@ -81,7 +114,7 @@
         @pagination="getList"
       />
     </div>
-    <el-dialog title="编辑" draggable v-model="showDialog" :before-close="close" width="400px">
+    <el-dialog title="编辑" draggable v-model="showDialog" :before-close="close" width="420px">
       <el-form
         :model="form"
         :rules="formRules"
@@ -90,16 +123,16 @@
         label-width="60px"
       >
         <el-form-item label="单词:" prop="text">
-          <el-input v-model="form.text" placeholder="单词" class="input form-input" />
+          <el-input v-model="form.text" placeholder="单词" maxlength="50" show-word-limit class="input form-input" />
         </el-form-item>
         <el-form-item label="英音:" prop="ukSounds">
-          <el-input v-model="form.ukSounds" placeholder="英音" class="input form-input" />
+          <el-input v-model="form.ukSounds" placeholder="英音" maxlength="100" show-word-limit class="input form-input" />
         </el-form-item>
         <el-form-item label="美音:" prop="usSounds">
-          <el-input v-model="form.usSounds" placeholder="美音" class="input form-input" />
+          <el-input v-model="form.usSounds" placeholder="美音" maxlength="100" show-word-limit class="input form-input" />
         </el-form-item>
         <el-form-item label="释义:" prop="paraphrase">
-          <el-input v-model="form.paraphrase" placeholder="释义" class="input form-input" />
+          <el-input v-model="form.paraphrase" placeholder="释义" maxlength="500" show-word-limit class="input form-input" />
         </el-form-item>
       </el-form>
       <template #footer>
@@ -125,34 +158,36 @@
         label-width="80px"
       >
         <div class="sentence-item" v-for="(item, index) in formWordGroup.expandList" :key="index">
-          <el-form-item label="原文:" v-if="formWordGroup.type === 2">
+          <el-form-item label="英文原文:" v-if="formWordGroup.type === 2">
             <el-input
               class="form-textarea"
               v-model="item.cnText"
               placeholder="原文"
               type="textarea"
+              maxlength="200"
               :autosize="{ minRows: 2, maxRows: 4 }"
               show-word-limit
             />
           </el-form-item>
           <el-form-item label="英文词组:" v-else>
             <div class="flex-c">
-              <el-input v-model="item.enText" placeholder="英文词组" class="form-input" />
+              <el-input v-model="item.enText" maxlength="200" show-word-limit placeholder="英文词组" class="form-input" />
             </div>
           </el-form-item>
           <div class="flex-c">
-            <el-form-item label="翻译:" v-if="formWordGroup.type === 2">
+            <el-form-item label="中文翻译:" v-if="formWordGroup.type === 2">
               <el-input
                 class="form-textarea"
                 v-model="item.enText"
                 placeholder="翻译"
                 type="textarea"
+                maxlength="100"
                 :autosize="{ minRows: 2, maxRows: 4 }"
                 show-word-limit
               />
             </el-form-item>
             <el-form-item label="中文:" v-else>
-              <el-input v-model="item.cnText" placeholder="中文" class="form-input" />
+              <el-input v-model="item.cnText" maxlength="100" show-word-limit placeholder="中文" class="form-input" />
             </el-form-item>
 
             <template v-if="index === formWordGroup.expandList.length - 1">
@@ -186,9 +221,11 @@ const { proxy } = getCurrentInstance()
 const state = reactive({
   formData: {
     status: '',
+    bookId: '',
     text: ''
   },
   tableDataLoading: false,
+  bookList: [],
   tableData: [],
   total: 0,
   listQuery: {
@@ -228,6 +265,7 @@ const ruleFormRef = ref()
 const ruleFormWordGroup = ref()
 const {
   formData,
+  bookList,
   tableDataLoading,
   tableData,
   total,
@@ -292,10 +330,12 @@ const updateStatus = async (id, status) => {
 }
 
 function edit(row) {
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+  })
 }
 
 const submit = async () => {
@@ -314,7 +354,7 @@ const submitWordGroup = async () => {
     if (valid) {
       await proxy.$http.content.addExpand(formWordGroup.value)
       proxy.$modal.msgSuccess('操作成功!')
-      close()
+      closeWordGroup()
       getList()
     }
   })
@@ -347,6 +387,15 @@ function addSentenceItem(index) {
     status: ''
   })
 }
+const getBookList = async () => {
+  try {
+    const { data } = await proxy.$http.content.queryWordBookDownList()
+    bookList.value = data
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
+getBookList()
 </script>
 
 <style scoped lang="scss">

@@ -106,9 +106,23 @@ export function userList(data) {
     data
   })
 }
+export function addAdmin(data) {
+  return request({
+    url: `/config/permission/addAdmin`,
+    method: 'post',
+    data,
+    isRepeatSubmit: true
+  })
+}
 export function queryRobotConfig(userId) {
   return request({
     url: `/user/userInfo/queryRobotConfig/${userId}`,
+    method: 'get'
+  })
+}
+export function queryUserPhone(userId, permissionValue) {
+  return request({
+    url: `/user/userPermission/queryUserPhone/${userId}/${permissionValue}`,
     method: 'get'
   })
 }

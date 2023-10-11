@@ -46,8 +46,10 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-            <el-button type="success" @click="add">新增</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'3200'"
+              >查询</el-button
+            >
+            <el-button type="success" @click="add" v-permission="'3202'">新增</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -85,16 +87,25 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
+                v-permission="'3204'"
                 plain
                 size="small"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >下架
               </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
-                >上架</el-button
+              <el-button
+                type="primary"
+                v-permission="'3204'"
+                plain
+                size="small"
+                v-else
+                @click="updateStatus(row.id, 0)"
+                >上架
+              </el-button>
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'3203'"
+                >编辑</el-button
               >
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
             </div>
           </template>
         </el-table-column>
@@ -157,23 +168,26 @@
         <el-form-item label="过期时间:" prop="failTime">
           <el-date-picker
             v-model="form.failTime"
-            value-format="yyyy-MM-dd HH:mm:ss"
+            value-format="YYYY-MM-DD HH:mm:ss"
             type="datetime"
             class="form-date"
             placeholder="选择日期"
+            :disabledDate="disabledDate"
           />
         </el-form-item>
         <el-form-item prop="imgUrl" label="广告图片">
           <div class="flex-column">
             <el-upload
-              ref="barrierImg"
-              :http-request="uploadImg"
-              action=""
-              :show-file-list="false"
-              accept=".jpg, .jpeg, .png"
+                ref="barrierImg"
+                :http-request="uploadImg"
+                action=""
+                :show-file-list="false"
+                accept=".jpg, .jpeg, .png"
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
-              <!--              <span slot="tip" class="remarks ml15">注：建议尺寸：750*750px</span>-->
+              <template #tip>
+                <span class="remarks ml15">注：建议尺寸：670px*160px</span>
+              </template>
             </el-upload>
             <img :src="form.imgUrl" v-if="form.imgUrl" class="cover" />
           </div>
@@ -206,7 +220,9 @@ const state = reactive({
     currPage: 1,
     pageSize: 10
   },
-
+  disabledDate(date) {
+    return date.getTime() < new Date().getTime() - 8.64e7
+  },
   loading: false,
   showDialog: false,
   form: {
@@ -236,6 +252,7 @@ const {
   formRules,
   showDialog,
   loading,
+  disabledDate,
   isEdit
 } = toRefs(state)
 
@@ -290,10 +307,12 @@ const submit = async () => {
 
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+  })
 }
 
 const uploadImg = async (file) => {
@@ -306,7 +325,7 @@ const uploadImg = async (file) => {
   formData.append('file', file.file)
   try {
     const { data } = await proxy.$http.common.uploadFile(formData)
-    form.value.barrierImg = data.fileUrl
+    form.value.imgUrl = data.fileUrl
     loading.value = false
   } catch (e) {
     loading.value = false
@@ -318,9 +337,7 @@ const uploadImg = async (file) => {
 .cover {
   margin-top: 15px;
   min-width: 150px;
-  min-height: 150px;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 300px;
 }
 
 .remarks {

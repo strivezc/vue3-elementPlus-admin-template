@@ -14,12 +14,14 @@
         <el-radio-group v-model="formData.status">
           <el-radio label="">全部</el-radio>
           <el-radio :label="0">正常</el-radio>
-          <el-radio :label="1">下架</el-radio>
+          <el-radio :label="1">删除</el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-        <el-button type="success" @click="add">新增</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3420'"
+          >查询</el-button
+        >
+        <el-button type="success" @click="add" v-permission="'3422'">新增</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -38,15 +40,22 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
+                v-permission="'3423'"
                 plain
                 size="small"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >禁用
               </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
-                >启用</el-button
-              >
+              <el-button
+                type="primary"
+                v-permission="'3423'"
+                plain
+                size="small"
+                v-else
+                @click="updateStatus(row.id, 0)"
+                >启用
+              </el-button>
             </div>
           </template>
         </el-table-column>
@@ -115,6 +124,7 @@ const submit = async () => {
       try {
         await proxy.$http.operation.addSmsBlack(form.value.phone)
         proxy.$modal.msgSuccess('操作成功!')
+        close()
         getList()
       } catch (e) {
         console.log(e, 'error')

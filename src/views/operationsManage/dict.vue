@@ -8,8 +8,10 @@
       onsubmit="return false"
     >
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-        <el-button type="success" @click="addDict">新增</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3500'"
+          >查询</el-button
+        >
+        <el-button type="success" @click="addDict" v-permission="'3502'">新增</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -28,8 +30,15 @@
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
             <div class="button-box-row">
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
-              <el-button type="primary" plain size="small" @click="infoList(row.id, row.dataType)"
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'3503'"
+                >编辑</el-button
+              >
+              <el-button
+                type="primary"
+                plain
+                size="small"
+                @click="infoList(row.id, row.dataType)"
+                v-permission="'3504'"
                 >列表</el-button
               >
             </div>
@@ -168,13 +177,15 @@ function addDict() {
 
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+  })
 }
 function infoList(id, dataType) {
-  proxy.$router.push(`/operationsManage/dictData/${id}?dictType=${dataType}`)
+  proxy.$router.push(`/operationsManage/dictManage/dictData/${id}?dictType=${dataType}`)
 }
 
 function close() {

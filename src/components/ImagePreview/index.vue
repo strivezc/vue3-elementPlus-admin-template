@@ -70,15 +70,15 @@ const realHeight = computed(() =>
 
 <style lang="scss" scoped>
 .el-image {
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   background-color: #ebeef5;
   box-shadow: 0 0 5px 1px #ccc;
   :deep(.el-image__inner) {
     transition: all 0.3s;
     cursor: pointer;
-    &:hover {
-      transform: scale(1.1);
-    }
+    /*&:hover {*/
+    /*  transform: scale(1.1);*/
+    /*}*/
   }
   :deep(.image-slot) {
     display: flex;

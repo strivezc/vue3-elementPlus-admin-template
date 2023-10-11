@@ -17,7 +17,7 @@
           <el-form-item label="发送时间">
             <el-date-picker
               v-model="formData.beginTime"
-              value-format="yyyy-MM-dd"
+              value-format="YYYY-MM-DD"
               type="date"
               class="date"
               placeholder="选择日期"
@@ -25,7 +25,7 @@
             <span class="date-line">-</span>
             <el-date-picker
               v-model="formData.endTime"
-              value-format="yyyy-MM-dd"
+              value-format="YYYY-MM-DD"
               type="date"
               class="date"
               placeholder="选择日期"
@@ -71,7 +71,9 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'4020'"
+              >查询</el-button
+            >
           </el-form-item>
         </el-col>
       </el-row>

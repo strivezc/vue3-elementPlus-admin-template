@@ -12,7 +12,7 @@ export function login(data) {
 export function logout() {
   return request({
     url: '/user/login/logout',
-    method: 'get',
+    method: 'get'
   })
 }
 

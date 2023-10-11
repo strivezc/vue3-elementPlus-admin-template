@@ -1,9 +1,9 @@
 <template>
   <div class="app-container">
     <el-form label-width="100px" ref="ruleForm" :model="form">
-      <el-form-item label="邮箱：">
-        <div>{{ form.email }}</div>
-      </el-form-item>
+      <!--      <el-form-item label="邮箱：">-->
+      <!--        <div>{{ form.email }}</div>-->
+      <!--      </el-form-item>-->
       <el-form-item label="用户名：">
         <div>{{ form.userName }}</div>
       </el-form-item>
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       form: {
-        email: '',
+        // email: '',
         realName: '',
         userId: null,
         userName: ''

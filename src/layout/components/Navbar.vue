@@ -16,6 +16,9 @@
       <template v-if="appStore.device !== 'mobile'">
         <header-search id="header-search" class="right-menu-item" />
       </template>
+      <div class="logout flex-c">
+        <el-icon class="avatar"><Avatar /></el-icon><span>{{ talkId }}</span>
+      </div>
       <div class="logout" @click="logout">退出登录</div>
     </div>
   </div>
@@ -26,10 +29,12 @@ const { proxy } = getCurrentInstance()
 import useAppStore from '@/store/modules/app'
 import useUserStore from '@/store/modules/user'
 import useSettingsStore from '@/store/modules/settings'
+import { getTalkId } from '@/utils/auth'
 
 const appStore = useAppStore()
 const userStore = useUserStore()
 const settingsStore = useSettingsStore()
+const talkId = getTalkId()
 
 function toggleSideBar() {
   appStore.toggleSideBar()
@@ -40,7 +45,7 @@ function logout() {
     .confirm('确定退出系统吗？')
     .then(() => {
       userStore.logOut().then(() => {
-        location.href = '/index'
+        location.href = '/admin/login'
       })
     })
     .catch(() => {})
@@ -116,6 +121,15 @@ function logout() {
         background-color: #eee;
       }
     }
+  }
+  .flex-c {
+    display: flex;
+    align-items: center;
+  }
+  .avatar {
+    color: #0087ff;
+    margin-right: 5px;
+    font-size: 18px;
   }
 }
 </style>

@@ -33,8 +33,11 @@
         </el-col>
       </el-row>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-        <el-button type="success" @click="add">新增</el-button>
+        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3300'"
+          >查询</el-button
+        >
+        <el-button type="success" @click="add" v-permission="'3302'">新增</el-button>
+        <el-button type="warning" @click="queryAppVersionNumber" v-permission="'3305'">app审核状态管理</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -64,16 +67,25 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
+                v-permission="'3304'"
                 plain
                 size="small"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >下架
               </el-button>
-              <el-button type="primary" plain size="small" v-else @click="updateStatus(row.id, 0)"
-                >上架</el-button
+              <el-button
+                type="primary"
+                v-permission="'3304'"
+                plain
+                size="small"
+                v-else
+                @click="updateStatus(row.id, 0)"
+                >上架
+              </el-button>
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'3303'"
+                >编辑</el-button
               >
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
             </div>
           </template>
         </el-table-column>
@@ -120,11 +132,11 @@
             show-word-limit
           />
         </el-form-item>
-        <el-form-item label="下载地址:">
+        <el-form-item label="下载地址:" prop="downloadUrl">
           <el-input v-model="form.downloadUrl" placeholder="下载地址" class="form-input" />
         </el-form-item>
         <el-form-item label="更新版本范围:" label-width="115px" prop="beginNo">
-          <el-select class="small-select" clearable v-model="formData.beginNo" placeholder="请选择">
+          <el-select class="small-select" clearable v-model="form.beginNo" placeholder="请选择">
             <el-option
               v-for="item in versionList"
               :key="item.innerVersion"
@@ -133,7 +145,7 @@
             />
           </el-select>
           <span class="date-line">-</span>
-          <el-select class="small-select" clearable v-model="formData.endNo" placeholder="请选择">
+          <el-select class="small-select" clearable v-model="form.endNo" placeholder="请选择">
             <el-option
               v-for="item in versionList"
               :key="item.innerVersion"
@@ -156,6 +168,44 @@
         </span>
       </template>
     </el-dialog>
+
+    <el-dialog
+        title="app审核状态"
+        draggable
+        v-model="showStatus"
+        :before-close="closeStatus"
+        width="500px"
+    >
+      <el-form
+          :model="formStatus"
+          :rules="formStatusRules"
+          label-width="115px"
+          label-position="right"
+          ref="remFormStatus"
+      >
+        <el-form-item label="平台类型:" prop="type">
+          <el-radio-group v-model="formStatus.type" @change="queryAppVersionNumber">
+            <el-radio :label="0">ios</el-radio>
+            <el-radio :label="1">Android</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="版本号:" prop="versionNum">
+          <el-input v-model="formStatus.versionNum" placeholder="版本号" class="input form-input"/>
+        </el-form-item>
+        <el-form-item label="设置审核状态:" prop="status">
+          <el-radio-group v-model="formStatus.status">
+            <el-radio :label="0">正常</el-radio>
+            <el-radio :label="1">审核</el-radio>
+          </el-radio-group>
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="closeStatus">取消</el-button>
+          <el-button type="primary" @click="submitStatus">确认</el-button>
+        </span>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
@@ -164,7 +214,7 @@ const { proxy } = getCurrentInstance()
 
 const state = reactive({
   formData: {
-    status: '',
+    status: 0,
     type: '',
     versionNo: ''
   },
@@ -176,6 +226,7 @@ const state = reactive({
     currPage: 1,
     pageSize: 10
   },
+  showStatus: false,
   showDialog: false,
   isEdit: false
 })
@@ -203,12 +254,42 @@ const formRules = ref({
   type: [{ required: true, trigger: 'change', message: '请选择平台类型!' }],
   text: [{ required: true, trigger: 'blur', message: '请输入更新内容!' }],
   downloadUrl: [{ required: true, trigger: 'blur', message: '请输入下载地址!' }],
-  forceUpdate: [{ required: true, trigger: 'change', message: '请选择是否强制更新!' }],
-  beginNo: [{ required: true, trigger: 'change', validator: validateBeginNo }]
+  forceUpdate: [{ required: true, trigger: 'change', message: '请选择是否强制更新!' }]
+  // beginNo: [{ required: true, trigger: 'change', validator: validateBeginNo }]
 })
+const formStatus = ref({
+  status: 1,
+  type: 0,
+  versionNum: ''
+})
+const validateVersionNum = (rule, value, callback) => {
+  const reg =/^\d{1,2}\.\d{1,2}\.\d{1,2}$/
+  if (!value) {
+    callback(new Error('请输入版本号!'))
+  } else if (!reg.test(value)) {
+    callback(new Error('格式不正确,x.x.x的形式,x最多两位数!'))
+  } else {
+    callback()
+  }
+}
+const formStatusRules = ref({
+  versionNum: [{ required: true, trigger: 'blur',validator: validateVersionNum }],
+  status: [{ required: true, trigger: 'change', message: '请选择审核状态!' }],
+  type: [{ required: true, trigger: 'change', message: '请选择平台类型!' }],
+})
+const remFormStatus = ref()
 const ruleFormRef = ref()
-const { formData, tableDataLoading, tableData, total, listQuery, showDialog, isEdit, versionList } =
-  toRefs(state)
+const {
+  formData,
+  tableDataLoading,
+  tableData,
+  total,
+  listQuery,
+  showDialog,
+  showStatus,
+  isEdit,
+  versionList
+} = toRefs(state)
 
 function add() {
   showDialog.value = true
@@ -218,6 +299,11 @@ function add() {
 function close() {
   showDialog.value = false
   ruleFormRef.value.resetFields()
+}
+
+function closeStatus() {
+  showStatus.value = false
+  remFormStatus.value.resetFields()
 }
 
 function search() {
@@ -241,6 +327,21 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+
+const queryAppVersionNumber=async ()=>{
+  try {
+    const {data} =await proxy.$http.operation.queryVersionReview(formStatus.value.type)
+    if (data) {
+      showStatus.value = true
+      nextTick(()=>{
+        formStatus.value.versionNum=data.versionNum
+        formStatus.value.status=data.status
+      })
+    }
+  } catch (e) {
+    console.log(e, 'error')
+  }
+}
 const submit = async () => {
   await ruleFormRef.value.validate(async (valid) => {
     if (valid) {
@@ -255,6 +356,16 @@ const submit = async () => {
     }
   })
 }
+const submitStatus = async () => {
+  remFormStatus.value.validate(async (valid) => {
+    if (valid) {
+      await proxy.$http.operation.versionReview(formStatus.value)
+      proxy.$modal.msgSuccess('操作成功!')
+      closeStatus()
+      getList()
+    }
+  })
+}
 const updateStatus = async (id, status) => {
   proxy.$modal.confirm(status === 0 ? '确定要上架吗？' : '确定要下架吗？').then(async () => {
     await proxy.$http.operation.updateStatus(id)
@@ -265,10 +376,12 @@ const updateStatus = async (id, status) => {
 
 function edit(row) {
   isEdit.value = true
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+  })
 }
 
 const getVersionList = async () => {
@@ -289,4 +402,17 @@ function changeType(type) {
 getVersionList()
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  .red {
+    color: #ff574e;
+  }
+
+  .text {
+    margin: 0 0 0 68px;
+    line-height: 20px;
+  }
+  .el-text{
+    cursor: pointer;
+    margin-left: 15px;
+  }
+</style>

@@ -39,8 +39,10 @@
       <el-row>
         <el-col :sm="24" :md="12" :lg="8" :xl="8">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList">查询</el-button>
-            <el-button type="success" @click="add">新增</el-button>
+            <el-button type="primary" native-type="submit" @click="getList" v-permission="'3600'"
+              >查询</el-button
+            >
+            <el-button type="success" @click="add" v-permission="'3602'">新增</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -60,7 +62,9 @@
         <el-table-column align="center" label="操作">
           <template #default="{ row }">
             <div class="button-box-row">
-              <el-button type="primary" plain size="small" @click="edit(row)">编辑</el-button>
+              <el-button type="primary" plain size="small" @click="edit(row)" v-permission="'3603'"
+                >编辑</el-button
+              >
             </div>
           </template>
         </el-table-column>
@@ -113,7 +117,7 @@
         <el-form-item label="有效期:" prop="validDate">
           <el-date-picker
             v-model="form.validDate"
-            value-format="yyyy-MM-dd"
+            value-format="YYYY-MM-DD"
             type="date"
             class="form-date"
             placeholder="选择日期"
@@ -217,10 +221,12 @@ const getList = async () => {
 
 function edit(row) {
   showDialog.value = true
-  Object.keys(form.value).forEach((key) => {
-    form.value[key] = row[key]
-  })
   showDialog.value = true
+  nextTick(() => {
+    Object.keys(form.value).forEach((key) => {
+      form.value[key] = row[key]
+    })
+  })
 }
 
 const submit = async () => {
@@ -245,7 +251,7 @@ const getTypeList = async () => {
     console.log(e, 'error')
   }
 }
-// getTypeList()
+getTypeList()
 </script>
 
 <style scoped lang="scss"></style>

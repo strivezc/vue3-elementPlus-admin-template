@@ -70,11 +70,6 @@ export const constantRoutes = [
         meta: { title: '首页', icon: 'house', affix: true }
       }
     ]
-  },
-  {
-    path: '/test',
-    component: () => import('@/views/pubuliu'),
-    hidden: true
   }
 ]
 
@@ -82,7 +77,7 @@ export const constantRoutes = [
 export const asyncRoutes = [user, content, operations, operationLog, system, account]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/admin/'),
   routes: constantRoutes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

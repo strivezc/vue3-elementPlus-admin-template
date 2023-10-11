@@ -24,7 +24,7 @@
           v-model="form.newPassword"
           class="large-input"
           maxlength="20"
-          placeholder="8-20位需包含大小写字母、数字和特殊字符(至少包含3种)"
+          placeholder="8-20位需包含大小写字母、数字或特殊字符"
           type="password"
           oninput="value=value.replace(/\s+/g,'')"
         />
@@ -35,13 +35,13 @@
           v-model="form.confirmPassword"
           class="large-input"
           maxlength="20"
-          placeholder="8-20位需包含大小写字母、数字和特殊字符(至少包含3种)"
+          placeholder="8-20位需包含大小写字母、数字或特殊字符"
           type="password"
           oninput="value=value.replace(/\s+/g,'')"
         />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submit">修改</el-button>
+        <el-button type="primary" @click="submit" v-permission="'5000'">修改</el-button>
       </el-form-item>
     </el-form>
   </div>

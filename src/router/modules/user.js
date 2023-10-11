@@ -11,14 +11,15 @@ const user = {
   alwaysShow: true,
   meta: {
     title: '用户管理',
-    icon: 'user'
+    icon: 'user',
+    menuId: '1'
   },
   children: [
     {
       path: 'student',
       name: 'Student',
       component: components.Student,
-      meta: { title: '学员管理' }
+      meta: { title: '学员管理', menuId: '10' }
     }
   ]
 }

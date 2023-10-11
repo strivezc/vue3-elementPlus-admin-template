@@ -1,14 +1,17 @@
 <template>
   <div class="login">
-    <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
+    <el-form ref="loginRef"  onsubmit="return false" :model="loginForm" :rules="loginRules" class="login-form">
       <h3 class="title">后台管理系统</h3>
       <el-form-item prop="account">
         <el-input
           v-model="loginForm.account"
           type="text"
           size="large"
-          auto-complete="off"
+          autocomplete="on"
+          :model="loginForm"
+          onsubmit="return false"
           placeholder="账号"
+          name="account"
         >
           <template #prefix>
             <svg-icon icon-class="user" class="el-input__icon input-icon" />
@@ -22,7 +25,6 @@
           size="large"
           auto-complete="off"
           placeholder="密码"
-          @keyup.enter="handleLogin"
         >
           <template #prefix>
             <svg-icon icon-class="password" class="el-input__icon input-icon" />
@@ -36,6 +38,7 @@
         <el-button
           :loading="loading"
           size="large"
+          native-type="submit"
           type="primary"
           style="width: 100%"
           @click.prevent="handleLogin"
@@ -57,7 +60,7 @@
             value="http://10.204.42.157:9090"
           ></el-option>
           <el-option label="http://10.204.42.89:9090" value="http://10.204.42.89:9090"></el-option>
-          <el-option label="https://test.talk915.com" value="https://test.talk915.com"></el-option>
+          <el-option label="https://testlearn.talk915.com" value="https://testlearn.talk915.com"></el-option>
         </el-select>
       </el-form-item>
     </el-form>
@@ -69,7 +72,7 @@
 
 <script setup>
 import { getRequestPath, setRequestPath } from '@/utils/auth'
-import Cookies from 'js-cookie'
+import cache from '@/plugins/cache'
 import { encrypt, decrypt } from '@/utils/jsencrypt'
 import useUserStore from '@/store/modules/user'
 
@@ -102,14 +105,14 @@ function handleLogin() {
       loading.value = true
       // 勾选了需要记住密码设置在 cookie 中设置记住用户名和密码
       if (loginForm.value.rememberMe) {
-        Cookies.set('account', loginForm.value.account, { expires: 30 })
-        Cookies.set('password', encrypt(loginForm.value.password), { expires: 30 })
-        Cookies.set('rememberMe', loginForm.value.rememberMe, { expires: 30 })
+        cache.local.set('account', loginForm.value.account)
+        cache.local.set('password', encrypt(loginForm.value.password))
+        cache.local.set('rememberMe', loginForm.value.rememberMe)
       } else {
         // 否则移除
-        Cookies.remove('account')
-        Cookies.remove('password')
-        Cookies.remove('rememberMe')
+        cache.local.remove('account')
+        cache.local.remove('password')
+        cache.local.remove('rememberMe')
       }
       // 调用action的登录方法
       userStore
@@ -125,15 +128,14 @@ function handleLogin() {
 }
 
 function getCookie() {
-  const account = Cookies.get('account')
-  const password = Cookies.get('password')
-  const rememberMe = Cookies.get('rememberMe')
+  const account = cache.local.get('account')
+  const password = cache.local.get('password')
+  const rememberMe = cache.local.get('rememberMe')
   loginForm.value = {
-    account: account === undefined ? loginForm.value.account : account,
-    password: password === undefined ? loginForm.value.password : decrypt(password),
-    rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
+    account: (account ?? '') === '' ? loginForm.value.account : account,
+    password: (password ?? '') === '' ? loginForm.value.password : decrypt(password),
+    rememberMe: (rememberMe ?? '') === '' ? false : Boolean(rememberMe)
   }
-  console.log(loginForm.value, 'loginForm.value')
 }
 
 if (MODE === 'development') {
