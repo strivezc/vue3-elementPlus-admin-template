@@ -97,6 +97,11 @@ service.interceptors.response.use(
       } else {
         if (res.code === -1) {
           // to re-login
+          useUserStore()
+            .resetToken()
+            .then(() => {
+              //
+            })
           ElMessageBox.confirm('登录失效，请重新登录！', '提示', {
             confirmButtonText: '确认',
             showCancelButton: false,
@@ -105,12 +110,7 @@ service.interceptors.response.use(
             closeOnPressEscape: false,
             type: 'warning'
           }).then(() => {
-            useUserStore()
-              .resetToken()
-              .then(() => {
-                // window.location.href = import.meta.env.VITE_APP_DOMAIN;
-                router.push('/login')
-              })
+            location.href = '/admin/login'
           })
         } else {
           ElMessage.error(`操作异常，请联系管理员(${res.code})!`)

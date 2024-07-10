@@ -13,11 +13,10 @@
       <div class="ml-120">
         <el-tabs v-model="activeName" type="card" @tab-change="handleClick">
           <el-tab-pane label="web" name="0"></el-tab-pane>
-          <el-tab-pane label="android" name="1"></el-tab-pane>
-          <el-tab-pane label="ios" name="2"></el-tab-pane>
+          <el-tab-pane label="小程序" name="1"></el-tab-pane>
         </el-tabs>
         <div class="text">
-          <span>更新人： {{ updateUser }}</span> <span>更新时间：{{ modifyTime }}</span>
+          <span>更新人： {{ updateUser }}</span> <span>更新时间：{{ subjectId }}</span>
         </div>
       </div>
       <el-form-item label="资讯正文:" prop="content">
@@ -34,10 +33,14 @@
 import { queryAgreementOne, updateAgreement } from '@/api/operation'
 
 const resourceType = {
-  1: '未成年人隐私协议',
-  2: '隐私协议',
-  3: '用户协议',
-  4: '关于我们'
+  1: '免责声明',
+  2: '用户协议',
+  3: '隐私协议',
+  4: '儿童隐私协议',
+  5: '接单规则',
+  6: '提现规则',
+  7: '等级解锁攻略',
+  8: '发布悬赏须知'
 }
 const { proxy } = getCurrentInstance()
 
@@ -53,13 +56,13 @@ const state = reactive({
   title: '',
   activeName: '0',
   updateUser: '',
-  modifyTime: '',
+  subjectId: '',
   oldContent: ''
 })
 
 const ruleFormRef = ref()
 
-const { form, formRules, title, activeName, updateUser, modifyTime, oldContent } = toRefs(state)
+const { form, formRules, title, activeName, updateUser, subjectId, oldContent } = toRefs(state)
 
 const getDetail = async () => {
   try {
@@ -67,7 +70,7 @@ const getDetail = async () => {
       type: form.value.type,
       platformType: form.value.platformType
     })
-    modifyTime.value = data.modifyTime
+    subjectId.value = data.updateTime
     updateUser.value = data.updateUser
     form.value.content = data.content
     oldContent.value = data.content

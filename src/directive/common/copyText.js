@@ -48,6 +48,7 @@ function copyTextToClipboard(input, { target = document.body } = {}) {
   let isSuccess = false
   try {
     isSuccess = document.execCommand('copy')
+    ElMessage.success('复制成功!')
   } catch {}
 
   element.remove()

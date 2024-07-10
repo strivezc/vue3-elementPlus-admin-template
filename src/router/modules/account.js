@@ -1,12 +1,12 @@
 export const components = {
   Account: () => import('@/layout'),
-  EditPassword: () => import('@/views/account')
+  EditPassword: () => import('@/views/account/editPassword'),
 }
 
 const account = {
   path: '/account',
   component: components.Account,
-  redirect: '/account/editPassword',
+  redirect: 'noRedirect',
   name: 'Account',
   alwaysShow: true,
   meta: {

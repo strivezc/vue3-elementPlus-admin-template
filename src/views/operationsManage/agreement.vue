@@ -14,7 +14,7 @@
       <el-table-column align="center" label="更新日期" prop="updateTime"></el-table-column>
       <el-table-column align="center" label="操作">
         <template #default="{ row }">
-          <el-button type="primary" v-permission="'3001'" plain size="small" @click="edit(row.type)"
+          <el-button type="primary" plain size="small" @click="edit(row.type)" v-permission="'3001'"
             >编辑</el-button
           >
         </template>
@@ -27,10 +27,14 @@
 const { proxy } = getCurrentInstance()
 
 const resourceType = {
-  1: '未成年人隐私协议',
-  2: '隐私协议',
-  3: '用户协议',
-  4: '关于我们'
+  1: '免责声明',
+  2: '用户协议',
+  3: '隐私协议',
+  4: '儿童隐私协议',
+  5: '接单规则',
+  6: '提现规则',
+  7: '等级解锁攻略',
+  8: '发布悬赏须知'
 }
 const tableData = ref([])
 

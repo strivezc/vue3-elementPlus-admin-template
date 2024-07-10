@@ -12,7 +12,6 @@
           <el-form-item label="用户">
             <el-input
               v-model="formData.userName"
-              autocomplete="on"
               name="userInfo"
               placeholder="邮箱/用户名/姓名"
               class="input"
@@ -44,11 +43,12 @@
         </el-col>
       </el-row>
       <el-row>
-        <el-col :sm="24" :md="12" :lg="8" :xl="8">
+        <el-col :sm="24" :md="12" :lg="10" :xl="10">
           <el-form-item>
             <el-button type="primary" @click="search" native-type="submit" v-permission="'c000'"
               >查询</el-button
             >
+            <el-button @click="clear" v-permission="'c000'">清空选项</el-button>
             <el-button type="success" @click="add" v-permission="'c007'">新增管理员</el-button>
             <el-button type="warning" @click="refreshCache" v-permission="'c006'"
               >刷新缓存</el-button
@@ -284,6 +284,16 @@ function search() {
   getList()
 }
 
+function clear() {
+  formData.value = {
+    userName: '',
+    roleId: -1,
+    status: -1
+  }
+  listQuery.value.currPage = 1
+  getList()
+}
+
 const getList = async () => {
   tableDataLoading.value = true
   try {
@@ -332,6 +342,7 @@ const submit = async () => {
 }
 
 getAllRoleList()
+search()
 </script>
 
 <style scoped lang="scss"></style>

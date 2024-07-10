@@ -2,20 +2,20 @@ import request from '@/utils/request'
 
 export function queryAgreement() {
   return request({
-    url: `/config/operation/queryAgreement`,
+    url: `/config/agree/queryAgreement`,
     method: 'get'
   })
 }
 export function queryAgreementOne(data) {
   return request({
-    url: `/config/operation/queryAgreementOne`,
+    url: `/config/agree/queryAgreementOne`,
     method: 'post',
     data
   })
 }
 export function updateAgreement(data) {
   return request({
-    url: `/config/operation/updateAgreement`,
+    url: `/config/agree/updateAgreement`,
     method: 'post',
     data
   })
@@ -311,5 +311,130 @@ export function updateAppRecommendStatus(data) {
     url: `/config/appRecommend/updateAppRecommendStatus`,
     method: 'post',
     data
+  })
+}
+export function addInfoContent(data) {
+  return request({
+    url: '/config/Info/addInfoContent',
+    method: 'post',
+    data: data,
+    isRepeatSubmit: true
+  })
+}
+export function addSubject(data) {
+  return request({
+    url: '/config/Info/addSubject',
+    method: 'post',
+    data: data,
+    isRepeatSubmit: true
+  })
+}
+export function addSubjectType(data) {
+  return request({
+    url: '/config/Info/addSubjectType',
+    method: 'post',
+    data: data,
+    isRepeatSubmit: true
+  })
+}
+export function queryAllTypeDownList() {
+  return request({
+    url: '/config/Info/queryAllTypeDownList',
+    method: 'get'
+  })
+}
+export function queryInfo(data) {
+  return request({
+    url: '/config/Info/queryInfo',
+    method: 'post',
+    data: data
+  })
+}
+export function queryInfoContent(data) {
+  return request({
+    url: '/config/Info/queryInfoContent',
+    method: 'post',
+    data: data
+  })
+}
+export function updateInfoContent(data) {
+  return request({
+    url: '/config/Info/updateInfoContent',
+    method: 'post',
+    data: data
+  })
+}
+export function updateInfoContentStatus(data) {
+  return request({
+    url: '/config/Info/updateInfoContentStatus',
+    method: 'post',
+    data: data
+  })
+}
+export function updateInfoStatus(data) {
+  return request({
+    url: '/config/Info/updateInfoStatus',
+    method: 'post',
+    data: data
+  })
+}
+export function updateSubject(data) {
+  return request({
+    url: '/config/Info/updateSubject',
+    method: 'post',
+    data: data
+  })
+}
+export function updateSubjectType(data) {
+  return request({
+    url: '/config/Info/updateSubjectType',
+    method: 'post',
+    data: data
+  })
+}
+export function queryOneInfoContent(id) {
+  return request({
+    url: `/config/Info/queryOneInfoContent/${id}`,
+    method: 'get'
+  })
+}
+export function querySubjectDownList() {
+  return request({
+    url: '/config/Info/querySubjectDownList',
+    method: 'get'
+  })
+}
+export function queryTypeDownList(id) {
+  return request({
+    url: `/config/Info/queryTypeDownList/${id}`,
+    method: 'get'
+  })
+}
+export function queryGradeList(data) {
+  return request({
+    url: '/user/grade/queryGradeList',
+    method: 'post',
+    data: data
+  })
+}
+export function upGradeStatus(data) {
+  return request({
+    url: '/user/grade/upGradeStatus',
+    method: 'post',
+    data: data
+  })
+}
+export function queryGradeById(data) {
+  return request({
+    url: '/user/grade/queryGradeById',
+    method: 'post',
+    data: data
+  })
+}
+export function addOrUpGrade(data) {
+  return request({
+    url: '/user/grade/addOrUpGrade',
+    method: 'post',
+    data: data
   })
 }

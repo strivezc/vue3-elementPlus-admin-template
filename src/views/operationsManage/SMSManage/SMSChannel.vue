@@ -11,16 +11,17 @@
         <el-radio-group v-model="formData.status">
           <el-radio label="">全部</el-radio>
           <el-radio :label="0">正常</el-radio>
-          <el-radio :label="1">删除</el-radio>
+          <el-radio :label="1">下架</el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item label="类型名称">
         <el-input v-model="formData.name" placeholder="类型名称" class="input" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3400'"
+        <el-button type="primary" native-type="submit" @click="search" v-permission="'3400'"
           >查询</el-button
         >
+        <el-button @click="clear" v-permission="'3400'">清空选项</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -31,7 +32,7 @@
         <el-table-column align="center" label="签名" prop="sign"></el-table-column>
         <el-table-column align="center" label="状态">
           <template #default="{ row }">
-            {{ row.status === 0 ? '正常' : '删除' }}
+            {{ row.status === 0 ? '正常' : '下架' }}
           </template>
         </el-table-column>
         <el-table-column align="center" label="操作">
@@ -92,6 +93,15 @@ function search() {
   getList()
 }
 
+function clear() {
+  formData.value = {
+    name: '',
+    status: ''
+  }
+  listQuery.value.currPage = 1
+  getList()
+}
+
 const getList = async () => {
   tableDataLoading.value = true
   try {
@@ -115,6 +125,7 @@ const updateStatus = async (id, status) => {
     getList()
   })
 }
+search()
 </script>
 
 <style scoped lang="scss"></style>

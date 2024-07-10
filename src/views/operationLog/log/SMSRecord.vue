@@ -20,7 +20,7 @@
               value-format="YYYY-MM-DD"
               type="date"
               class="date"
-              placeholder="选择日期"
+              placeholder="开始日期"
             />
             <span class="date-line">-</span>
             <el-date-picker
@@ -28,7 +28,7 @@
               value-format="YYYY-MM-DD"
               type="date"
               class="date"
-              placeholder="选择日期"
+              placeholder="结束日期"
             />
           </el-form-item>
         </el-col>
@@ -71,9 +71,10 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList" v-permission="'4020'"
+            <el-button type="primary" native-type="submit" @click="search" v-permission="'4020'"
               >查询</el-button
             >
+            <el-button @click="clear" v-permission="'4020'">清空选项</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -134,6 +135,19 @@ function search() {
   getList()
 }
 
+function clear() {
+  formData.value = {
+    beginTime: '',
+    endTime: '',
+    channelId: '',
+    contentId: '',
+    phone: '',
+    status: ''
+  }
+  listQuery.value.currPage = 1
+  getList()
+}
+
 const getList = async () => {
   tableDataLoading.value = true
   try {
@@ -168,6 +182,7 @@ const getSmsTypeList = async () => {
 }
 getChannelList()
 getSmsTypeList()
+search()
 </script>
 
 <style scoped lang="scss"></style>

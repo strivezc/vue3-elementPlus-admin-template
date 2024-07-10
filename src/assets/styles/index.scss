@@ -140,7 +140,7 @@ aside {
 }
 
 .text-center {
-  text-align: center;
+  text-align: center!important;
 }
 
 .sub-navbar {
@@ -218,4 +218,36 @@ aside {
 .remarks {
   color: #ff574e;
   font-size: 14px;
+}
+.flex-horizontal-center{
+  display: flex;
+  align-items: center;
+  &>*{
+    flex-shrink: 0;
+    &:not(:first-child){
+      margin-left: 5px;
+    }
+  }
+}
+.el-button--default:focus{
+  border-color: #dcdfe6 !important;
+  background-color: #ffffff !important;
+  color: #606266 !important;
+}
+.el-button--primary:focus{
+  border-color: #1890ff !important;
+  background-color: #1890ff !important;
+  color: #ffffff !important;
+}
+.duohang {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.danhang{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap
 }

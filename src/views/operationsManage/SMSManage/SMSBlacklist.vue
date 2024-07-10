@@ -14,13 +14,14 @@
         <el-radio-group v-model="formData.status">
           <el-radio label="">全部</el-radio>
           <el-radio :label="0">正常</el-radio>
-          <el-radio :label="1">删除</el-radio>
+          <el-radio :label="1">禁用</el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3420'"
+        <el-button type="primary" native-type="submit" @click="search" v-permission="'3420'"
           >查询</el-button
         >
+        <el-button @click="clear" v-permission="'3420'">清空选项</el-button>
         <el-button type="success" @click="add" v-permission="'3422'">新增</el-button>
       </el-form-item>
     </el-form>
@@ -32,7 +33,7 @@
         <el-table-column align="center" label="创建人" prop="createUser"></el-table-column>
         <el-table-column align="center" label="状态">
           <template #default="{ row }">
-            {{ row.status === 0 ? '正常' : '下架' }}
+            {{ row.status === 0 ? '正常' : '禁用' }}
           </template>
         </el-table-column>
         <el-table-column align="center" label="操作">
@@ -149,6 +150,15 @@ function search() {
   getList()
 }
 
+function clear() {
+  formData.value = {
+    phone: '',
+    status: ''
+  }
+  listQuery.value.currPage = 1
+  getList()
+}
+
 const getList = async () => {
   tableDataLoading.value = true
   try {
@@ -172,6 +182,7 @@ const updateStatus = async (id, status) => {
     getList()
   })
 }
+search()
 </script>
 
 <style scoped lang="scss"></style>

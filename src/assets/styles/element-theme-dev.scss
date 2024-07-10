@@ -1,0 +1,38 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+$colors: (
+        'primary': (
+                'base': #1890ff
+        ),
+        'success': (
+                'base': #13ce66
+        ),
+        'warning': (
+                'base': #ffba00
+        ),
+        'danger': (
+                'base': #ff4949
+        ),
+        'error': (
+                'base': #f56c6c
+        ),
+        'info': (
+                'base': #909399
+        )
+),
+$border-color: (
+        'light': #dfe4ed,
+        'lighter': #e6ebf5
+),
+$table: (
+        'border-color': #dfe6ec
+),
+$common-component-size: (
+        'large': 40px,
+        'default': 36px,
+        'small': 28px
+)
+);
+
+// 本地开发环境加引入全局elementPlus样式，否则自定义样式不生效
+@use "element-plus/theme-chalk/src/index.scss" as *;
+

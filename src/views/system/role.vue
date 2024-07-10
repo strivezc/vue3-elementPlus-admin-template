@@ -18,9 +18,10 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList" v-permission="'c100'"
+        <el-button type="primary" native-type="submit" @click="search" v-permission="'c100'"
           >查询</el-button
         >
+        <el-button @click="clear" v-permission="'c100'">清空选项</el-button>
         <el-button type="success" @click="add" v-permission="'c101'">添加角色</el-button>
       </el-form-item>
     </el-form>
@@ -123,6 +124,15 @@ function search() {
   getList()
 }
 
+function clear() {
+  formData.value = {
+    status: -1,
+    roleName: ''
+  }
+  listQuery.value.currPage = 1
+  getList()
+}
+
 const getList = async () => {
   tableDataLoading.value = true
   try {
@@ -180,6 +190,7 @@ function deleteItem(roleId, status) {
 function setLimit(roleId) {
   router.push({ path: '/system/roleLimit', query: { roleId } })
 }
+search()
 </script>
 
 <style scoped lang="scss"></style>

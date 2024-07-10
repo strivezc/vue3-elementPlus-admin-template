@@ -126,3 +126,54 @@ export function queryUserPhone(userId, permissionValue) {
     method: 'get'
   })
 }
+// 用户管理
+export function queryCompanyInfoList(data) {
+  return request({
+    url: `/user/companyInfo/queryCompanyInfoList`,
+    method: 'post',
+    data
+  })
+}
+export function resetPassword(data) {
+  return request({
+    url: `/user/companyInfo/resetPassword`,
+    method: 'post',
+    data
+  })
+}
+export function setTaskReviewStatus(data) {
+  return request({
+    url: `/user/companyInfo/setTaskReviewStatus`,
+    method: 'post',
+    data
+  })
+}
+export function queryCompanyDetail(userId) {
+  return request({
+    url: `/user/companyInfo/queryCompanyDetail/${userId}`,
+    method: 'get'
+  })
+}
+export function addCompanyInfo(data) {
+  return request({
+    url: `/user/companyInfo/addCompanyInfo`,
+    method: 'post',
+    data,
+    isRepeatSubmit: true
+  })
+}
+export function updateCompanyInfo(data) {
+  return request({
+    url: `/user/companyInfo/updateCompanyInfo`,
+    method: 'post',
+    data,
+    isRepeatSubmit: true
+  })
+}
+export function queryUserManageList(data) {
+  return request({
+    url: `/user/userInfo/queryUserManageList`,
+    method: 'post',
+    data
+  })
+}

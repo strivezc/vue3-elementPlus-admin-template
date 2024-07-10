@@ -8,7 +8,7 @@
       onsubmit="return false"
     >
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3500'"
+        <el-button type="primary" native-type="submit" @click="search" v-permission="'3500'"
           >查询</el-button
         >
         <el-button type="success" @click="addDict" v-permission="'3502'">新增</el-button>
@@ -211,6 +211,7 @@ const submit = async () => {
     }
   })
 }
+search()
 </script>
 
 <style scoped lang="scss"></style>

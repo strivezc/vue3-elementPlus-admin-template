@@ -1,5 +1,6 @@
 // import { ElMessage, ElMessageBox, ElNotification, ElLoading } from 'element-plus'
-
+import router from '@/router'
+import useTagsView from './tab'
 let loadingInstance
 
 export default {
@@ -83,5 +84,36 @@ export default {
   // 关闭遮罩层
   closeLoading() {
     loadingInstance.close()
+  },
+  // 定时关闭提示
+  setTimeBox(content, count, obj) {
+    let timer
+    timer = setInterval(() => {
+      if (count <= 0) {
+        clearInterval(timer)
+        ElMessageBox.close()
+        if (obj) {
+          useTagsView.closeOpenPage(router).then(() => {
+            router.push(obj)
+          })
+        }
+      } else {
+        count--
+        const timeInfo = document.getElementsByClassName('setTimeBtn')
+        timeInfo[0].innerHTML = `确定（${count}s）`
+      }
+    }, 1000)
+    ElMessageBox.alert(content, '提示', {
+      type: 'success',
+      confirmButtonClass: 'setTimeBtn',
+      confirmButtonText: `确定（${count}s）`
+    }).then(() => {
+      clearInterval(timer)
+      if (obj) {
+        useTagsView.closeOpenPage(router).then(() => {
+          router.push(obj)
+        })
+      }
+    })
   }
 }

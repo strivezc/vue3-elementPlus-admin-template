@@ -15,7 +15,7 @@
               value-format="YYYY-MM-DD"
               type="date"
               class="date"
-              placeholder="选择日期"
+              placeholder="开始日期"
             />
             <span class="date-line">-</span>
             <el-date-picker
@@ -23,7 +23,7 @@
               value-format="YYYY-MM-DD"
               type="date"
               class="date"
-              placeholder="选择日期"
+              placeholder="结束日期"
             />
           </el-form-item>
         </el-col>
@@ -68,9 +68,10 @@
         </el-col>
         <el-col :sm="24" :md="12" :lg="7" :xl="7">
           <el-form-item>
-            <el-button type="primary" native-type="submit" @click="getList" v-permission="'4000'"
+            <el-button type="primary" native-type="submit" @click="search" v-permission="'4000'"
               >查询</el-button
             >
+            <el-button @click="clear" v-permission="'4000'">清空选项</el-button>
           </el-form-item>
         </el-col>
       </el-row>
@@ -85,8 +86,9 @@
           <template #default="{ row }">
             <span v-if="row.userType === -1">游客</span>
             <span v-else-if="row.userType === 0">管理员</span>
-            <span v-else-if="row.userType === 1">学员</span>
-            <span v-else-if="row.userType === 2">老师</span>
+            <span v-else-if="row.userType === 1">用户</span>
+            <span v-else-if="row.userType === 2">客户/品牌方</span>
+            <span v-else-if="row.userType === 3">品牌方子账号</span>
             <span v-else-if="row.userType === 99">超级管理员</span>
           </template>
         </el-table-column>
@@ -132,6 +134,19 @@ function search() {
   getList()
 }
 
+function clear() {
+  formData.value = {
+    startDate:'',
+    endDate:'',
+    userId:'',
+    requestUrl:'',
+    startTime:'',
+    endTime:'',
+  }
+  listQuery.value.currPage = 1
+  getList()
+}
+
 const getList = async () => {
   tableDataLoading.value = true
   try {
@@ -148,6 +163,7 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+search()
 </script>
 
 <style scoped lang="scss"></style>

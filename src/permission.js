@@ -24,6 +24,7 @@ router.beforeEach((to, from, next) => {
       const hasRoles =
         (useUserStore().menuList && useUserStore().menuList.length > 0) ||
         useUserStore().permissionFlag
+      console.log(hasRoles,'hasRoles')
       if (hasRoles) {
         next()
       } else {
@@ -59,12 +60,14 @@ router.beforeEach((to, from, next) => {
       // 在免登录白名单，直接进入
       next()
     } else {
-      next(`/login?redirect=${to.fullPath}`) // 否则全部重定向到登录页
+      next('/login')
+      // next(`/login?redirect=${to.fullPath}`) // 否则全部重定向到登录页
       NProgress.done()
     }
   }
 })
 
 router.afterEach(() => {
+  console.log('afterEach')
   NProgress.done()
 })

@@ -12,11 +12,13 @@ import plugins from './plugins' // plugins
 // svg图标
 import 'virtual:svg-icons-register'
 import elementIcons from '@/components/SvgIcon/svgicon'
+import * as echarts from 'echarts' // 引入echarts
 import './permission' // permission control
 
 const app = createApp(App)
 // 全局方法挂载
 app.config.globalProperties.$http = http
+app.config.globalProperties.$echarts = echarts
 app.use(router)
 app.use(store)
 app.use(plugins)

@@ -29,9 +29,10 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList" v-permission="'3410'"
+        <el-button type="primary" native-type="submit" @click="search" v-permission="'3410'"
           >查询</el-button
         >
+        <el-button @click="clear" v-permission="'3410'">清空选项</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -40,6 +41,7 @@
         <el-table-column align="center" label="ID" prop="id"></el-table-column>
         <el-table-column align="center" label="短信类型" prop="typeName"></el-table-column>
         <el-table-column align="center" label="模板内容" prop="content"></el-table-column>
+        <el-table-column align="center" label="当天限制条数" prop="limitNum"></el-table-column>
         <el-table-column align="center" label="通道" prop="channelName"></el-table-column>
         <el-table-column align="center" label="状态">
           <template #default="{ row }">
@@ -236,9 +238,21 @@ const title = computed(() => {
 function close() {
   showDialog.value = false
   ruleFormRef.value.resetFields()
+  form.value.num = ''
+  form.value.content = ''
 }
 
 function search() {
+  listQuery.value.currPage = 1
+  getList()
+}
+
+function clear() {
+  formData.value = {
+    channelId: '',
+    status: '',
+    typeName: ''
+  }
   listQuery.value.currPage = 1
   getList()
 }
@@ -272,6 +286,7 @@ function openDialog(row, dialogType) {
   type.value = dialogType
   form.value.id = row.id
   form.value.content = row.content
+  form.value.num = row.limitNum
   showDialog.value = true
 }
 
@@ -314,6 +329,7 @@ const submit = async () => {
 }
 
 getChannelList()
+search()
 </script>
 
 <style scoped lang="scss"></style>

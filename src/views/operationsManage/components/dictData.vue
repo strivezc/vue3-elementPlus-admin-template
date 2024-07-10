@@ -63,6 +63,14 @@
             class="form-input"
           />
         </el-form-item>
+        <el-form-item label="拓展内容:" prop="extendText">
+          <el-input
+            v-model="form.extendText"
+            maxlength="20"
+            placeholder="拓展内容"
+            class="form-input"
+          />
+        </el-form-item>
         <el-form-item label="排序:" prop="dataSort">
           <el-input
             v-model="form.dataSort"

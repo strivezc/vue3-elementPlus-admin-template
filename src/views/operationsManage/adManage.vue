@@ -12,10 +12,8 @@
           <el-form-item label="位置">
             <el-select class="select" clearable v-model="formData.type" placeholder="请选择">
               <el-option label="全部" value="" />
-              <el-option label="开屏弹层" :value="0" />
-              <el-option label="首页底部" :value="1" />
-              <el-option label="首页弹层" :value="2" />
-              <el-option label="发现中部" :value="3" />
+              <el-option label="移动端首页顶部广告位" :value="0" />
+              <el-option label="小程序首页顶部广告位" :value="1" />
             </el-select>
           </el-form-item>
         </el-col>
@@ -49,6 +47,7 @@
             <el-button type="primary" native-type="submit" @click="getList" v-permission="'3200'"
               >查询</el-button
             >
+            <el-button @click="clear" v-permission="'3200'">清空选项</el-button>
             <el-button type="success" @click="add" v-permission="'3202'">新增</el-button>
           </el-form-item>
         </el-col>
@@ -60,18 +59,22 @@
         <el-table-column align="center" label="ID" prop="id"></el-table-column>
         <el-table-column align="center" label="位置">
           <template #default="{ row }">
-            <span v-if="row.type === 0">开屏弹层</span>
-            <span v-else-if="row.type === 1">首页底部</span>
-            <span v-else-if="row.type === 2">首页弹层</span>
-            <span v-else-if="row.type === 3">发现中部</span>
+            <span v-if="row.type === 0">移动端首页顶部广告位</span>
+            <span v-if="row.type === 1">小程序首页顶部广告位</span>
           </template>
         </el-table-column>
         <el-table-column align="center" label="标题" prop="title"></el-table-column>
         <el-table-column align="center" label="目标链接" prop="linkUrl"></el-table-column>
+        <el-table-column align="center" label="链接类型">
+          <template #default="{ row }">
+            <span v-if="row.linkType === 1">普通链接</span>
+            <span v-if="row.linkType === 2">小程序路径</span>
+          </template>
+        </el-table-column>
         <el-table-column align="center" label="广告图">
           <template #default="{ row }">
             <div class="img">
-              <ImagePreview :src="row.imgUrl"></ImagePreview>
+              <ImagePreview :src="row.imgUrl" fit="fill" custom-img-class="img"></ImagePreview>
             </div>
           </template>
         </el-table-column>
@@ -79,7 +82,7 @@
         <el-table-column align="center" label="点击量" prop="clickNum"></el-table-column>
         <el-table-column align="center" label="状态">
           <template #default="{ row }">
-            {{ row.status === 0 ? '正常' : '删除' }}
+            {{ row.status === 0 ? '正常' : '下架' }}
           </template>
         </el-table-column>
         <el-table-column align="center" label="操作">
@@ -87,18 +90,18 @@
             <div class="button-box-row">
               <el-button
                 type="danger"
-                v-permission="'3204'"
                 plain
                 size="small"
+                v-permission="'3204'"
                 v-if="row.status === 0"
                 @click="updateStatus(row.id, 1)"
                 >下架
               </el-button>
               <el-button
                 type="primary"
-                v-permission="'3204'"
                 plain
                 size="small"
+                v-permission="'3204'"
                 v-else
                 @click="updateStatus(row.id, 0)"
                 >上架
@@ -140,11 +143,10 @@
             :disabled="isEdit"
             v-model="form.type"
             placeholder="请选择"
+            @change="chooseType"
           >
-            <el-option label="开屏弹层" :value="0" />
-            <el-option label="首页底部" :value="1" />
-            <el-option label="首页弹层" :value="2" />
-            <el-option label="发现中部" :value="3" />
+            <el-option label="移动端首页顶部广告位" :value="0" />
+            <el-option label="小程序首页顶部广告位" :value="1" />
           </el-select>
         </el-form-item>
         <el-form-item label="广告标题:" prop="title">
@@ -155,6 +157,17 @@
             show-word-limit
             class="input form-input"
           />
+        </el-form-item>
+        <el-form-item label="链接类型:" prop="linkType">
+          <el-select
+            class="form-select"
+            clearable
+            v-model="form.linkType"
+            placeholder="请选择"
+          >
+            <el-option label="普通链接" :value="1" v-if="form.type === 0" />
+            <el-option label="小程序路径" :value="2" v-if="form.type === 1" />
+          </el-select>
         </el-form-item>
         <el-form-item label="目标链接:" prop="linkUrl">
           <el-input
@@ -186,7 +199,7 @@
             >
               <el-button type="warning" :loading="loading">点击上传</el-button>
               <template #tip>
-                <span class="remarks ml15">注：建议尺寸：670px*160px</span>
+                <span class="remarks ml15">注：建议尺寸：{{suggestImgSize[form.type] || suggestImgSize[0]}}</span>
               </template>
             </el-upload>
             <img :src="form.imgUrl" v-if="form.imgUrl" class="cover" />
@@ -204,8 +217,16 @@
 </template>
 
 <script setup name="AdManage">
+const suggestImgSize = ['686px * 304px']
 const { proxy } = getCurrentInstance()
-
+const http = /^(http|https):\/\/[^ "]+$/
+const valiHttp = (rule, value, callback) => {
+  if (value && form.value.type === 0 && !http.test(value)){
+    callback(new Error('请输入带http或https的网址!'))
+  } else {
+    callback()
+  }
+}
 const state = reactive({
   formData: {
     invalid: '',
@@ -231,12 +252,15 @@ const state = reactive({
     imgUrl: '',
     linkUrl: '',
     title: '',
-    type: ''
+    type: '',
+    linkType: ''
   },
   formRules: {
     imgUrl: [{ required: true, message: '请上传图片！', trigger: 'blur' }],
     title: [{ required: true, message: '请输入标题！', trigger: 'blur' }],
-    type: [{ required: true, message: '请选择广告位置！', trigger: 'change' }]
+    linkUrl: [{ required: false, trigger: 'blur', validator: valiHttp }],
+    type: [{ required: true, message: '请选择广告位置！', trigger: 'change' }],
+    linkType: [{ required: true, message: '请选择链接类型！', trigger: 'change' }]
   },
   isEdit: false
 })
@@ -264,9 +288,21 @@ function add() {
 function close() {
   showDialog.value = false
   ruleFormRef.value.resetFields()
+  form.value.id = ''
 }
 
 function search() {
+  listQuery.value.currPage = 1
+  getList()
+}
+
+function clear() {
+  formData.value = {
+    invalid: '',
+    status: '',
+    title: '',
+    type: ''
+  }
   listQuery.value.currPage = 1
   getList()
 }
@@ -304,7 +340,9 @@ const submit = async () => {
     }
   })
 }
-
+function chooseType() {
+  form.value.linkType = ''
+}
 function edit(row) {
   isEdit.value = true
   showDialog.value = true
@@ -331,6 +369,7 @@ const uploadImg = async (file) => {
     loading.value = false
   }
 }
+search()
 </script>
 
 <style scoped lang="scss">
@@ -345,7 +384,7 @@ const uploadImg = async (file) => {
   font-size: 14px;
 }
 
-.img {
+:deep(.img img){
   max-width: 260px;
   max-height: 85px;
 }

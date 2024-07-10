@@ -13,7 +13,7 @@
           value-format="YYYY-MM-DD"
           type="date"
           class="date"
-          placeholder="选择日期"
+          placeholder="开始日期"
         />
         <span class="date-line">-</span>
         <el-date-picker
@@ -21,7 +21,7 @@
           value-format="YYYY-MM-DD"
           type="date"
           class="date"
-          placeholder="选择日期"
+          placeholder="结束日期"
         />
       </el-form-item>
       <el-form-item label="用户编号">
@@ -35,9 +35,10 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" native-type="submit" @click="getList" v-permission="'4010'"
+        <el-button type="primary" native-type="submit" @click="search" v-permission="'4010'"
           >查询</el-button
         >
+        <el-button @click="clear" v-permission="'4010'">清空选项</el-button>
       </el-form-item>
     </el-form>
     <div class="pt20">
@@ -90,6 +91,17 @@ function search() {
   getList()
 }
 
+function clear() {
+  formData.value = {
+    createStartTime:'',
+    createEndTime:'',
+    userId:'',
+    type:'',
+  }
+  listQuery.value.currPage = 1
+  getList()
+}
+
 const getList = async () => {
   tableDataLoading.value = true
   try {
@@ -106,6 +118,7 @@ const getList = async () => {
     tableDataLoading.value = false
   }
 }
+search()
 </script>
 
 <style scoped lang="scss"></style>
